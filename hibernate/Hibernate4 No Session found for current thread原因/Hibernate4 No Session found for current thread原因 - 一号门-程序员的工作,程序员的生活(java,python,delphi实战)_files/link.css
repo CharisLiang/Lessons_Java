@@ -1,0 +1,31 @@
+﻿/*-----------超链接样式---------------
+说明: 伪类:link :visited :hover分别代表超链接的通常、被访问后、和鼠标接触链接是的样式
+a标签代表通用超链接样式
+.menuA代表Blog导航条菜单的样式
+.titleA代表日志标题的样式
+.sideA代表侧栏的超链接样式
+.CategoryA代表树形分类的链接样式
+.more代表更多链接的样式
+------------------------------------*/
+a:link,a:visited{text-decoration:none;color:#0A5D0A;}
+a:hover{color:#cc3000;}
+.menuA:link,.menuA:visited{float:left;height:30px;text-align:center;padding:0px 5px 0px 0px;*padding:2px 5px 0px 0px;_padding:4px 4px 0px 4px;line-height:20px;text-decoration:none;color:#fff;} 
+.menuA:hover{color:#f90;text-decoration:underline;} 
+.titleA:link,.titleA:visited{text-decoration:none; display:block;font-weight:bold;text-align:left;color:#ff6600;}
+.titleA:hover{color:#cc3000;text-decoration:none;}
+.sideA:link,.sideA:visited{text-decoration:none;padding-left:16px;height:22px;overflow:hidden;display:block;margin-bottom:5px;width:240px;line-height:22px;}
+.sideA:hover{text-decoration:underline;padding-left:16px;height:22px; line-height:22px;overflow:hidden}
+.CategoryA:link,.CategoryA:visited{text-decoration:none;}
+.CategoryA:hover{text-decoration:underline;}
+
+.more:link,.more:visited{font-weight:bold;background:url(go.gif) no-repeat;padding-left:18px;margin:5px;text-decoration:none;}
+.more:hover{background:url(go.gif) no-repeat;} 
+.blogsetA:link,.blogsetA:visited{padding:0px 9px 4px 16px ; background:url(../../images/tools.gif) no-repeat;text-decoration:none}
+.mp3A:link,.mp3A:visited{padding:0px 0px 4px 16px; background:url(../../images/mm_snd.gif) no-repeat;text-decoration:none}
+.collA:link,.collA:visited{padding:0px 0px 4px 16px; background:url(../../images/MyFa.gif) no-repeat;text-decoration:none}
+.aboutA:link,.aboutA:visited{padding:0px 0px 4px 16px; background:url(../../images/ico_skdaq.gif) no-repeat;text-decoration:none}
+.normalA:link,.normalA:visited{padding:0px 12px 4px 16px; background:url(../../images/icon_normal.gif) no-repeat;text-decoration:none}
+.listA:link,.listA:visited{padding:0px 0px 4px 16px; background:url(../../images/icon_topic.gif) no-repeat;text-decoration:none}
+.commentA:link,.commentA:visited{padding:0px 0px 4px 14px; background:url(../../images/icon_offsite_red.gif) no-repeat -2px 3px;text-decoration:none}
+/*---超链接样式定义结束---*/
+

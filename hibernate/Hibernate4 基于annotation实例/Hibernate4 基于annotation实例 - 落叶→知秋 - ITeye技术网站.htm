@@ -1,0 +1,633 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0037)http://cxl2012.iteye.com/blog/1938752 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title> Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站</title>
+    <meta name="description" content="      hibernate最新版本：hibernate-release-4.2.5.Final     Myeclipse 8.5 + jdk1.6.10(使用自己的jdk1.5报错，提示版本过低，网上说是hibernate4以上版本需要jdk1.6，但是使用myeclipse自带的1.5没有问题)     jar包：hibernate-release-4.2.5.Final\lib\requi ...">
+    <meta name="keywords" content="  Hibernate4 基于annotation实例">
+    <link rel="shortcut icon" href="http://cxl2012.iteye.com/images/favicon.ico" type="image/x-icon">
+    <link rel="search" type="application/opensearchdescription+xml" href="http://cxl2012.iteye.com/open_search.xml" title="ITeye">
+    <link href="http://cxl2012.iteye.com/rss" rel="alternate" title="落叶→知秋" type="application/rss+xml">
+    <link href="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/blog.css" media="screen" rel="stylesheet" type="text/css">
+<link href="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/blue.css" media="screen" rel="stylesheet" type="text/css">
+    <script src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/ca-pub-8990951720398508.js"></script><script type="text/javascript" async="" src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/rctm"></script><script type="text/javascript" async="" src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/rctm(1)"></script><script src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/hm.js"></script><script src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/application.js" type="text/javascript"></script>    
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?e19a8b00cf63f716d774540875007664";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+      <link href="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/SyntaxHighlighter.css" media="screen" rel="stylesheet" type="text/css">
+  <script src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/shCoreCommon.js" type="text/javascript"></script>
+<script src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/hotkey.js" type="text/javascript"></script>
+  <script src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/code_favorites.js" type="text/javascript"></script>
+<script src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/weiboshare.js" type="text/javascript"></script>
+
+    
+  <style type="text/css">.dp-xml .cdata { color: #ff1493; }.dp-xml .tag, .dp-xml .tag-name { color: #069; font-weight: bold; }.dp-xml .attribute { color: red; }.dp-xml .attribute-value { color: blue; }</style><style type="text/css">.dp-j .annotation { color: #646464; }.dp-j .number { color: #C00000; }</style><style type="text/css">.dp-j .annotation { color: #646464; }.dp-j .number { color: #C00000; }</style><style type="text/css">.dp-j .annotation { color: #646464; }.dp-j .number { color: #C00000; }</style><script src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/get_ads.php" type="text/javascript"></script></head>
+  <body><div id="BAIDU_DUP_fp_wrapper" style="position: absolute; left: -1px; bottom: -1px; z-index: 0; width: 0px; height: 0px; overflow: hidden; visibility: hidden; display: none;"><iframe id="BAIDU_DUP_fp_iframe" src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/o.htm" style="width: 0px; height: 0px; visibility: hidden; display: none;"></iframe></div>
+    <div id="header">
+	      <div id="blog_site_nav">
+  <a href="http://www.iteye.com/" class="homepage">首页</a>
+  <a href="http://www.iteye.com/news">资讯</a>
+  <a href="http://www.iteye.com/magazines">精华</a>
+  <a href="http://www.iteye.com/forums">论坛</a>
+  <a href="http://www.iteye.com/ask">问答</a>
+  <a href="http://www.iteye.com/blogs">博客</a>
+  <a href="http://www.iteye.com/blogs/subjects">专栏</a>
+  <a href="http://www.iteye.com/groups">群组</a>
+  <a href="http://cxl2012.iteye.com/blog/1938752#" onclick="return false;" id="msna"><u>更多</u> <small>▼</small></a>
+  <div class="quick_menu" style="display:none;">
+    <a target="_blank" href="http://job.iteye.com/iteye">知识库</a>
+    <a href="http://www.iteye.com/search">搜索</a>
+  </div>
+</div>
+
+	      <div id="user_nav">
+      <a href="http://cxl2012.iteye.com/login" class="welcome" title="登录">您还未登录 !</a>
+    <a href="http://cxl2012.iteye.com/login">登录</a>
+    <a href="http://cxl2012.iteye.com/signup" class="nobg">注册</a>
+  </div>
+
+	    
+    </div>
+
+    <div id="page">
+        <div id="branding" class="clearfix" style="overflow: hidden;background: none;padding:0 0 2px;">
+        	<div class="J_adv" data-view="true" data-mod="ad_popu_184" data-mtp="34" data-order="92" data-con="ad_content_1127" style="width: 960px; height: 90px;"><!--广告占位容器--><div id="cpro_u2720131"><iframe id="iframeu2720131_0" src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/rctm.htm" width="960" height="90" align="center,center" vspace="0" hspace="0" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" style="border:0;vertical-align:bottom;margin:0;width:960px;height:90px" allowtransparency="true"></iframe></div><!--投放代码--><script type="text/javascript">(window.cproArray=window.cproArray||[]).push({id:'u2720131'});</script><script src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/c.js" type="text/javascript"></script></div>
+        </div>
+      <div id="branding" class="clearfix">
+        <div id="blog_name">
+          <h1><a href="http://cxl2012.iteye.com/">落叶→知秋</a></h1>
+        </div>
+        <div id="fd"></div>
+        <div id="blog_navbar">
+          <ul>
+            <li class="blog_navbar_for"><a href="http://cxl2012.iteye.com/"><strong>博客</strong></a></li>
+            <li><a href="http://cxl2012.iteye.com/weibo">微博</a></li>
+            <li><a href="http://cxl2012.iteye.com/album">相册</a></li>
+            <li><a href="http://cxl2012.iteye.com/link">收藏</a></li>
+            <li><a href="http://cxl2012.iteye.com/blog/guest_book">留言</a></li>
+            <li><a href="http://cxl2012.iteye.com/blog/profile">关于我</a></li>
+          </ul>
+    
+          <div class="search">
+            <form action="http://cxl2012.iteye.com/blog/search" method="get">
+              <input class="search_text" id="query" name="query" style="margin-left: 10px;width: 110px;" type="text" value="">
+              <input class="submit_search" type="submit" value="">
+            </form>
+          </div> 
+          <div id="fd"></div>         
+        </div>
+      </div>
+      
+      <div id="content" class="clearfix">
+        <div id="main">
+          
+
+
+
+          
+
+
+<div class="h-entry" style="display:none">
+  <a href="http://cxl2012.iteye.com/" class="p-author" target="_blank">cxl2012</a>
+</div>
+
+
+<div class="blog_main">
+  <div class="blog_title">
+    <h3>
+      <a href="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站.htm"> Hibernate4 基于annotation实例</a>
+      <em class="actions">      </em>
+    </h3>
+    <ul class="blog_categories"><strong>博客分类：</strong> <li><a href="http://cxl2012.iteye.com/category/291659">hibernate</a></li> </ul>
+        <div class="news_tag">&nbsp;</div>
+    	  
+    	
+    	
+  		
+      </div>
+
+  <div id="blog_content" class="blog_content">
+    <div class="iteye-blog-content-contain" style="font-size: 14px;">
+<div class="blog_content">
+<div class="iteye-blog-content-contain" style="font-size: 14px;">
+<p>hibernate最新版本：hibernate-release-4.2.5.Final</p>
+<p>&nbsp;</p>
+<p>Myeclipse 8.5&nbsp;+ jdk1.6.10(使用自己的jdk1.5报错，提示版本过低，网上说是hibernate4以上版本需要jdk1.6，但是使用myeclipse自带的1.5没有问题)</p>
+<p>&nbsp;</p>
+<p>jar包：hibernate-release-4.2.5.Final\lib\required下的所有包+mysql-connector-java-5.1.15-bin.jar+</p>
+<p>junit4.10.jar</p>
+<p>&nbsp;</p>
+<p>hibernate.cfg.xml</p>
+<div class="dp-highlighter" id=""><div class="bar"><div class="tools">Xml代码 <embed wmode="transparent" src="/javascripts/syntaxhighlighter/clipboard_new.swf" width="14" height="15" flashvars="clipboard=%3C%3Fxml%20version%3D&#39;1.0&#39;%20encoding%3D&#39;utf-8&#39;%3F%3E%0A%3C!DOCTYPE%20hibernate-configuration%20PUBLIC%0A%20%20%20%20%20%20%20%20%22-%2F%2FHibernate%2FHibernate%20Configuration%20DTD%203.0%2F%2FEN%22%0A%20%20%20%20%20%20%20%20%22http%3A%2F%2Fwww.hibernate.org%2Fdtd%2Fhibernate-configuration-3.0.dtd%22%3E%0A%3Chibernate-configuration%3E%0A%3Csession-factory%3E%0A%3C!--%20Database%20connection%20settings%20--%3E%0A%3Cproperty%20name%3D%22connection.driver_class%22%3Ecom.mysql.jdbc.Driver%3C%2Fproperty%3E%0A%3Cproperty%20name%3D%22connection.url%22%3Ejdbc%3Amysql%3A%2F%2F127.0.0.1%3A3306%2Fhibernate4%3C%2Fproperty%3E%0A%3Cproperty%20name%3D%22connection.username%22%3Eroot%3C%2Fproperty%3E%0A%3Cproperty%20name%3D%22connection.password%22%3Eroot%3C%2Fproperty%3E%0A%3C!--%20JDBC%20connection%20pool%20(use%20the%20built-in)%20--%3E%0A%3Cproperty%20name%3D%22connection.pool_size%22%3E1%3C%2Fproperty%3E%0A%3C!--%20SQL%20dialect%20--%3E%0A%3Cproperty%20name%3D%22dialect%22%3Eorg.hibernate.dialect.MySQL5Dialect%3C%2Fproperty%3E%0A%3C!--%20Enable%20Hibernate&#39;s%20automatic%20session%20context%20management%20--%3E%0A%3Cproperty%20name%3D%22current_session_context_class%22%3Ethread%3C%2Fproperty%3E%0A%3C!--%20Disable%20the%20second-level%20cache%20--%3E%0A%3Cproperty%20name%3D%22cache.provider_class%22%3Eorg.hibernate.cache.internal.NoCacheProvider%3C%2Fproperty%3E%0A%3C!--%20Echo%20all%20executed%20SQL%20to%20stdout%20--%3E%0A%3Cproperty%20name%3D%22show_sql%22%3Etrue%3C%2Fproperty%3E%0A%3C!--%20Drop%20and%20re-create%20the%20database%20schema%20on%20startup%20--%3E%0A%3Cproperty%20name%3D%22hbm2ddl.auto%22%3Eupdate%3C%2Fproperty%3E%0A%3C!--%20%3Cmapping%20resource%3D%22com%2Ftest%2Fpojo%2FStudent.hbm.xml%22%2F%3E%20--%3E%0A%3Cmapping%20class%3D%22com.test.pojo.Teacher%22%20%2F%3E%0A%3C%2Fsession-factory%3E%0A%3C%2Fhibernate-configuration%3E" quality="high" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">&nbsp;<a href="javascript:void()" title="收藏这段代码" onclick="code_favorites_do_favorite(this);return false;"><img class="star" src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/icon_star.png" alt="收藏代码"><img class="spinner" src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/spinner.gif" style="display:none"></a></div></div><ol start="1" class="dp-xml"><li><span><span class="tag">&lt;?</span><span class="tag-name">xml</span><span>&nbsp;</span><span class="attribute">version</span><span>=</span><span class="attribute-value">'1.0'</span><span>&nbsp;</span><span class="attribute">encoding</span><span>=</span><span class="attribute-value">'utf-8'</span><span class="tag">?&gt;</span><span>&nbsp;&nbsp;</span></span></li><li><span>&lt;!DOCTYPE&nbsp;hibernate-configuration&nbsp;PUBLIC&nbsp;&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"-//Hibernate/Hibernate&nbsp;Configuration&nbsp;DTD&nbsp;3.0//EN"&nbsp;&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd"<span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li><span><span class="tag">&lt;</span><span class="tag-name">hibernate-configuration</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li><span><span class="tag">&lt;</span><span class="tag-name">session-factory</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li><span><span class="comments">&lt;!--&nbsp;Database&nbsp;connection&nbsp;settings&nbsp;--&gt;</span><span>&nbsp;&nbsp;</span></span></li><li><span><span class="tag">&lt;</span><span class="tag-name">property</span><span>&nbsp;</span><span class="attribute">name</span><span>=</span><span class="attribute-value">"connection.driver_class"</span><span class="tag">&gt;</span><span>com.mysql.jdbc.Driver</span><span class="tag">&lt;/</span><span class="tag-name">property</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li><span><span class="tag">&lt;</span><span class="tag-name">property</span><span>&nbsp;</span><span class="attribute">name</span><span>=</span><span class="attribute-value">"connection.url"</span><span class="tag">&gt;</span><span>jdbc:mysql://127.0.0.1:3306/hibernate4</span><span class="tag">&lt;/</span><span class="tag-name">property</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li><span><span class="tag">&lt;</span><span class="tag-name">property</span><span>&nbsp;</span><span class="attribute">name</span><span>=</span><span class="attribute-value">"connection.username"</span><span class="tag">&gt;</span><span>root</span><span class="tag">&lt;/</span><span class="tag-name">property</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li><span><span class="tag">&lt;</span><span class="tag-name">property</span><span>&nbsp;</span><span class="attribute">name</span><span>=</span><span class="attribute-value">"connection.password"</span><span class="tag">&gt;</span><span>root</span><span class="tag">&lt;/</span><span class="tag-name">property</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li><span><span class="comments">&lt;!--&nbsp;JDBC&nbsp;connection&nbsp;pool&nbsp;(use&nbsp;the&nbsp;built-in)&nbsp;--&gt;</span><span>&nbsp;&nbsp;</span></span></li><li><span><span class="tag">&lt;</span><span class="tag-name">property</span><span>&nbsp;</span><span class="attribute">name</span><span>=</span><span class="attribute-value">"connection.pool_size"</span><span class="tag">&gt;</span><span>1</span><span class="tag">&lt;/</span><span class="tag-name">property</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li><span><span class="comments">&lt;!--&nbsp;SQL&nbsp;dialect&nbsp;--&gt;</span><span>&nbsp;&nbsp;</span></span></li><li><span><span class="tag">&lt;</span><span class="tag-name">property</span><span>&nbsp;</span><span class="attribute">name</span><span>=</span><span class="attribute-value">"dialect"</span><span class="tag">&gt;</span><span>org.hibernate.dialect.MySQL5Dialect</span><span class="tag">&lt;/</span><span class="tag-name">property</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li><span><span class="comments">&lt;!--&nbsp;Enable&nbsp;Hibernate's&nbsp;automatic&nbsp;session&nbsp;context&nbsp;management&nbsp;--&gt;</span><span>&nbsp;&nbsp;</span></span></li><li><span><span class="tag">&lt;</span><span class="tag-name">property</span><span>&nbsp;</span><span class="attribute">name</span><span>=</span><span class="attribute-value">"current_session_context_class"</span><span class="tag">&gt;</span><span>thread</span><span class="tag">&lt;/</span><span class="tag-name">property</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li><span><span class="comments">&lt;!--&nbsp;Disable&nbsp;the&nbsp;second-level&nbsp;cache&nbsp;--&gt;</span><span>&nbsp;&nbsp;</span></span></li><li><span><span class="tag">&lt;</span><span class="tag-name">property</span><span>&nbsp;</span><span class="attribute">name</span><span>=</span><span class="attribute-value">"cache.provider_class"</span><span class="tag">&gt;</span><span>org.hibernate.cache.internal.NoCacheProvider</span><span class="tag">&lt;/</span><span class="tag-name">property</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li><span><span class="comments">&lt;!--&nbsp;Echo&nbsp;all&nbsp;executed&nbsp;SQL&nbsp;to&nbsp;stdout&nbsp;--&gt;</span><span>&nbsp;&nbsp;</span></span></li><li><span><span class="tag">&lt;</span><span class="tag-name">property</span><span>&nbsp;</span><span class="attribute">name</span><span>=</span><span class="attribute-value">"show_sql"</span><span class="tag">&gt;</span><span>true</span><span class="tag">&lt;/</span><span class="tag-name">property</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li><span><span class="comments">&lt;!--&nbsp;Drop&nbsp;and&nbsp;re-create&nbsp;the&nbsp;database&nbsp;schema&nbsp;on&nbsp;startup&nbsp;--&gt;</span><span>&nbsp;&nbsp;</span></span></li><li><span><span class="tag">&lt;</span><span class="tag-name">property</span><span>&nbsp;</span><span class="attribute">name</span><span>=</span><span class="attribute-value">"hbm2ddl.auto"</span><span class="tag">&gt;</span><span>update</span><span class="tag">&lt;/</span><span class="tag-name">property</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li><span><span class="comments">&lt;!--&nbsp;&lt;mapping&nbsp;resource="com/test/pojo/Student.hbm.xml"/&gt;&nbsp;--&gt;</span><span>&nbsp;&nbsp;</span></span></li><li><span><span class="tag">&lt;</span><span class="tag-name">mapping</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"com.test.pojo.Teacher"</span><span>&nbsp;</span><span class="tag">/&gt;</span><span>&nbsp;&nbsp;</span></span></li><li><span><span class="tag">&lt;/</span><span class="tag-name">session-factory</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li><span><span class="tag">&lt;/</span><span class="tag-name">hibernate-configuration</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><pre name="code" class="xml" codeable_id="" codeable_type="BlogComment" source_url="http://cxl2012.iteye.com/blog/1938752#" pre_index="0" title=" Hibernate4 基于annotation实例" style="display: none;">&lt;?xml version='1.0' encoding='utf-8'?&gt;
+&lt;!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd"&gt;
+&lt;hibernate-configuration&gt;
+&lt;session-factory&gt;
+&lt;!-- Database connection settings --&gt;
+&lt;property name="connection.driver_class"&gt;com.mysql.jdbc.Driver&lt;/property&gt;
+&lt;property name="connection.url"&gt;jdbc:mysql://127.0.0.1:3306/hibernate4&lt;/property&gt;
+&lt;property name="connection.username"&gt;root&lt;/property&gt;
+&lt;property name="connection.password"&gt;root&lt;/property&gt;
+&lt;!-- JDBC connection pool (use the built-in) --&gt;
+&lt;property name="connection.pool_size"&gt;1&lt;/property&gt;
+&lt;!-- SQL dialect --&gt;
+&lt;property name="dialect"&gt;org.hibernate.dialect.MySQL5Dialect&lt;/property&gt;
+&lt;!-- Enable Hibernate's automatic session context management --&gt;
+&lt;property name="current_session_context_class"&gt;thread&lt;/property&gt;
+&lt;!-- Disable the second-level cache --&gt;
+&lt;property name="cache.provider_class"&gt;org.hibernate.cache.internal.NoCacheProvider&lt;/property&gt;
+&lt;!-- Echo all executed SQL to stdout --&gt;
+&lt;property name="show_sql"&gt;true&lt;/property&gt;
+&lt;!-- Drop and re-create the database schema on startup --&gt;
+&lt;property name="hbm2ddl.auto"&gt;update&lt;/property&gt;
+&lt;!-- &lt;mapping resource="com/test/pojo/Student.hbm.xml"/&gt; --&gt;
+&lt;mapping class="com.test.pojo.Teacher" /&gt;
+&lt;/session-factory&gt;
+&lt;/hibernate-configuration&gt;</pre>
+<p>pojo类Teacher</p>
+<div class="dp-highlighter" id=""><div class="bar"><div class="tools">Java代码 <embed wmode="transparent" src="/javascripts/syntaxhighlighter/clipboard_new.swf" width="14" height="15" flashvars="clipboard=package%20com.test.pojo%3B%0A%0Aimport%20javax.persistence.Entity%3B%0Aimport%20javax.persistence.Id%3B%0A%0A%40Entity%0Apublic%20class%20Teacher%20%7B%0A%09%40Id%0A%09private%20int%20id%3B%0A%09private%20String%20name%3B%0A%09private%20int%20age%3B%0A%09public%20int%20getId()%20%7B%0A%09%09return%20id%3B%0A%09%7D%0A%09public%20void%20setId(int%20id)%20%7B%0A%09%09this.id%20%3D%20id%3B%0A%09%7D%0A%09public%20String%20getName()%20%7B%0A%09%09return%20name%3B%0A%09%7D%0A%09public%20void%20setName(String%20name)%20%7B%0A%09%09this.name%20%3D%20name%3B%0A%09%7D%0A%09public%20int%20getAge()%20%7B%0A%09%09return%20age%3B%0A%09%7D%0A%09public%20void%20setAge(int%20age)%20%7B%0A%09%09this.age%20%3D%20age%3B%0A%09%7D%0A%09%0A%7D%0A" quality="high" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">&nbsp;<a href="javascript:void()" title="收藏这段代码" onclick="code_favorites_do_favorite(this);return false;"><img class="star" src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/icon_star.png" alt="收藏代码"><img class="spinner" src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/spinner.gif" style="display:none"></a></div></div><ol start="1" class="dp-j"><li><span><span class="keyword">package</span><span>&nbsp;com.test.pojo;&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;</span></li><li><span><span class="keyword">import</span><span>&nbsp;javax.persistence.Entity;&nbsp;&nbsp;</span></span></li><li><span><span class="keyword">import</span><span>&nbsp;javax.persistence.Id;&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;</span></li><li><span><span class="annotation">@Entity</span><span>&nbsp;&nbsp;</span></span></li><li><span><span class="keyword">public</span><span>&nbsp;</span><span class="keyword">class</span><span>&nbsp;Teacher&nbsp;{&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Id</span><span>&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span><span>&nbsp;</span><span class="keyword">int</span><span>&nbsp;id;&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span><span>&nbsp;String&nbsp;name;&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span><span>&nbsp;</span><span class="keyword">int</span><span>&nbsp;age;&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">int</span><span>&nbsp;getId()&nbsp;{&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;id;&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">void</span><span>&nbsp;setId(</span><span class="keyword">int</span><span>&nbsp;id)&nbsp;{&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span><span>.id&nbsp;=&nbsp;id;&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;String&nbsp;getName()&nbsp;{&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;name;&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">void</span><span>&nbsp;setName(String&nbsp;name)&nbsp;{&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span><span>.name&nbsp;=&nbsp;name;&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">int</span><span>&nbsp;getAge()&nbsp;{&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;age;&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">void</span><span>&nbsp;setAge(</span><span class="keyword">int</span><span>&nbsp;age)&nbsp;{&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span><span>.age&nbsp;=&nbsp;age;&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li><span>}&nbsp;&nbsp;</span></li></ol></div><pre name="code" class="java" codeable_id="" codeable_type="BlogComment" source_url="http://cxl2012.iteye.com/blog/1938752#" pre_index="1" title=" Hibernate4 基于annotation实例" style="display: none;">package com.test.pojo;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Teacher {
+	@Id
+	private int id;
+	private String name;
+	private int age;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+}
+</pre>
+<p>&nbsp;</p>
+<p>&nbsp;junit4测试类TeacherTest</p>
+<div class="dp-highlighter" id=""><div class="bar"><div class="tools">Java代码 <embed wmode="transparent" src="/javascripts/syntaxhighlighter/clipboard_new.swf" width="14" height="15" flashvars="clipboard=package%20com.test.pojo%3B%0A%0Aimport%20org.hibernate.Session%3B%0Aimport%20org.hibernate.SessionFactory%3B%0Aimport%20org.hibernate.cfg.Configuration%3B%0Aimport%20org.hibernate.service.ServiceRegistry%3B%0Aimport%20org.hibernate.service.ServiceRegistryBuilder%3B%0Aimport%20org.junit.BeforeClass%3B%0Aimport%20org.junit.Test%3B%0A%0Apublic%20class%20TeacherTest%20%7B%0A%09%0A%09private%20static%20SessionFactory%20sessionFactory%20%3D%20null%3B%0A%09%40BeforeClass%0A%09public%20static%20void%20beforeClass()%20%7B%0A%09%09Configuration%20configuration%20%3D%20new%20Configuration()%3B%0A%09%09configuration.configure()%3B%0A%09%09ServiceRegistry%20serviceRegistry%20%3D%20new%20ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry()%3B%0A%09%09sessionFactory%20%3D%20configuration.buildSessionFactory(serviceRegistry)%3B%0A%09%09%2F%2FsessionFactory%20%3D%20configuration.addAnnotatedClass(Teacher.class).buildSessionFactory(serviceRegistry)%3B%0A%0A%09%7D%20%0A%09%40Test%0A%09public%20void%20testSave()%20%7B%0A%09%09Teacher%20t%20%3D%20new%20Teacher()%3B%0A%09%09t.setId(1)%3B%0A%09%09t.setName(%22wangwu%22)%3B%0A%09%09t.setAge(38)%3B%0A%09%09Session%20session%20%3D%20sessionFactory.getCurrentSession()%3B%0A%09%09session.beginTransaction()%3B%0A%09%09session.save(t)%3B%0A%09%09session.getTransaction().commit()%3B%0A%09%7D%0A%7D" quality="high" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">&nbsp;<a href="javascript:void()" title="收藏这段代码" onclick="code_favorites_do_favorite(this);return false;"><img class="star" src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/icon_star.png" alt="收藏代码"><img class="spinner" src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/spinner.gif" style="display:none"></a></div></div><ol start="1" class="dp-j"><li><span><span class="keyword">package</span><span>&nbsp;com.test.pojo;&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;</span></li><li><span><span class="keyword">import</span><span>&nbsp;org.hibernate.Session;&nbsp;&nbsp;</span></span></li><li><span><span class="keyword">import</span><span>&nbsp;org.hibernate.SessionFactory;&nbsp;&nbsp;</span></span></li><li><span><span class="keyword">import</span><span>&nbsp;org.hibernate.cfg.Configuration;&nbsp;&nbsp;</span></span></li><li><span><span class="keyword">import</span><span>&nbsp;org.hibernate.service.ServiceRegistry;&nbsp;&nbsp;</span></span></li><li><span><span class="keyword">import</span><span>&nbsp;org.hibernate.service.ServiceRegistryBuilder;&nbsp;&nbsp;</span></span></li><li><span><span class="keyword">import</span><span>&nbsp;org.junit.BeforeClass;&nbsp;&nbsp;</span></span></li><li><span><span class="keyword">import</span><span>&nbsp;org.junit.Test;&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;</span></li><li><span><span class="keyword">public</span><span>&nbsp;</span><span class="keyword">class</span><span>&nbsp;TeacherTest&nbsp;{&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;SessionFactory&nbsp;sessionFactory&nbsp;=&nbsp;</span><span class="keyword">null</span><span>;&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@BeforeClass</span><span>&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">void</span><span>&nbsp;beforeClass()&nbsp;{&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Configuration&nbsp;configuration&nbsp;=&nbsp;<span class="keyword">new</span><span>&nbsp;Configuration();&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;configuration.configure();&nbsp;&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ServiceRegistry&nbsp;serviceRegistry&nbsp;=&nbsp;<span class="keyword">new</span><span>&nbsp;ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sessionFactory&nbsp;=&nbsp;configuration.buildSessionFactory(serviceRegistry);&nbsp;&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//sessionFactory&nbsp;=&nbsp;configuration.addAnnotatedClass(Teacher.class).buildSessionFactory(serviceRegistry);</span><span>&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Test</span><span>&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">void</span><span>&nbsp;testSave()&nbsp;{&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Teacher&nbsp;t&nbsp;=&nbsp;<span class="keyword">new</span><span>&nbsp;Teacher();&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t.setId(<span class="number">1</span><span>);&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t.setName(<span class="string">"wangwu"</span><span>);&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t.setAge(<span class="number">38</span><span>);&nbsp;&nbsp;</span></span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Session&nbsp;session&nbsp;=&nbsp;sessionFactory.getCurrentSession();&nbsp;&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;session.beginTransaction();&nbsp;&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;session.save(t);&nbsp;&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;session.getTransaction().commit();&nbsp;&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li><span>}&nbsp;&nbsp;</span></li></ol></div><pre name="code" class="java" codeable_id="" codeable_type="BlogComment" source_url="http://cxl2012.iteye.com/blog/1938752#" pre_index="2" title=" Hibernate4 基于annotation实例" style="display: none;">package com.test.pojo;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.service.ServiceRegistry;
+import org.hibernate.service.ServiceRegistryBuilder;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class TeacherTest {
+	
+	private static SessionFactory sessionFactory = null;
+	@BeforeClass
+	public static void beforeClass() {
+		Configuration configuration = new Configuration();
+		configuration.configure();
+		ServiceRegistry serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();
+		sessionFactory = configuration.buildSessionFactory(serviceRegistry);
+		//sessionFactory = configuration.addAnnotatedClass(Teacher.class).buildSessionFactory(serviceRegistry);
+
+	} 
+	@Test
+	public void testSave() {
+		Teacher t = new Teacher();
+		t.setId(1);
+		t.setName("wangwu");
+		t.setAge(38);
+		Session session = sessionFactory.getCurrentSession();
+		session.beginTransaction();
+		session.save(t);
+		session.getTransaction().commit();
+	}
+}</pre>
+<p>&nbsp;输出：</p>
+<div class="dp-highlighter" id=""><div class="bar"><div class="tools">Java代码 <embed wmode="transparent" src="/javascripts/syntaxhighlighter/clipboard_new.swf" width="14" height="15" flashvars="clipboard=2013-9-8%2014%3A46%3A04%20org.hibernate.annotations.common.Version%20%3Cclinit%3E%0AINFO%3A%20HCANN000001%3A%20Hibernate%20Commons%20Annotations%20%7B4.0.2.Final%7D%0A2013-9-8%2014%3A46%3A04%20org.hibernate.Version%20logVersion%0AINFO%3A%20HHH000412%3A%20Hibernate%20Core%20%7B4.2.5.Final%7D%0A2013-9-8%2014%3A46%3A04%20org.hibernate.cfg.Environment%20%3Cclinit%3E%0AINFO%3A%20HHH000206%3A%20hibernate.properties%20not%20found%0A2013-9-8%2014%3A46%3A04%20org.hibernate.cfg.Environment%20buildBytecodeProvider%0AINFO%3A%20HHH000021%3A%20Bytecode%20provider%20name%20%3A%20javassist%0A2013-9-8%2014%3A46%3A04%20org.hibernate.cfg.Configuration%20configure%0AINFO%3A%20HHH000043%3A%20Configuring%20from%20resource%3A%20%2Fhibernate.cfg.xml%0A2013-9-8%2014%3A46%3A04%20org.hibernate.cfg.Configuration%20getConfigurationInputStream%0AINFO%3A%20HHH000040%3A%20Configuration%20resource%3A%20%2Fhibernate.cfg.xml%0A2013-9-8%2014%3A46%3A05%20org.hibernate.cfg.Configuration%20doConfigure%0AINFO%3A%20HHH000041%3A%20Configured%20SessionFactory%3A%20null%0A2013-9-8%2014%3A46%3A05%20org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl%20configure%0AINFO%3A%20HHH000402%3A%20Using%20Hibernate%20built-in%20connection%20pool%20(not%20for%20production%20use!)%0A2013-9-8%2014%3A46%3A05%20org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl%20configure%0AINFO%3A%20HHH000115%3A%20Hibernate%20connection%20pool%20size%3A%201%0A2013-9-8%2014%3A46%3A05%20org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl%20configure%0AINFO%3A%20HHH000006%3A%20Autocommit%20mode%3A%20false%0A2013-9-8%2014%3A46%3A05%20org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl%20configure%0AINFO%3A%20HHH000401%3A%20using%20driver%20%5Bcom.mysql.jdbc.Driver%5D%20at%20URL%20%5Bjdbc%3Amysql%3A%2F%2F127.0.0.1%3A3306%2Fhibernate4%5D%0A2013-9-8%2014%3A46%3A05%20org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl%20configure%0AINFO%3A%20HHH000046%3A%20Connection%20properties%3A%20%7Buser%3Droot%2C%20password%3D****%7D%0A2013-9-8%2014%3A46%3A08%20org.hibernate.dialect.Dialect%20%3Cinit%3E%0AINFO%3A%20HHH000400%3A%20Using%20dialect%3A%20org.hibernate.dialect.MySQL5Dialect%0A2013-9-8%2014%3A46%3A08%20org.hibernate.engine.transaction.internal.TransactionFactoryInitiator%20initiateService%0AINFO%3A%20HHH000399%3A%20Using%20default%20transaction%20strategy%20(direct%20JDBC%20transactions)%0A2013-9-8%2014%3A46%3A08%20org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory%20%3Cinit%3E%0AINFO%3A%20HHH000397%3A%20Using%20ASTQueryTranslatorFactory%0A2013-9-8%2014%3A46%3A09%20org.hibernate.tool.hbm2ddl.SchemaUpdate%20execute%0AINFO%3A%20HHH000228%3A%20Running%20hbm2ddl%20schema%20update%0A2013-9-8%2014%3A46%3A09%20org.hibernate.tool.hbm2ddl.SchemaUpdate%20execute%0AINFO%3A%20HHH000102%3A%20Fetching%20database%20metadata%0A2013-9-8%2014%3A46%3A09%20org.hibernate.tool.hbm2ddl.SchemaUpdate%20execute%0AINFO%3A%20HHH000396%3A%20Updating%20schema%0A2013-9-8%2014%3A46%3A10%20org.hibernate.tool.hbm2ddl.TableMetadata%20%3Cinit%3E%0AINFO%3A%20HHH000261%3A%20Table%20found%3A%20hibernate4.teacher%0A2013-9-8%2014%3A46%3A10%20org.hibernate.tool.hbm2ddl.TableMetadata%20%3Cinit%3E%0AINFO%3A%20HHH000037%3A%20Columns%3A%20%5Bid%2C%20age%2C%20name%5D%0A2013-9-8%2014%3A46%3A10%20org.hibernate.tool.hbm2ddl.TableMetadata%20%3Cinit%3E%0AINFO%3A%20HHH000108%3A%20Foreign%20keys%3A%20%5B%5D%0A2013-9-8%2014%3A46%3A10%20org.hibernate.tool.hbm2ddl.TableMetadata%20%3Cinit%3E%0AINFO%3A%20HHH000126%3A%20Indexes%3A%20%5Bprimary%5D%0A2013-9-8%2014%3A46%3A10%20org.hibernate.tool.hbm2ddl.SchemaUpdate%20execute%0AINFO%3A%20HHH000232%3A%20Schema%20update%20complete%0AHibernate%3A%20insert%20into%20Teacher%20(age%2C%20name%2C%20id)%20values%20(%3F%2C%20%3F%2C%20%3F)" quality="high" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">&nbsp;<a href="javascript:void()" title="收藏这段代码" onclick="code_favorites_do_favorite(this);return false;"><img class="star" src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/icon_star.png" alt="收藏代码"><img class="spinner" src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/spinner.gif" style="display:none"></a></div></div><ol start="1" class="dp-j"><li><span><span class="number">2013</span><span>-</span><span class="number">9</span><span>-</span><span class="number">8</span><span>&nbsp;</span><span class="number">14</span><span>:</span><span class="number">46</span><span>:</span><span class="number">04</span><span>&nbsp;org.hibernate.annotations.common.Version&nbsp;&lt;clinit&gt;&nbsp;&nbsp;</span></span></li><li><span>INFO:&nbsp;HCANN000001:&nbsp;Hibernate&nbsp;Commons&nbsp;Annotations&nbsp;{<span class="number">4.0</span><span>.</span><span class="number">2</span><span>.Final}&nbsp;&nbsp;</span></span></li><li><span><span class="number">2013</span><span>-</span><span class="number">9</span><span>-</span><span class="number">8</span><span>&nbsp;</span><span class="number">14</span><span>:</span><span class="number">46</span><span>:</span><span class="number">04</span><span>&nbsp;org.hibernate.Version&nbsp;logVersion&nbsp;&nbsp;</span></span></li><li><span>INFO:&nbsp;HHH000412:&nbsp;Hibernate&nbsp;Core&nbsp;{<span class="number">4.2</span><span>.</span><span class="number">5</span><span>.Final}&nbsp;&nbsp;</span></span></li><li><span><span class="number">2013</span><span>-</span><span class="number">9</span><span>-</span><span class="number">8</span><span>&nbsp;</span><span class="number">14</span><span>:</span><span class="number">46</span><span>:</span><span class="number">04</span><span>&nbsp;org.hibernate.cfg.Environment&nbsp;&lt;clinit&gt;&nbsp;&nbsp;</span></span></li><li><span>INFO:&nbsp;HHH000206:&nbsp;hibernate.properties&nbsp;not&nbsp;found&nbsp;&nbsp;</span></li><li><span><span class="number">2013</span><span>-</span><span class="number">9</span><span>-</span><span class="number">8</span><span>&nbsp;</span><span class="number">14</span><span>:</span><span class="number">46</span><span>:</span><span class="number">04</span><span>&nbsp;org.hibernate.cfg.Environment&nbsp;buildBytecodeProvider&nbsp;&nbsp;</span></span></li><li><span>INFO:&nbsp;HHH000021:&nbsp;Bytecode&nbsp;provider&nbsp;name&nbsp;:&nbsp;javassist&nbsp;&nbsp;</span></li><li><span><span class="number">2013</span><span>-</span><span class="number">9</span><span>-</span><span class="number">8</span><span>&nbsp;</span><span class="number">14</span><span>:</span><span class="number">46</span><span>:</span><span class="number">04</span><span>&nbsp;org.hibernate.cfg.Configuration&nbsp;configure&nbsp;&nbsp;</span></span></li><li><span>INFO:&nbsp;HHH000043:&nbsp;Configuring&nbsp;from&nbsp;resource:&nbsp;/hibernate.cfg.xml&nbsp;&nbsp;</span></li><li><span><span class="number">2013</span><span>-</span><span class="number">9</span><span>-</span><span class="number">8</span><span>&nbsp;</span><span class="number">14</span><span>:</span><span class="number">46</span><span>:</span><span class="number">04</span><span>&nbsp;org.hibernate.cfg.Configuration&nbsp;getConfigurationInputStream&nbsp;&nbsp;</span></span></li><li><span>INFO:&nbsp;HHH000040:&nbsp;Configuration&nbsp;resource:&nbsp;/hibernate.cfg.xml&nbsp;&nbsp;</span></li><li><span><span class="number">2013</span><span>-</span><span class="number">9</span><span>-</span><span class="number">8</span><span>&nbsp;</span><span class="number">14</span><span>:</span><span class="number">46</span><span>:</span><span class="number">05</span><span>&nbsp;org.hibernate.cfg.Configuration&nbsp;doConfigure&nbsp;&nbsp;</span></span></li><li><span>INFO:&nbsp;HHH000041:&nbsp;Configured&nbsp;SessionFactory:&nbsp;<span class="keyword">null</span><span>&nbsp;&nbsp;</span></span></li><li><span><span class="number">2013</span><span>-</span><span class="number">9</span><span>-</span><span class="number">8</span><span>&nbsp;</span><span class="number">14</span><span>:</span><span class="number">46</span><span>:</span><span class="number">05</span><span>&nbsp;org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl&nbsp;configure&nbsp;&nbsp;</span></span></li><li><span>INFO:&nbsp;HHH000402:&nbsp;Using&nbsp;Hibernate&nbsp;built-in&nbsp;connection&nbsp;pool&nbsp;(not&nbsp;<span class="keyword">for</span><span>&nbsp;production&nbsp;use!)&nbsp;&nbsp;</span></span></li><li><span><span class="number">2013</span><span>-</span><span class="number">9</span><span>-</span><span class="number">8</span><span>&nbsp;</span><span class="number">14</span><span>:</span><span class="number">46</span><span>:</span><span class="number">05</span><span>&nbsp;org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl&nbsp;configure&nbsp;&nbsp;</span></span></li><li><span>INFO:&nbsp;HHH000115:&nbsp;Hibernate&nbsp;connection&nbsp;pool&nbsp;size:&nbsp;<span class="number">1</span><span>&nbsp;&nbsp;</span></span></li><li><span><span class="number">2013</span><span>-</span><span class="number">9</span><span>-</span><span class="number">8</span><span>&nbsp;</span><span class="number">14</span><span>:</span><span class="number">46</span><span>:</span><span class="number">05</span><span>&nbsp;org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl&nbsp;configure&nbsp;&nbsp;</span></span></li><li><span>INFO:&nbsp;HHH000006:&nbsp;Autocommit&nbsp;mode:&nbsp;<span class="keyword">false</span><span>&nbsp;&nbsp;</span></span></li><li><span><span class="number">2013</span><span>-</span><span class="number">9</span><span>-</span><span class="number">8</span><span>&nbsp;</span><span class="number">14</span><span>:</span><span class="number">46</span><span>:</span><span class="number">05</span><span>&nbsp;org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl&nbsp;configure&nbsp;&nbsp;</span></span></li><li><span>INFO:&nbsp;HHH000401:&nbsp;using&nbsp;driver&nbsp;[com.mysql.jdbc.Driver]&nbsp;at&nbsp;URL&nbsp;[jdbc:mysql:<span class="comment">//127.0.0.1:3306/hibernate4]</span><span>&nbsp;&nbsp;</span></span></li><li><span><span class="number">2013</span><span>-</span><span class="number">9</span><span>-</span><span class="number">8</span><span>&nbsp;</span><span class="number">14</span><span>:</span><span class="number">46</span><span>:</span><span class="number">05</span><span>&nbsp;org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl&nbsp;configure&nbsp;&nbsp;</span></span></li><li><span>INFO:&nbsp;HHH000046:&nbsp;Connection&nbsp;properties:&nbsp;{user=root,&nbsp;password=****}&nbsp;&nbsp;</span></li><li><span><span class="number">2013</span><span>-</span><span class="number">9</span><span>-</span><span class="number">8</span><span>&nbsp;</span><span class="number">14</span><span>:</span><span class="number">46</span><span>:</span><span class="number">08</span><span>&nbsp;org.hibernate.dialect.Dialect&nbsp;&lt;init&gt;&nbsp;&nbsp;</span></span></li><li><span>INFO:&nbsp;HHH000400:&nbsp;Using&nbsp;dialect:&nbsp;org.hibernate.dialect.MySQL5Dialect&nbsp;&nbsp;</span></li><li><span><span class="number">2013</span><span>-</span><span class="number">9</span><span>-</span><span class="number">8</span><span>&nbsp;</span><span class="number">14</span><span>:</span><span class="number">46</span><span>:</span><span class="number">08</span><span>&nbsp;org.hibernate.engine.transaction.internal.TransactionFactoryInitiator&nbsp;initiateService&nbsp;&nbsp;</span></span></li><li><span>INFO:&nbsp;HHH000399:&nbsp;Using&nbsp;<span class="keyword">default</span><span>&nbsp;transaction&nbsp;strategy&nbsp;(direct&nbsp;JDBC&nbsp;transactions)&nbsp;&nbsp;</span></span></li><li><span><span class="number">2013</span><span>-</span><span class="number">9</span><span>-</span><span class="number">8</span><span>&nbsp;</span><span class="number">14</span><span>:</span><span class="number">46</span><span>:</span><span class="number">08</span><span>&nbsp;org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory&nbsp;&lt;init&gt;&nbsp;&nbsp;</span></span></li><li><span>INFO:&nbsp;HHH000397:&nbsp;Using&nbsp;ASTQueryTranslatorFactory&nbsp;&nbsp;</span></li><li><span><span class="number">2013</span><span>-</span><span class="number">9</span><span>-</span><span class="number">8</span><span>&nbsp;</span><span class="number">14</span><span>:</span><span class="number">46</span><span>:</span><span class="number">09</span><span>&nbsp;org.hibernate.tool.hbm2ddl.SchemaUpdate&nbsp;execute&nbsp;&nbsp;</span></span></li><li><span>INFO:&nbsp;HHH000228:&nbsp;Running&nbsp;hbm2ddl&nbsp;schema&nbsp;update&nbsp;&nbsp;</span></li><li><span><span class="number">2013</span><span>-</span><span class="number">9</span><span>-</span><span class="number">8</span><span>&nbsp;</span><span class="number">14</span><span>:</span><span class="number">46</span><span>:</span><span class="number">09</span><span>&nbsp;org.hibernate.tool.hbm2ddl.SchemaUpdate&nbsp;execute&nbsp;&nbsp;</span></span></li><li><span>INFO:&nbsp;HHH000102:&nbsp;Fetching&nbsp;database&nbsp;metadata&nbsp;&nbsp;</span></li><li><span><span class="number">2013</span><span>-</span><span class="number">9</span><span>-</span><span class="number">8</span><span>&nbsp;</span><span class="number">14</span><span>:</span><span class="number">46</span><span>:</span><span class="number">09</span><span>&nbsp;org.hibernate.tool.hbm2ddl.SchemaUpdate&nbsp;execute&nbsp;&nbsp;</span></span></li><li><span>INFO:&nbsp;HHH000396:&nbsp;Updating&nbsp;schema&nbsp;&nbsp;</span></li><li><span><span class="number">2013</span><span>-</span><span class="number">9</span><span>-</span><span class="number">8</span><span>&nbsp;</span><span class="number">14</span><span>:</span><span class="number">46</span><span>:</span><span class="number">10</span><span>&nbsp;org.hibernate.tool.hbm2ddl.TableMetadata&nbsp;&lt;init&gt;&nbsp;&nbsp;</span></span></li><li><span>INFO:&nbsp;HHH000261:&nbsp;Table&nbsp;found:&nbsp;hibernate4.teacher&nbsp;&nbsp;</span></li><li><span><span class="number">2013</span><span>-</span><span class="number">9</span><span>-</span><span class="number">8</span><span>&nbsp;</span><span class="number">14</span><span>:</span><span class="number">46</span><span>:</span><span class="number">10</span><span>&nbsp;org.hibernate.tool.hbm2ddl.TableMetadata&nbsp;&lt;init&gt;&nbsp;&nbsp;</span></span></li><li><span>INFO:&nbsp;HHH000037:&nbsp;Columns:&nbsp;[id,&nbsp;age,&nbsp;name]&nbsp;&nbsp;</span></li><li><span><span class="number">2013</span><span>-</span><span class="number">9</span><span>-</span><span class="number">8</span><span>&nbsp;</span><span class="number">14</span><span>:</span><span class="number">46</span><span>:</span><span class="number">10</span><span>&nbsp;org.hibernate.tool.hbm2ddl.TableMetadata&nbsp;&lt;init&gt;&nbsp;&nbsp;</span></span></li><li><span>INFO:&nbsp;HHH000108:&nbsp;Foreign&nbsp;keys:&nbsp;[]&nbsp;&nbsp;</span></li><li><span><span class="number">2013</span><span>-</span><span class="number">9</span><span>-</span><span class="number">8</span><span>&nbsp;</span><span class="number">14</span><span>:</span><span class="number">46</span><span>:</span><span class="number">10</span><span>&nbsp;org.hibernate.tool.hbm2ddl.TableMetadata&nbsp;&lt;init&gt;&nbsp;&nbsp;</span></span></li><li><span>INFO:&nbsp;HHH000126:&nbsp;Indexes:&nbsp;[primary]&nbsp;&nbsp;</span></li><li><span><span class="number">2013</span><span>-</span><span class="number">9</span><span>-</span><span class="number">8</span><span>&nbsp;</span><span class="number">14</span><span>:</span><span class="number">46</span><span>:</span><span class="number">10</span><span>&nbsp;org.hibernate.tool.hbm2ddl.SchemaUpdate&nbsp;execute&nbsp;&nbsp;</span></span></li><li><span>INFO:&nbsp;HHH000232:&nbsp;Schema&nbsp;update&nbsp;complete&nbsp;&nbsp;</span></li><li><span>Hibernate:&nbsp;insert&nbsp;into&nbsp;Teacher&nbsp;(age,&nbsp;name,&nbsp;id)&nbsp;values&nbsp;(?,&nbsp;?,&nbsp;?)&nbsp;&nbsp;</span></li></ol></div><pre name="code" class="java" codeable_id="" codeable_type="BlogComment" source_url="http://cxl2012.iteye.com/blog/1938752#" pre_index="3" title=" Hibernate4 基于annotation实例" style="display: none;">2013-9-8 14:46:04 org.hibernate.annotations.common.Version &lt;clinit&gt;
+INFO: HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2013-9-8 14:46:04 org.hibernate.Version logVersion
+INFO: HHH000412: Hibernate Core {4.2.5.Final}
+2013-9-8 14:46:04 org.hibernate.cfg.Environment &lt;clinit&gt;
+INFO: HHH000206: hibernate.properties not found
+2013-9-8 14:46:04 org.hibernate.cfg.Environment buildBytecodeProvider
+INFO: HHH000021: Bytecode provider name : javassist
+2013-9-8 14:46:04 org.hibernate.cfg.Configuration configure
+INFO: HHH000043: Configuring from resource: /hibernate.cfg.xml
+2013-9-8 14:46:04 org.hibernate.cfg.Configuration getConfigurationInputStream
+INFO: HHH000040: Configuration resource: /hibernate.cfg.xml
+2013-9-8 14:46:05 org.hibernate.cfg.Configuration doConfigure
+INFO: HHH000041: Configured SessionFactory: null
+2013-9-8 14:46:05 org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+INFO: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2013-9-8 14:46:05 org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+INFO: HHH000115: Hibernate connection pool size: 1
+2013-9-8 14:46:05 org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+INFO: HHH000006: Autocommit mode: false
+2013-9-8 14:46:05 org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+INFO: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://127.0.0.1:3306/hibernate4]
+2013-9-8 14:46:05 org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+INFO: HHH000046: Connection properties: {user=root, password=****}
+2013-9-8 14:46:08 org.hibernate.dialect.Dialect &lt;init&gt;
+INFO: HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2013-9-8 14:46:08 org.hibernate.engine.transaction.internal.TransactionFactoryInitiator initiateService
+INFO: HHH000399: Using default transaction strategy (direct JDBC transactions)
+2013-9-8 14:46:08 org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory &lt;init&gt;
+INFO: HHH000397: Using ASTQueryTranslatorFactory
+2013-9-8 14:46:09 org.hibernate.tool.hbm2ddl.SchemaUpdate execute
+INFO: HHH000228: Running hbm2ddl schema update
+2013-9-8 14:46:09 org.hibernate.tool.hbm2ddl.SchemaUpdate execute
+INFO: HHH000102: Fetching database metadata
+2013-9-8 14:46:09 org.hibernate.tool.hbm2ddl.SchemaUpdate execute
+INFO: HHH000396: Updating schema
+2013-9-8 14:46:10 org.hibernate.tool.hbm2ddl.TableMetadata &lt;init&gt;
+INFO: HHH000261: Table found: hibernate4.teacher
+2013-9-8 14:46:10 org.hibernate.tool.hbm2ddl.TableMetadata &lt;init&gt;
+INFO: HHH000037: Columns: [id, age, name]
+2013-9-8 14:46:10 org.hibernate.tool.hbm2ddl.TableMetadata &lt;init&gt;
+INFO: HHH000108: Foreign keys: []
+2013-9-8 14:46:10 org.hibernate.tool.hbm2ddl.TableMetadata &lt;init&gt;
+INFO: HHH000126: Indexes: [primary]
+2013-9-8 14:46:10 org.hibernate.tool.hbm2ddl.SchemaUpdate execute
+INFO: HHH000232: Schema update complete
+Hibernate: insert into Teacher (age, name, id) values (?, ?, ?)</pre>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+</div>
+</div>
+  </div>
+
+  
+  <div class="attachments">
+    
+      
+        <ul>
+          <li><a href="http://dl.iteye.com/topics/download/31a17609-ba67-3e92-b10a-1d140f986075">hibernate4.2.5_required.zip</a> (5.5 MB)</li>
+          
+          <li>下载次数: 54</li>
+        </ul>
+      
+    
+      
+        <ul>
+          <li><a href="http://dl.iteye.com/topics/download/da6ae975-4d2e-3128-a677-689939d1c338">junit-4.10.jar</a> (247.2 KB)</li>
+          
+          <li>下载次数: 19</li>
+        </ul>
+      
+    
+      
+        <ul style="display:none;">
+          <li><a href="http://dl2.iteye.com/upload/attachment/0089/3325/c462a4de-47aa-3fe5-ac10-48fdd6f018be.png" target="_blank"><img src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/c462a4de-47aa-3fe5-ac10-48fdd6f018be-thumb.png" class="magplus" title="点击查看原始大小图片"></a></li>
+          
+          <li>大小: 20.6 KB</li>
+        </ul>
+      
+    
+      
+        <ul style="display:none;">
+          <li><a href="http://dl2.iteye.com/upload/attachment/0089/3327/ccc562b0-8256-316f-997c-a68cf597115f.png" target="_blank"><img src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/ccc562b0-8256-316f-997c-a68cf597115f-thumb.png" class="magplus" title="点击查看原始大小图片"></a></li>
+          
+          <li>大小: 20.6 KB</li>
+        </ul>
+      
+    
+    
+      <ul>
+        <li><a href="http://cxl2012.iteye.com/blog/1938752#" onclick="$$(&#39;div.attachments ul&#39;).invoke(&#39;show&#39;);$(this).up(1).hide();return false;">查看图片附件</a></li>
+      </ul>
+    
+  </div>
+
+
+  
+  <div class="J_adv" data-view="true" data-mod="ad_popu_201" data-mtp="43" data-order="93" data-con="ad_content_1811" style="width: 728px; height: 90px;"><script src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8990951720398508" data-ad-slot="8267689356/1918544322" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;width:728px;height:90px;"></iframe></ins></ins></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+  
+
+  <div id="bottoms" class="clearfix">
+    
+    <div id="share_weibo">分享到：
+      <a data-type="sina" href="javascript:;" title="分享到新浪微博"><img src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/sina.jpg"></a>
+      <a data-type="qq" href="javascript:;" title="分享到腾讯微博"><img src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/tec.jpg"></a>
+    </div>
+  </div>
+
+  <div class="blog_nav">
+    <div class="pre_next">
+      <a href="http://cxl2012.iteye.com/blog/1938763" class="next" title="Hibernate4 annotation实例补充">Hibernate4 annotation实例补充</a>
+      |
+      <a href="http://cxl2012.iteye.com/blog/1931961" class="pre" title="Spring监控器作用">Spring监控器作用</a>
+    </div>
+  </div>
+  <div class="blog_bottom">
+    <ul>
+      <li>2013-09-15 20:09</li>
+      <li>浏览 7725</li>
+      <li><a href="http://cxl2012.iteye.com/blog/1938752#comments">评论(0)</a></li>
+      
+      
+      <li>分类:<a href="http://www.iteye.com/blogs/category/language">编程语言</a></li>      
+      <li class="last"><a href="http://www.iteye.com/wiki/blog/1938752" target="_blank" class="more">相关推荐</a></li>
+    </ul>    
+  </div>
+  
+		    
+		
+<div class="boutique-curr-box blog_comment">
+	  <div class="boutique-curr clearfix">
+	    <h5 class="h3titles">参考知识库</h5>
+	    
+	    <dl class="dlnewlist">
+	    
+          <dd><a target="_blank" href="http://lib.csdn.net/base/vras"><img src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/1490587425183_183.jpg" width="58" height="58" alt=""></a></dd>
+          <dt>
+              <a target="_blank" href="http://lib.csdn.net/base/vras" classs="title">语音识别与合成知识库</a>
+              <span>
+                 <em>521</em>&nbsp;&nbsp;关注 <i>|</i> <em>316</em>&nbsp;&nbsp;收录                  
+              </span>
+          </dt>
+      
+	    </dl>
+	    
+	    <dl class="dlnewlist">
+	    
+          <dd><a target="_blank" href="http://lib.csdn.net/base/computervison"><img src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/1490352585394_394.jpg" width="58" height="58" alt=""></a></dd>
+          <dt>
+              <a target="_blank" href="http://lib.csdn.net/base/computervison" classs="title">计算机视觉知识库</a>
+              <span>
+                 <em>1257</em>&nbsp;&nbsp;关注 <i>|</i> <em>251</em>&nbsp;&nbsp;收录                  
+              </span>
+          </dt>
+      
+	    </dl>
+	    
+	    <dl class="dlnewlist">
+	    
+          <dd><a target="_blank" href="http://lib.csdn.net/base/nlp"><img src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/1490351555268_268.jpg" width="58" height="58" alt=""></a></dd>
+          <dt>
+              <a target="_blank" href="http://lib.csdn.net/base/nlp" classs="title">自然语言理解和处理知识库</a>
+              <span>
+                 <em>464</em>&nbsp;&nbsp;关注 <i>|</i> <em>87</em>&nbsp;&nbsp;收录                  
+              </span>
+          </dt>
+      
+	    </dl>
+	    
+	    <dl class="dlnewlist">
+	    
+          <dd><a target="_blank" href="http://lib.csdn.net/base/knowledgeengineering"><img src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/1490788422140_140.jpg" width="58" height="58" alt=""></a></dd>
+          <dt>
+              <a target="_blank" href="http://lib.csdn.net/base/knowledgeengineering" classs="title">知识工程知识库</a>
+              <span>
+                 <em>150</em>&nbsp;&nbsp;关注 <i>|</i> <em>74</em>&nbsp;&nbsp;收录                  
+              </span>
+          </dt>
+      
+	    </dl>
+	    
+	  </div>
+</div>
+ 		
+      
+  <div class="blog_comment">
+    <h5>评论</h5>
+    <a id="comments" name="comments"></a>
+    
+    
+    
+  </div>
+
+  <div class="blog_comment">
+    <h5>发表评论</h5>
+            <p style="text-align:center; margin-top:30px;margin-bottom:0px;"><a href="http://cxl2012.iteye.com/login" style="background-color:white;"> <img src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/login_icon.png" style="vertical-align:middle; margin-right: 10px;"></a><a href="http://cxl2012.iteye.com/login">  您还没有登录,请您登录后再发表评论 </a></p>
+      </div>
+</div>
+
+
+<script type="text/javascript">
+  dp.SyntaxHighlighter.HighlightAll('code', true, true);
+
+  $$('#main .blog_content pre[name=code]').each(function(pre, index){ // blog content
+    var post_id = 1938752;
+    var location = window.location;
+    source_url = location.protocol + "//" + location.host + location.pathname + location.search;
+    pre.writeAttribute('codeable_id', post_id);
+    pre.writeAttribute('codeable_type', "Blog");
+    pre.writeAttribute('source_url', source_url);
+    pre.writeAttribute('pre_index', index);
+    pre.writeAttribute('title', ' Hibernate4 基于annotation实例');
+  });
+
+  fix_image_size($$('div.blog_content img'), 700);
+
+  function processComment() {
+    $$('#main .blog_comment > div').each(function(comment){// comment
+      var post_id = comment.id.substr(2);
+      $$("#"+comment.id+" pre[name=code]").each(function(pre, index){
+        var location = window.location;
+        source_url = location.protocol + "//" + location.host + location.pathname + location.search;
+        source_url += "#" + comment.id;
+        pre.writeAttribute('codeable_id', post_id);
+        pre.writeAttribute('codeable_type', "BlogComment");
+        pre.writeAttribute('source_url', source_url);
+        pre.writeAttribute('pre_index', index);
+        pre.writeAttribute('title', ' Hibernate4 基于annotation实例');
+      });
+    });
+  }
+
+  function quote_comment(id) {
+    new Ajax.Request('/editor/quote', {
+      parameters: {'id':id, 'type':'BlogComment'},
+      onSuccess:function(response){editor.bbcode_editor.textarea.insertAfterSelection(response.responseText);
+        Element.scrollTo(editor.bbcode_editor.textarea.element);}
+    });
+  }
+
+  code_favorites_init();
+  processComment();
+  new WeiboShare({share_buttons: $('share_weibo'), img_scope: $('blog_content')});
+</script>
+
+
+
+
+        </div>
+
+        <div id="local">
+          <div class="local_top"></div>
+          <div id="blog_owner">
+  <div id="blog_owner_logo"><a href="http://cxl2012.iteye.com/"><img alt="cxl2012的博客" class="logo" src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/user-logo.gif" title="cxl2012的博客: 落叶→知秋" width=""></a></div>
+  <div id="blog_owner_name">cxl2012</div>
+</div>
+
+          <div id="blog_actions">
+            <ul>
+              <li>浏览: 111388 次</li>
+              <li>性别: <img alt="Icon_minigender_1" src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/icon_minigender_1.gif" title="男"></li>
+              
+              <li><img src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/offline.gif"></li>
+              
+            </ul>
+          </div>
+          <div id="user_visits" class="clearfix">
+            <h5>最近访客 <span style="font-weight:normal;font-size:12px;padding-left:30px;"><a href="http://cxl2012.iteye.com/blog/user_visits">更多访客&gt;&gt;</a></span></h5>
+            
+              <div class="user_visit">
+                <div class="logo"><a href="http://hekui1016.iteye.com/" target="_blank"><img alt="hekui1016的博客" class="logo" src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/user-logo-thumb.gif" title="hekui1016的博客: 大明终始，六位时成，时乘六龙以御天" width="48px"></a></div>
+                <div class="left"><a href="http://hekui1016.iteye.com/" target="_blank" title="hekui1016">hekui1016</a></div>
+              </div>
+            
+              <div class="user_visit">
+                <div class="logo"><a href="http://nc2.iteye.com/" target="_blank"><img alt="NC2的博客" class="logo" src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/user-logo-thumb.gif" title="NC2的博客: " width="48px"></a></div>
+                <div class="left"><a href="http://nc2.iteye.com/" target="_blank" title="NC2">NC2</a></div>
+              </div>
+            
+              <div class="user_visit">
+                <div class="logo"><a href="http://zql3315.iteye.com/" target="_blank"><img alt="zql3315的博客" class="logo" src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/5c21906c-0821-36f8-aad4-4301d6f60d12-thumb.jpg" title="zql3315的博客: 樵夫" width="48px"></a></div>
+                <div class="left"><a href="http://zql3315.iteye.com/" target="_blank" title="zql3315">zql3315</a></div>
+              </div>
+            
+              <div class="user_visit">
+                <div class="logo"><a href="http://leron.iteye.com/" target="_blank"><img alt="我心悠悠的博客" class="logo" src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/58e91195-de05-334e-a282-3afde8078ffd-thumb.png" title="我心悠悠的博客: 我心悠悠" width="48px"></a></div>
+                <div class="left"><a href="http://leron.iteye.com/" target="_blank" title="我心悠悠">我心悠悠</a></div>
+              </div>
+            
+          </div>
+
+          
+
+                      <div id="blog_menu">
+              <h5>文章分类</h5>
+              <ul>
+                <li><a href="http://cxl2012.iteye.com/">全部博客 (19)</a></li>
+                
+                  <li><a href="http://cxl2012.iteye.com/category/224926">java (4)</a></li>
+                
+                  <li><a href="http://cxl2012.iteye.com/category/226419">jQuery (2)</a></li>
+                
+                  <li><a href="http://cxl2012.iteye.com/category/290364">spring (3)</a></li>
+                
+                  <li><a href="http://cxl2012.iteye.com/category/290400">springmvc (0)</a></li>
+                
+                  <li><a href="http://cxl2012.iteye.com/category/290448">eclipse (2)</a></li>
+                
+                  <li><a href="http://cxl2012.iteye.com/category/291302">freemarker (2)</a></li>
+                
+                  <li><a href="http://cxl2012.iteye.com/category/291659">hibernate (5)</a></li>
+                
+                  <li><a href="http://cxl2012.iteye.com/category/292588">enum (1)</a></li>
+                
+                  <li><a href="http://cxl2012.iteye.com/category/293440">tomcat (0)</a></li>
+                
+                  <li><a href="http://cxl2012.iteye.com/category/296760">js (0)</a></li>
+                
+                  <li><a href="http://cxl2012.iteye.com/category/303858">jxl (0)</a></li>
+                
+                  <li><a href="http://cxl2012.iteye.com/category/304219">webwork (0)</a></li>
+                
+                  <li><a href="http://cxl2012.iteye.com/category/309984">sql (0)</a></li>
+                
+                  <li><a href="http://cxl2012.iteye.com/category/315718">html (0)</a></li>
+                
+                  <li><a href="http://cxl2012.iteye.com/category/365923">redis (0)</a></li>
+                
+              </ul>
+            </div>
+            <div id="month_blogs">
+              <h5>社区版块</h5>
+              <ul>
+                <li><a href="http://cxl2012.iteye.com/blog/news">我的资讯</a> (0)</li>
+                <li>
+                  <a href="http://cxl2012.iteye.com/blog/post">我的论坛</a> (0)
+                </li>
+                <li><a href="http://cxl2012.iteye.com/blog/answered_problems">我的问答</a> (0)</li>
+              </ul>
+            </div>
+            <div id="month_blogs">
+              <h5>存档分类</h5>
+              <ul>
+                
+                  <li><a href="http://cxl2012.iteye.com/blog/monthblog/2014-05">2014-05</a> (1)</li>
+                
+                  <li><a href="http://cxl2012.iteye.com/blog/monthblog/2013-11">2013-11</a> (5)</li>
+                
+                  <li><a href="http://cxl2012.iteye.com/blog/monthblog/2013-10">2013-10</a> (1)</li>
+                
+                <li><a href="http://cxl2012.iteye.com/blog/monthblog_more">更多存档...</a></li>
+              </ul>
+            </div>
+            
+            
+
+            <div id="guest_books">
+              <h5>最新评论</h5>
+              <ul>
+                
+                <li>
+                  <a href="http://cyw555.iteye.com/" target="_blank" title="cyw555">cyw555</a>： 
+                   我按您这样搭好了，访问不进去一直是404,访问地址应该是那样 ...<br>
+                  <a href="http://cxl2012.iteye.com/blog/1937006#bc2395165">基于注解SpringMVC+freemarker实例</a>
+                </li>
+                
+              </ul>
+            </div>
+
+            <div class="local_bottom"></div>
+          
+        </div>
+        <div style="margin-top: 10px;float: left;clear: left;">
+					<div class="J_adv" data-view="true" data-mod="ad_popu_185" data-mtp="63" data-order="92" data-con="ad_content_1129" style="width: 200px; height: 200px;"><div id="nav_show_top_stop" style="width: 200px; height: 200px; z-index: 1000; position: fixed; top: 1221.484375px;"><div id="cpro_u2720202"><iframe id="iframeu2720202_0" src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/rctm(2).htm" width="200" height="200" align="center,center" vspace="0" hspace="0" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" style="border:0;vertical-align:bottom;margin:0;width:200px;height:200px" allowtransparency="true"></iframe></div></div><script>var naviga_offsetTop=0;function naviga_stay_top(){var scrollTop=jQuery(document).scrollTop();if(scrollTop>naviga_offsetTop){jQuery('#nav_show_top_stop').css({'position':'fixed'});jQuery('#nav_show_top_stop').css({'top':'0px'});}else{jQuery('#nav_show_top_stop').css({'position':'fixed'});jQuery('#nav_show_top_stop').css({'top':naviga_offsetTop-scrollTop+'px'});}}function onload_function(){naviga_offsetTop=jQuery('#nav_show_top_stop').position().top;jQuery(window).bind('scroll',naviga_stay_top);jQuery(window).bind('mousewheel',naviga_stay_top);jQuery(document).bind('scroll',naviga_stay_top);jQuery(document).bind('mousewheel',naviga_stay_top);}jQuery(document).ready(onload_function);</script><script type="text/javascript">(window.cproArray=window.cproArray||[]).push({id:'u2720202'});</script><script src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/c.js" type="text/javascript"></script></div>
+				</div>
+      </div>    
+
+      <div id="footer" class="clearfix">
+        <div id="copyright">
+          <hr>
+          声明：ITeye文章版权属于作者，受法律保护。没有作者书面许可不得转载。若作者同意转载，必须以超链接形式标明文章原始出处和作者。<br>
+          © 2003-2017 ITeye.com.   All rights reserved.  [ 京ICP证110151号  京公网安备110105010620 ]
+        </div>
+        <div class="J_adv" data-view="true" data-mod="ad_popu_186" data-mtp="61" data-order="93" data-con="ad_content_1933"><script id="popuLayer_js_q" src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/popuLayer.js" defer="" type="text/javascript"></script><div id="location_parent_google"></div><script src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/adsbygoogle.js"></script><div id="layerd_google" style="position: fixed;bottom:0px;right:0px;line-height:0px;z-index:1000"><div class="J_close layer_close" style="display:;background-color:#efefef;padding:0px;color:#333;font:12px/24px Helvetica,Tahoma,Arial,sans-serif;text-align:right;">关闭</div><ins class="adsbygoogle" style="display: inline-block; width: 300px; height: 250px;" data-ad-client="ca-pub-8990951720398508" data-ad-slot="8267689356/5752063962" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;width:300px;height:250px;"></iframe></ins></ins></ins></div><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><script>document.getElementById('popuLayer_js_q').onload=function(){var styObjd=styObj={width:'302px',height:'275px'};window.CSDN.Layer.PopuLayer('#layerd_google',{storageName:'layerd',styleObj:styObjd,total:50,expoire:1000*60});}</script></div>
+      </div>
+    </div>
+    <script type="text/javascript">
+  document.write("<img src='http://stat.iteye.com/?url="+ encodeURIComponent(document.location.href) + "&referrer=" + encodeURIComponent(document.referrer) + "&user_id=' width='0' height='0' />");
+</script><img src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/saved_resource" width="0" height="0">
+
+<script src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/tracking.js" type="text/javascript"></script>
+
+    
+    
+    <script language="javascript" type="text/javascript" src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/async_new.js"></script>
+<script src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">var $csdn_iteye_jq = jQuery.noConflict();// 解决jq与prototype.js命名空间冲突的问题</script>
+<script src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/tracking(1).js" type="text/javascript"></script>
+    
+	    
+	    <script src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/web-storage-cache.min.js" type="text/javascript"></script>
+	    <script src="./Hibernate4 基于annotation实例 - 落叶→知秋 - ITeye技术网站_files/replace.min.js" type="text/javascript"></script>
+    
+    
+  
+
+</body></html>

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)http://www.cnblogs.com/wl0000-03/p/6381985.html -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hibernate Annotation (Hibernate 注解) - 刘二雄 - 博客园</title>
+<link type="text/css" rel="stylesheet" href="./Hibernate Annotation (Hibernate 注解) - 刘二雄 - 博客园_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="./Hibernate Annotation (Hibernate 注解) - 刘二雄 - 博客园_files/bundle-Nerium.css">
+<link id="mobile-style" media="only screen and (max-width: 768px)" type="text/css" rel="stylesheet" href="./Hibernate Annotation (Hibernate 注解) - 刘二雄 - 博客园_files/bundle-Nerium-mobile.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/wl0000-03/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/wl0000-03/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/wl0000-03/wlwmanifest.xml">
+<script async="" src="./Hibernate Annotation (Hibernate 注解) - 刘二雄 - 博客园_files/analytics.js"></script><script type="text/javascript" src="./Hibernate Annotation (Hibernate 注解) - 刘二雄 - 博客园_files/encoder.js"></script><script src="./Hibernate Annotation (Hibernate 注解) - 刘二雄 - 博客园_files/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'wl0000-03', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="./Hibernate Annotation (Hibernate 注解) - 刘二雄 - 博客园_files/blog-common.js" type="text/javascript"></script>
+<script src="./Hibernate Annotation (Hibernate 注解) - 刘二雄 - 博客园_files/bundle-Nerium.js" language="javascript" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="http://www.cnblogs.com/wl0000-03/"><img id="blogLogo" src="./Hibernate Annotation (Hibernate 注解) - 刘二雄 - 博客园_files/logo.gif" alt="返回主页"></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/wl0000-03/">刘二雄</a></h1>
+<h2></h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator" style="overflow: hidden;">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="http://www.cnblogs.com/" style="width: 70px;">博客园</a></li>
+<li><a id="blog_nav_myhome" class="menu" href="http://www.cnblogs.com/wl0000-03/" style="width: 70px;">首页</a></li>
+<li><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" style="width: 70px;">新随笔</a></li>
+<li><a id="blog_nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/%E5%88%98%E4%BA%8C%E9%9B%84" style="width: 70px;">联系</a></li>
+<li><a id="blog_nav_rss" class="menu" href="http://www.cnblogs.com/wl0000-03/rss" style="width: 70px;">订阅</a>
+<!--<a id="blog_nav_rss_image" class="aHeaderXML" href="http://www.cnblogs.com/wl0000-03/rss"><img src="//www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></li>
+<li><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/" style="width: 70px; font-size: 14px;">管理</a></li>
+</ul>
+		<div class="blogStats">
+			
+			<div id="blog_stats">
+<span id="stats_post_count">随笔 - 95&nbsp; </span>
+<span id="stats_article_count">文章 - 0&nbsp; </span>
+<span id="stats-comment_count">评论 - 22</span>
+</div>
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class="postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="./Hibernate Annotation (Hibernate 注解) - 刘二雄 - 博客园_files/Hibernate Annotation (Hibernate 注解) - 刘二雄 - 博客园.htm">Hibernate Annotation (Hibernate 注解)</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body"><p><span style="font-size: 18px">简介：&nbsp;</span></p>
+<p><span style="font-size: 18px">传统上，Hibernate的配置依赖于外部 XML 文件：数据库映射被定义为一组 XML 映射文件，并且在启动时进行加载。</span></p>
+<p><span style="font-size: 18px">然而现在借助新的 Hibernate&nbsp;&nbsp; Annotation 库，即可一次性地分配所有旧映射文件——一切都会按照您的想法来定义——注释直接嵌入到您的Java类中，并提供一种强大及灵活的方法来声明持久性映射。</span><span style="font-size: 18px">即利用hibernate注解后，可不用定义持久化类对应的*.hbm.xml文件，直接以注解方式写入在持久化类中来实现。</span></p>
+<div><span style="color: #ff0000; font-size: 18px">Hibernate annotation使用了ejb JPA的注解,所以，下面安装配置hibernate annotation环境时，需要导入ejb的包。</span></div>
+<p><span style="font-size: 18px">配置：</span></p>
+<p><span style="font-size: 18px">（1）安装 Hibernate Annotation 第一步， 环境与jar包： 要使用&nbsp; Hibernate Annotation，您至少需要具备 Hibernate 3.2和Java 5。可以从 Hibernate&nbsp; 站点下载&nbsp; Hibernate 3.2 和 Hibernate Annotation库。除了标准的 Hibernate JAR&nbsp; 和依赖项之外，您还需要&nbsp; Hibernate Annotations .jar&nbsp; 文件（hibernate-annotations.jar）、Java 持久性 API&nbsp; （lib/ejb3-persistence.jar）。</span></p>
+<div><span style="font-size: 18px">（2）添加hibernate3.2.jar,hibernate-annotations-&nbsp; 3.3.0.jar，hibernate-commons-annotations.jar和ejb3-persistence.jar&nbsp;&nbsp; 。这样就可以使用hibernate的annotation了。</span></div>
+<div><span style="font-size: 18px">（3） 如果您正在使用 Maven，只需要向 POM 文件添加相应的依赖项即可，如下所示： &nbsp;&nbsp;&nbsp;</span></div>
+<div><span style="font-size: 18px"> ...... &nbsp;&nbsp;&nbsp;</span></div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="font-size: 18px">&lt;dependency&gt; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></strong></div>
+<div><strong><span style="font-size: 18px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;groupId&gt;org.hibernate&lt;/groupId&gt; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></strong></div>
+<div><strong><span style="font-size: 18px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;artifactId&gt;hibernate&lt;/artifactId&gt; </span></strong></div>
+<div><strong><span style="font-size: 18px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;version&gt;3.2.1.ga&lt;/version&gt; &nbsp;&nbsp;&nbsp;</span></strong></div>
+<div><strong><span style="font-size: 18px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&lt;/dependency&gt;</span> </strong></div>
+<div>&nbsp;</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 18px"><strong>&lt;dependency&gt;</strong></span></div>
+<div><span style="font-size: 18px"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;groupId&gt;org.hibernate&lt;/groupId&gt;</strong></span></div>
+<div><span style="font-size: 18px"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;artifactId&gt;hibernate-annotations&lt;/artifactId&gt;</strong></span></div>
+<div><span style="font-size: 18px"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;version&gt;3.2.0.ga&lt;/version&gt; </strong></span></div>
+<div><span style="font-size: 18px"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;/dependency&gt; &nbsp;&nbsp;&nbsp;</strong></span></div>
+<div>&nbsp;</div>
+<div><span style="font-size: 18px"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;dependency&gt;</strong></span></div>
+<div><span style="font-size: 18px"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;groupId&gt;javax.persistence&lt;/groupId&gt;</strong></span></div>
+<div><span style="font-size: 18px"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;artifactId&gt;persistence-api&lt;/artifactId&gt;&nbsp;&nbsp;&nbsp;&nbsp; </strong></span></div>
+<div><span style="font-size: 18px"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;version&gt;1.0&lt;/version&gt;</strong></span></div>
+<div><span style="font-size: 18px"><strong>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;/dependency&gt;</strong></span></div>
+<div>&nbsp;</div>
+<div><span style="font-size: 18px">（4）hibernate&nbsp;annotation标签的使用</span></div>
+<div><span style="font-size: 18px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;【1】带注释的持久化类也是普通POJO，它们只是具有持久性注释的普通POJO。</span></div>
+<div><span style="font-size: 18px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;【2】事实上你既可以保持字段（注释写在成员变量之上）的持久性，也可以保持属性（注释写在getter方法之上）的持久性。</span></div>
+<div><span style="font-size: 18px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;【3】常用的Hibernate&nbsp;annotation标签如下：</span><span style="font-size: 18px"><span style="font-size: 18px">&nbsp;</span></span></div>
+<div>
+<div><span style="font-size: 18px"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000"> @Entity</span></strong><span style="color: #ff0000">&nbsp;&nbsp;</span>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --注释声明该类为持久类。将一个Javabean类声明为一&nbsp; 个实体的数据库表映射类,最好实现序列化.此时,默认情况下,所有的类属性都为映射到数据表的持久性字段.若在类中,添加另外属性,而非映射来数据库的,&nbsp; 要用下面的Transient来注解.</span></div>
+<div><span style="font-size: 18px"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000"> @Table</span></strong><span style="color: #ff0000">(name=</span><span style="color: #800000"><span style="color: #ff0000">"promotion_info")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span style="color: #000000">--持久性映射的表(表名="promotion_info).@Table是类一级的注解,定义在@Entity下,为实体bean映射表,目录和schema的名字,</span><span style="color: #ff0000"><span style="color: #000000">默认为实体bean的类名,不带包名.</span> </span></span></span></div>
+<div><span style="font-size: 18px"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000"> @Id&nbsp;&nbsp;&nbsp;</span> </strong>--注释可以表明哪种属性是该类中的独特标识符(即相当于数据表的主键)。&nbsp;&nbsp;&nbsp;&nbsp; </span></div>
+<div><span style="font-size: 18px"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000"> @GeneratedValue</span></strong><span style="color: #ff0000">&nbsp;&nbsp;&nbsp;</span> --定义自动增长的主键的生成策略.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></div>
+<div><span style="font-size: 18px"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000">@Transient</span></strong><span style="color: #ff0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</span>--将忽略这些字段和属性,不用持久化到数据库.适用于,在当前的持久类中,某些属性不是用于映射到数据表,而是用于其它的业务逻辑需要,这时,须将这些属性进行transient的注解.否则系统会因映射不到数据表相应字段而出错. </span></div>
+<div><span style="font-size: 18px"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: #ff0000">@Temporal</span></strong><span style="color: #ff0000">(TemporalType.TIMESTAMP)</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --声明时间格式&nbsp; </span></div>
+<div><span style="font-size: 18px"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000"> @Enumerated</span></strong><span style="color: #ff0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>--声明枚举</span></div>
+<div><span style="font-size: 18px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000"> <strong>@Version</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> --声明添加对乐观锁定的支持 </span></div>
+<div><span style="font-size: 18px"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000">&nbsp;@OneToOne</span></strong><span style="color: #ff0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>--可以建立实体bean之间的一对一的关联 </span></div>
+<div><span style="font-size: 18px"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000">&nbsp;&nbsp;&nbsp;@OneToMany</span></strong><span style="color: #ff0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>--可以建立实体bean之间的一对多的关联 </span></div>
+<div><span style="font-size: 18px"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: #ff0000">@ManyToOne</span></strong><span style="color: #ff0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>--可以建立实体bean之间的多对一的关联 </span></div>
+<div><span style="font-size: 18px"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: #ff0000">@ManyToMany</span></strong><span style="color: #ff0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>--可以建立实体bean之间的多对多的关联 </span></div>
+<div><span style="font-size: 18px"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff0000"> @Formula</span></strong><span style="color: #ff0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>--一个SQL表达式，这种属性是只读的,不在数据库生成属性(可以使用sum、average、max等)&nbsp;&nbsp;<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></span></div>
+<div><span style="font-size: 18px"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: #ff0000">@OrderBy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></strong> --Many端某个字段排序(List)</span></div>
+<div><span style="font-size: 18px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;【4】Hibernate能够出色的自动生成主键。Hibernate/EBJ 3&nbsp;也可以为主键的自动生成提供丰富的支持，允许实现各种策略。</span></div>
+<div><span style="font-size: 18px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;其生成规则由@GeneratedValue设定的，这里的@Id和@GeneratedValue都是JPA的标准用法。</span></div>
+<div><span style="font-size: 18px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; JPA提供了四种标准用法，由@GeneratedValue的源代码可以看出，JPA提供的四种标准用法是：&nbsp;</span></div>
+<div><span style="font-size: 18px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: #ff0000">TABLE,SEQUENCE,IDENTITY,AUTO&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;</span></div>
+<div><span style="font-size: 18px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;详解如下：&nbsp; </span></div>
+<div><span style="font-size: 18px"><span style="font-size: 18px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TABLE：使用一个特定的数据库表格来保存主键。 </span></span></div>
+<div><span style="font-size: 18px"><span style="font-size: 18px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SEQUENCE：根据底层数据库的序列来生成主键，条件是数据库支持序列。</span></span></div>
+<div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 18px">&nbsp;IDENTITY：主键由数据库自动生成（主要是自动增长型） </span></div>
+<div><span style="font-size: 18px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AUTO：主键由程序控制。在指定主键时，如果不指定主键生成策略，默认为AUTO。</span></div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 18px">@Id</span></div>
+<div><span style="font-size: 18px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 相当于</span></div>
+<div><span style="font-size: 18px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @Id @GeneratedValue(strategy = GenerationType.AUTO)</span></div>
+<div><span style="font-size: 18px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; identity:</span></div>
+<div><span style="font-size: 18px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 使用SQL Server 和 MySQL 的自增字段，这个方法不能放到 Oracle 中，Oracle 不支持自增字段，要设定sequence</span></div>
+<div><span style="font-size: 18px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; （MySQL 和 SQL Server 中很常用）。<span style="font-size: 18px">Oracle就要采用sequence了.</span></span></div>
+<div><span style="font-size: 18px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 同时,也可采用uuid,native等其它策略。</span></div>
+<div><span style="font-size: 18px">（5）</span></div>
+<div><span style="font-size: 18px">onetomany示例：</span></div>
+<div>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./Hibernate Annotation (Hibernate 注解) - 刘二雄 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #000000">@Entity
+@Table(name </span>= <span style="color: #800000">"</span><span style="color: #800000">Dept</span><span style="color: #800000">"</span><span style="color: #000000">)
+
+</span><span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span><span style="color: #000000"> Dept {
+    @Id
+    @GeneratedValue
+    </span><span style="color: #008000">/*</span><span style="color: #008000">
+       对于oracle想使用各自的Sequence,设置如下:
+       @GeneratedValue(strategy =GenerationType.AUTO,generator="PROMOTION_SEQ")
+       @SequenceGenerator(name="PROMOTION_SEQ",sequenceName="PROMOTION_SEQ")
+       另外:
+        对于自动增长后,在数据表中的相应字段,要设置字段为auto_increment.
+    </span><span style="color: #008000">*/</span>
+    <span style="color: #0000ff">private</span><span style="color: #000000"> Integer deptno;
+    @Column
+    </span><span style="color: #0000ff">private</span><span style="color: #000000"> String deptname;
+    @OneToMany(mappedBy="dept")<br></span><span style="color: #808080; font-style: italic">    //mappedBy 属性主要针对外键而言，与之对应的是.xml中的inverse属性 <br>    <span style="color: #808080; font-style: italic">//mappedBy="dept" 是把维护权交给多的一方<br>  </span></span><span style="color: #000000">  @LazyCollection(LazyCollectionOption.FALSE) <br></span><span style="color: #0000ff">    private</span> Set&lt;Emp&gt; emps=<span style="color: #0000ff">new</span> HashSet&lt;Emp&gt;<span style="color: #000000">(); <br></span><span style="color: #0000ff">    public</span><span style="color: #000000"> Integer getDeptno() { </span><span style="color: #0000ff">return</span><span style="color: #000000"> deptno; }<br>    </span><span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span><span style="color: #000000"> setDeptno(Integer deptno) { </span><span style="color: #0000ff">this</span>.deptno =<span style="color: #000000"> deptno; } <br></span><span style="color: #0000ff">    public</span><span style="color: #000000"> String getDeptname() { </span><span style="color: #0000ff">return</span><span style="color: #000000"> deptname; }<br>    </span><span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span><span style="color: #000000"> setDeptname(String deptname) { </span><span style="color: #0000ff">this</span>.deptname =<span style="color: #000000"> deptname; }  <br></span><span style="color: #0000ff">    public</span> Set&lt;Emp&gt;<span style="color: #000000"> getEmps() { </span><span style="color: #0000ff">return</span><span style="color: #000000"> emps; }<br>    </span><span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> setEmps(Set&lt;Emp&gt;<span style="color: #000000"> emps) { </span><span style="color: #0000ff">this</span>.emps =<span style="color: #000000"> emps; } }</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./Hibernate Annotation (Hibernate 注解) - 刘二雄 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p><span style="font-size: 18px"><span style="color: #ff0000">默认情况下，Hibernate 会将持久类以匹配的名称映射到表和字段中。</span></span></p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./Hibernate Annotation (Hibernate 注解) - 刘二雄 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #000000">@Entity
+@Table(name </span>= <span style="color: #800000">"</span><span style="color: #800000">Emp</span><span style="color: #800000">"</span><span style="color: #000000">)
+</span><span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span><span style="color: #000000"> Emp {
+    @Id
+    @GeneratedValue
+    </span><span style="color: #0000ff">private</span><span style="color: #000000"> Integer empno;
+    @Column
+    </span><span style="color: #0000ff">private</span><span style="color: #000000"> String ename;<br>    //如果有多个cascade,可以是{CascadeType.PERSIST,CascadeType.MERGE}
+    @ManyToOne(cascade </span>=<span style="color: #000000"> {CascadeType.ALL})
+    @JoinColumn(name </span>= <span style="color: #800000">"</span><span style="color: #800000">deptno</span><span style="color: #800000">"</span><span style="color: #000000">)//dept类对应外键的属性：deptno
+    </span><span style="color: #0000ff">private</span><span style="color: #000000"> Dept dept;
+
+    </span><span style="color: #0000ff">public</span><span style="color: #000000"> Integer getEmpno() {
+        </span><span style="color: #0000ff">return</span><span style="color: #000000"> empno;
+    }
+
+    </span><span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span><span style="color: #000000"> setEmpno(Integer empno) {
+        </span><span style="color: #0000ff">this</span>.empno =<span style="color: #000000"> empno;
+    }
+
+    </span><span style="color: #0000ff">public</span><span style="color: #000000"> String getEname() {
+        </span><span style="color: #0000ff">return</span><span style="color: #000000"> ename;
+    }
+
+    </span><span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span><span style="color: #000000"> setEname(String ename) {
+        </span><span style="color: #0000ff">this</span>.ename =<span style="color: #000000"> ename;
+    }
+
+    </span><span style="color: #0000ff">public</span><span style="color: #000000"> Dept getDept() {
+        </span><span style="color: #0000ff">return</span><span style="color: #000000"> dept;
+    }
+
+    </span><span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span><span style="color: #000000"> setDept(Dept dept) {
+        </span><span style="color: #0000ff">this</span>.dept =<span style="color: #000000"> dept;
+    }
+
+
+}</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./Hibernate Annotation (Hibernate 注解) - 刘二雄 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p><span style="color: #000000; font-size: 18px">在hibernate.cfg.xml中的</span></p>
+<p><span style="color: #000000; font-size: 18px">&lt;session-factory&gt;</span></p>
+<p><span style="color: #000000; font-size: 18px">&nbsp;&nbsp;&nbsp;&nbsp;.....</span></p>
+<p><span style="font-size: 18px">&nbsp;&nbsp;&nbsp;&lt;mapping class="cn.onetomanydouble.entity.Dept"/&gt;&nbsp;&nbsp; </span></p>
+<p><span style="font-size: 18px">&nbsp;&nbsp; &lt;mapping class="cn.onetomanydouble.entity.Emp"/&gt;</span></p>
+<p><span style="font-size: 18px">&lt;/session-factory&gt;</span></p>
+<p><span style="font-size: 18px">这里遇到一个问题：如果配置mappedBy属性的同时加上@JoinColumn会抛出异常，所以不能同时使用@JoinColumn和mappedBy；因为@JoinColumn本身就是自己来维护外键，和mappedBy冲突了。---&gt;&gt;&gt;希望大牛可以再详细的解说下！</span></p>
+<p><span style="font-size: 18px">抛出的异常如下：</span></p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./Hibernate Annotation (Hibernate 注解) - 刘二雄 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #000000">java.lang.ExceptionInInitializerError
+    at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+    at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+    at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+    at java.lang.reflect.Constructor.newInstance(Unknown Source)
+    at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:</span><span style="color: #800080">217</span><span style="color: #000000">)
+    at org.junit.runners.BlockJUnit4ClassRunner$</span><span style="color: #800080">1</span>.runReflectiveCall(BlockJUnit4ClassRunner.java:<span style="color: #800080">266</span><span style="color: #000000">)
+    at org.junit.</span><span style="color: #0000ff">internal</span>.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:<span style="color: #800080">12</span><span style="color: #000000">)
+    at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:</span><span style="color: #800080">263</span><span style="color: #000000">)
+    at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:</span><span style="color: #800080">78</span><span style="color: #000000">)
+    at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:</span><span style="color: #800080">57</span><span style="color: #000000">)
+    at org.junit.runners.ParentRunner$</span><span style="color: #800080">3</span>.run(ParentRunner.java:<span style="color: #800080">290</span><span style="color: #000000">)
+    at org.junit.runners.ParentRunner$</span><span style="color: #800080">1</span>.schedule(ParentRunner.java:<span style="color: #800080">71</span><span style="color: #000000">)
+    at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:</span><span style="color: #800080">288</span><span style="color: #000000">)
+    at org.junit.runners.ParentRunner.access$</span><span style="color: #800080">000</span>(ParentRunner.java:<span style="color: #800080">58</span><span style="color: #000000">)
+    at org.junit.runners.ParentRunner$</span><span style="color: #800080">2</span>.evaluate(ParentRunner.java:<span style="color: #800080">268</span><span style="color: #000000">)
+    at org.junit.runners.ParentRunner.run(ParentRunner.java:</span><span style="color: #800080">363</span><span style="color: #000000">)
+    at org.eclipse.jdt.</span><span style="color: #0000ff">internal</span>.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:<span style="color: #800080">86</span><span style="color: #000000">)
+    at org.eclipse.jdt.</span><span style="color: #0000ff">internal</span>.junit.runner.TestExecution.run(TestExecution.java:<span style="color: #800080">38</span><span style="color: #000000">)
+    at org.eclipse.jdt.</span><span style="color: #0000ff">internal</span>.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:<span style="color: #800080">459</span><span style="color: #000000">)
+    at org.eclipse.jdt.</span><span style="color: #0000ff">internal</span>.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:<span style="color: #800080">675</span><span style="color: #000000">)
+    at org.eclipse.jdt.</span><span style="color: #0000ff">internal</span>.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:<span style="color: #800080">382</span><span style="color: #000000">)
+    at org.eclipse.jdt.</span><span style="color: #0000ff">internal</span>.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:<span style="color: #800080">192</span><span style="color: #000000">)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name </span><span style="color: #800000">'</span><span style="color: #800000">sessionFactory</span><span style="color: #800000">'</span> defined <span style="color: #0000ff">in</span> <span style="color: #0000ff">class</span> path resource [applicationContext.xml]: Invocation of init method failed; nested exception <span style="color: #0000ff">is</span> org.hibernate.AnnotationException: Associations marked <span style="color: #0000ff">as</span><span style="color: #000000"> mappedBy must not define database mappings like @JoinTable or @JoinColumn: com.lizhou.entity.test.Department.employeeList
+    at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:</span><span style="color: #800080">1553</span><span style="color: #000000">)
+    at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:</span><span style="color: #800080">539</span><span style="color: #000000">)
+    at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:</span><span style="color: #800080">475</span><span style="color: #000000">)
+    at org.springframework.beans.factory.support.AbstractBeanFactory$</span><span style="color: #800080">1</span>.getObject(AbstractBeanFactory.java:<span style="color: #800080">302</span><span style="color: #000000">)
+    at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:</span><span style="color: #800080">228</span><span style="color: #000000">)
+    at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:</span><span style="color: #800080">298</span><span style="color: #000000">)
+    at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:</span><span style="color: #800080">193</span><span style="color: #000000">)
+    at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:</span><span style="color: #800080">684</span><span style="color: #000000">)
+    at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:</span><span style="color: #800080">760</span><span style="color: #000000">)
+    at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:</span><span style="color: #800080">482</span><span style="color: #000000">)
+    at org.springframework.context.support.ClassPathXmlApplicationContext.</span>&lt;init&gt;(ClassPathXmlApplicationContext.java:<span style="color: #800080">139</span><span style="color: #000000">)
+    at org.springframework.context.support.ClassPathXmlApplicationContext.</span>&lt;init&gt;(ClassPathXmlApplicationContext.java:<span style="color: #800080">83</span><span style="color: #000000">)
+    at com.lizhou.action.test.TestAction.</span>&lt;clinit&gt;(TestAction.java:<span style="color: #800080">26</span><span style="color: #000000">)
+    ... </span><span style="color: #800080">22</span><span style="color: #000000"> more
+Caused by: org.hibernate.AnnotationException: Associations marked </span><span style="color: #0000ff">as</span><span style="color: #000000"> mappedBy must not define database mappings like @JoinTable or @JoinColumn: com.lizhou.entity.test.Department.employeeList
+    at org.hibernate.cfg.annotations.CollectionBinder.bind(CollectionBinder.java:</span><span style="color: #800080">493</span><span style="color: #000000">)
+    at org.hibernate.cfg.AnnotationBinder.processElementAnnotations(AnnotationBinder.java:</span><span style="color: #800080">2156</span><span style="color: #000000">)
+    at org.hibernate.cfg.AnnotationBinder.processIdPropertiesIfNotAlready(AnnotationBinder.java:</span><span style="color: #800080">963</span><span style="color: #000000">)
+    at org.hibernate.cfg.AnnotationBinder.bindClass(AnnotationBinder.java:</span><span style="color: #800080">796</span><span style="color: #000000">)
+    at org.hibernate.cfg.Configuration$MetadataSourceQueue.processAnnotatedClassesQueue(Configuration.java:</span><span style="color: #800080">3788</span><span style="color: #000000">)
+    at org.hibernate.cfg.Configuration$MetadataSourceQueue.processMetadata(Configuration.java:</span><span style="color: #800080">3742</span><span style="color: #000000">)
+    at org.hibernate.cfg.Configuration.secondPassCompile(Configuration.java:</span><span style="color: #800080">1410</span><span style="color: #000000">)
+    at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:</span><span style="color: #800080">1844</span><span style="color: #000000">)
+    at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:</span><span style="color: #800080">1928</span><span style="color: #000000">)
+    at org.springframework.orm.hibernate4.LocalSessionFactoryBuilder.buildSessionFactory(LocalSessionFactoryBuilder.java:</span><span style="color: #800080">343</span><span style="color: #000000">)
+    at org.springframework.orm.hibernate4.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:</span><span style="color: #800080">431</span><span style="color: #000000">)
+    at org.springframework.orm.hibernate4.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:</span><span style="color: #800080">416</span><span style="color: #000000">)
+    at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:</span><span style="color: #800080">1612</span><span style="color: #000000">)
+    at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:</span><span style="color: #800080">1549</span><span style="color: #000000">)
+    ... </span><span style="color: #800080">34</span> more</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./Hibernate Annotation (Hibernate 注解) - 刘二雄 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p><span style="color: #ff0000; font-size: 18px">在这里再说一下，如果先保存员工后保存部门，会多出四条update语句。</span></p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./Hibernate Annotation (Hibernate 注解) - 刘二雄 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre>Hibernate: insert into emp (deptno, ename, empno) values (?, ?, ?<span style="color: #000000">)
+Hibernate: insert into emp (deptno, ename, empno) values (</span>?, ?, ?<span style="color: #000000">)
+Hibernate: insert into dept(dname) values (</span>?<span style="color: #000000">)
+Hibernate: update emp </span><span style="color: #0000ff">set</span> deptno=?, ename=? ,empno=? <span style="color: #0000ff">where</span> id=?<span style="color: #000000">
+Hibernate: update emp </span><span style="color: #0000ff">set</span> deptno=?, ename=? ,empno=?  <span style="color: #0000ff">where</span> id=?<span style="color: #000000">
+Hibernate: update emp </span><span style="color: #0000ff">set</span> deptno=?  ,empno=? <span style="color: #0000ff">where</span> id=?<span style="color: #000000">
+Hibernate: update emp </span><span style="color: #0000ff">set</span> deptno=?  ,empno=? <span style="color: #0000ff">where</span> id=?</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./Hibernate Annotation (Hibernate 注解) - 刘二雄 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p><span style="color: #ff0000; font-size: 18px">总结：mappedBy属性跟xml配置文件里的inverse一样。在一对多或一对一的关系映射中，如果不表明mappedBy属性，默认是由本方维护外键。但如果两方都由本方来维护的话，会多出一些update语句，性能有一定的损耗。</span></p>
+<p><span style="color: #ff0000; font-size: 18px">解决的办法就是在一的一方配置上mappedBy属性，将维护权交给多的一方来维护，就不会有update语句了。</span></p>
+<p><span style="color: #ff0000; font-size: 18px">注意，配了mappedBy属性后，不要再有@JoinColumn，会冲突！</span></p>
+<p>&nbsp;</p>
+</div>
+</div>
+</div></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory">分类: <a href="http://www.cnblogs.com/wl0000-03/category/935128.html" target="_blank">hibernate</a></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info"><div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(6381985,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+            <a id="green_channel_follow" onclick="follow(&#39;4e8ecac8-a75a-e611-9fc1-ac853d9f53cc&#39;);" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./Hibernate Annotation (Hibernate 注解) - 刘二雄 - 博客园_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./Hibernate Annotation (Hibernate 注解) - 刘二雄 - 博客园_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/wl0000-03/" target="_blank"><img src="./Hibernate Annotation (Hibernate 注解) - 刘二雄 - 博客园_files/20161019165459.png" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/wl0000-03/">刘二雄</a><br>
+            <a href="http://home.cnblogs.com/u/wl0000-03/followees">关注 - 16</a><br>
+            <a href="http://home.cnblogs.com/u/wl0000-03/followers">粉丝 - 29</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow(&#39;4e8ecac8-a75a-e611-9fc1-ac853d9f53cc&#39;);return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(6381985,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">0</span>
+    </div>
+    <div class="buryit" onclick="votePost(6381985,&#39;Bury&#39;)">
+        <span class="burynum" id="bury_count">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="http://www.cnblogs.com/wl0000-03/p/6379164.html" class="p_n_p_prefix">« </a> 上一篇：<a href="http://www.cnblogs.com/wl0000-03/p/6379164.html" title="发布于2017-02-08 17:26">ORA-02291: 违反完整约束条件 (*) - 未找到父项关键字</a><br><a href="http://www.cnblogs.com/wl0000-03/p/6387404.html" class="p_n_p_prefix">» </a> 下一篇：<a href="http://www.cnblogs.com/wl0000-03/p/6387404.html" title="发布于2017-02-10 17:43">Hibernate 函数 ，子查询 和原生SQL查询</a><br></div>
+</div>
+
+
+		</div>
+		<div class="postDesc">posted @ <span id="post-date">2017-02-09 17:30</span> <a href="http://www.cnblogs.com/wl0000-03/">刘二雄</a> 阅读(<span id="post_view_count">66</span>) 评论(<span id="post_comment_count">0</span>)  <a href="https://i.cnblogs.com/EditPosts.aspx?postid=6381985" rel="nofollow">编辑</a> <a href="http://www.cnblogs.com/wl0000-03/p/6381985.html#" onclick="AddToWz(6381985);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,cb_blogId=298158,cb_entryId=6381985,cb_blogApp=currentBlogApp,cb_blogUserGuid='4e8ecac8-a75a-e611-9fc1-ac853d9f53cc',cb_entryCreatedDate='2017/2/9 17:30:00';loadViewCount(cb_entryId);</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="http://www.cnblogs.com/wl0000-03/p/6381985.html#" onclick="return RefreshPage();">刷新页面</a><a href="http://www.cnblogs.com/wl0000-03/p/6381985.html#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login(&#39;commentform&#39;);">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="ad_t2"><a href="http://www.ucancode.com/index.htm" target="_blank">【推荐】50万行VC++源码: 大型组态工控、电力仿真CAD与GIS源码库</a><br><a href="http://www.gcpowertools.com.cn/products/activereports_casestudies.htm?utm_source=cnblogs&utm_medium=blogpage&utm_term=bottom&utm_content=AR&utm_campaign=community" target="_blank">【推荐】中铁、中石油等大型企业的复杂报表解决方案</a><br><a href="https://group.cnblogs.com/topic/76725.html" target="_blank">【福利】阿里云免费套餐升级，更多产品，更久时长</a><br></div>
+<div id="opt_under_post"></div>
+<div id="cnblogs_c1" class="c_ad_block"></div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>最新IT新闻</b>:<br> ·  <a href="http://news.cnblogs.com/n/568573/" target="_blank">SpaceX披露卫星上网详情：光纤级网速 2019年发射</a><br> ·  <a href="http://news.cnblogs.com/n/568572/" target="_blank">微信支付正式进入美国 衣食住行均可直接用人民币结算</a><br> ·  <a href="http://news.cnblogs.com/n/568570/" target="_blank">暴风冯鑫单月质押5次股份，要做下一个贾跃亭？</a><br> ·  <a href="http://news.cnblogs.com/n/568569/" target="_blank">Steam客服改善更新并增加专门统计页面</a><br> ·  <a href="http://news.cnblogs.com/n/568568/" target="_blank">Model 3最新路测视频曝光：离最终量产版更近</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="cnblogs_c2" class="c_ad_block"></div>
+<div id="under_post_kb"><div class="itnews c_ad_block" id="kb_block"><b>最新知识库文章</b>:<br><div id="kb_recent"> ·  <a href="http://kb.cnblogs.com/page/565901/" target="_blank">唱吧DevOps的落地，微服务CI/CD的范本技术解读</a><br> ·  <a href="http://kb.cnblogs.com/page/566523/" target="_blank">程序员，如何从平庸走向理想？</a><br> ·  <a href="http://kb.cnblogs.com/page/566318/" target="_blank">我为什么鼓励工程师写blog</a><br> ·  <a href="http://kb.cnblogs.com/page/566528/" target="_blank">怎么轻松学习JavaScript</a><br> ·  <a href="http://kb.cnblogs.com/page/509431/" target="_blank">如何打好前端游击战</a><br></div>» <a href="http://kb.cnblogs.com/" target="_blank">更多知识库文章...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"><div align="center"><a href="http://www.amazingcounters.com/"><img border="0" src="./Hibernate Annotation (Hibernate 注解) - 刘二雄 - 博客园_files/counter.php" alt="AmazingCounters.com"></a></div>
+
+本博客的目的仅为记录本人的成长过程<div id="profile_block">昵称：<a href="http://home.cnblogs.com/u/wl0000-03/">刘二雄</a><br>园龄：<a href="http://home.cnblogs.com/u/wl0000-03/" title="入园时间：2016-08-05">8个月</a><br>粉丝：<a href="http://home.cnblogs.com/u/wl0000-03/followers/">29</a><br>关注：<a href="http://home.cnblogs.com/u/wl0000-03/followees/">16</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="follow(&#39;4e8ecac8-a75a-e611-9fc1-ac853d9f53cc&#39;)">+加关注</a></div></div></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" cellspacing="0" cellpadding="0" title="Calendar">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2017/04/01&#39;);return false;">&lt;</a></td><td align="center">2017年5月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2017/06/01&#39;);return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" align="center" abbr="日" scope="col">日</th><th class="CalDayHeader" align="center" abbr="一" scope="col">一</th><th class="CalDayHeader" align="center" abbr="二" scope="col">二</th><th class="CalDayHeader" align="center" abbr="三" scope="col">三</th><th class="CalDayHeader" align="center" abbr="四" scope="col">四</th><th class="CalDayHeader" align="center" abbr="五" scope="col">五</th><th class="CalDayHeader" align="center" abbr="六" scope="col">六</th></tr><tr><td class="CalOtherMonthDay" align="center">30</td><td align="center">1</td><td align="center">2</td><td align="center">3</td><td class="CalTodayDay" align="center">4</td><td align="center">5</td><td class="CalWeekendDay" align="center">6</td></tr><tr><td class="CalWeekendDay" align="center">7</td><td align="center">8</td><td align="center">9</td><td align="center">10</td><td align="center">11</td><td align="center">12</td><td class="CalWeekendDay" align="center">13</td></tr><tr><td class="CalWeekendDay" align="center">14</td><td align="center">15</td><td align="center">16</td><td align="center">17</td><td align="center">18</td><td align="center">19</td><td class="CalWeekendDay" align="center">20</td></tr><tr><td class="CalWeekendDay" align="center">21</td><td align="center">22</td><td align="center">23</td><td align="center">24</td><td align="center">25</td><td align="center">26</td><td class="CalWeekendDay" align="center">27</td></tr><tr><td class="CalWeekendDay" align="center">28</td><td align="center">29</td><td align="center">30</td><td align="center">31</td><td class="CalOtherMonthDay" align="center">1</td><td class="CalOtherMonthDay" align="center">2</td><td class="CalOtherMonthDay" align="center">3</td></tr><tr><td class="CalOtherMonthDay" align="center">4</td><td class="CalOtherMonthDay" align="center">5</td><td class="CalOtherMonthDay" align="center">6</td><td class="CalOtherMonthDay" align="center">7</td><td class="CalOtherMonthDay" align="center">8</td><td class="CalOtherMonthDay" align="center">9</td><td class="CalOtherMonthDay" align="center">10</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block">
+<div id="sidebar_search" class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="sidebar_search_box">
+<div id="widget_my_zzk" class="div_my_zzk"><input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="zzk_go()" type="button" value="找找看" id="btnZzk" class="btn_my_zzk"></div>
+<div id="widget_my_google" class="div_my_zzk"><input type="text" name="google_q" id="google_q" onkeydown="return google_go_enter(event)" class="input_my_zzk">&nbsp;<input onclick="google_go()" type="button" value="谷歌搜索" class="btn_my_zzk"></div>
+</div>
+</div>
+
+</div><div id="sidebar_shortcut" class="sidebar-block">
+<div class="catListLink">
+<h3 class="catListTitle">常用链接</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/wl0000-03/p/" title="我的博客的随笔列表">我的随笔</a></li><li><a href="http://www.cnblogs.com/wl0000-03/MyComments.html" title="我发表过的评论列表">我的评论</a></li><li><a href="http://www.cnblogs.com/wl0000-03/OtherPosts.html" title="我评论过的随笔列表">我的参与</a></li><li><a href="http://www.cnblogs.com/wl0000-03/RecentComments.html" title="我的博客的评论列表">最新评论</a></li><li><a href="http://www.cnblogs.com/wl0000-03/tag/" title="我的博客的标签列表">我的标签</a></li>
+</ul>
+<div id="itemListLin_con" style="display:none;">
+<ul>
+
+</ul>
+</div>
+</div></div><div id="sidebar_toptags" class="sidebar-block"></div><div id="sidebar_categories">
+<div id="sidebar_postcategory" class="catListPostCategory sidebar-block">
+<h3 class="catListTitle">随笔分类</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_0_Link_0" href="http://www.cnblogs.com/wl0000-03/category/967259.html">Ajax(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_1" href="http://www.cnblogs.com/wl0000-03/category/907728.html">C#(18)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_2" href="http://www.cnblogs.com/wl0000-03/category/935128.html">hibernate(18)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_3" href="http://www.cnblogs.com/wl0000-03/category/936927.html">Intellij Idea(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_4" href="http://www.cnblogs.com/wl0000-03/category/907727.html">Java(13)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_5" href="http://www.cnblogs.com/wl0000-03/category/907729.html">javascript(9)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_6" href="http://www.cnblogs.com/wl0000-03/category/969728.html">jQuery UI(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_7" href="http://www.cnblogs.com/wl0000-03/category/912144.html">Jsp(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_8" href="http://www.cnblogs.com/wl0000-03/category/972639.html">Linux(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_9" href="http://www.cnblogs.com/wl0000-03/category/954657.html">MyBatis(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_10" href="http://www.cnblogs.com/wl0000-03/category/969731.html">Spring(9)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_11" href="http://www.cnblogs.com/wl0000-03/category/956195.html">Struts2(4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_12" href="http://www.cnblogs.com/wl0000-03/category/935706.html">错误(7)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_13" href="http://www.cnblogs.com/wl0000-03/category/907730.html">设计模式(6)</a> </li>
+
+</ul>
+
+</div>
+
+<div id="sidebar_postarchive" class="catListPostArchive sidebar-block">
+<h3 class="catListTitle">随笔档案</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_1_Link_0" href="http://www.cnblogs.com/wl0000-03/archive/2017/04.html">2017年4月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_1" href="http://www.cnblogs.com/wl0000-03/archive/2017/03.html">2017年3月 (11)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_2" href="http://www.cnblogs.com/wl0000-03/archive/2017/02.html">2017年2月 (14)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_3" href="http://www.cnblogs.com/wl0000-03/archive/2017/01.html">2017年1月 (15)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_4" href="http://www.cnblogs.com/wl0000-03/archive/2016/12.html">2016年12月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_5" href="http://www.cnblogs.com/wl0000-03/archive/2016/11.html">2016年11月 (17)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_6" href="http://www.cnblogs.com/wl0000-03/archive/2016/10.html">2016年10月 (15)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_7" href="http://www.cnblogs.com/wl0000-03/archive/2016/09.html">2016年9月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_8" href="http://www.cnblogs.com/wl0000-03/archive/2016/08.html">2016年8月 (11)</a> </li>
+
+</ul>
+
+</div>
+
+</div><div id="sidebar_recentcomments" class="sidebar-block"><div id="recent_comments_wrap">
+<div class="catListComment">
+<h3 class="catListTitle">最新评论</h3>
+
+	<div id="RecentCommentsBlock"><ul>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/wl0000-03/p/5942467.html#3681074">1. Re:分层开发---酒店管理系统---</a></li>
+        <li class="recent_comment_body">删除时这么没有好友提示呢？</li>
+        <li class="recent_comment_author">--黄钟飞</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/wl0000-03/p/5941566.html#3675303">2. Re:C#深入.NET平台的软件系统分层开发</a></li>
+        <li class="recent_comment_body">很不错的。你说北大鸟的吧</li>
+        <li class="recent_comment_author">--黄钟飞</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/wl0000-03/p/5964881.html#3665014">3. Re:Java中多态的一些简单理解</a></li>
+        <li class="recent_comment_body">你这么个写法谁能看懂，   搞得跟我上面都会一样  ， 你这是给人学基础写的东西吗？？？？？？？ 蠢</li>
+        <li class="recent_comment_author">--65456465</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/wl0000-03/p/6675811.html#3661778">4. Re:整合第二次（SSM第一次）------------&gt;spring+struts2+mybatis</a></li>
+        <li class="recent_comment_body">@寻风问雨GitHub上很多的呀...</li>
+        <li class="recent_comment_author">--gousili</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/wl0000-03/p/6675811.html#3661688">5. Re:整合第二次（SSM第一次）------------&gt;spring+struts2+mybatis</a></li>
+        <li class="recent_comment_body">@提伯斯好的，没问题，多多交流！...</li>
+        <li class="recent_comment_author">--刘二雄</li>
+</ul>
+</div>
+</div>
+</div></div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">阅读排行榜</h3>
+	<div id="TopViewPostsBlock"><ul><li><a href="http://www.cnblogs.com/wl0000-03/p/5973039.html">1. java中synchronized关键字的用法(6808)</a></li><li><a href="http://www.cnblogs.com/wl0000-03/p/5964881.html">2. Java中多态的一些简单理解(6149)</a></li><li><a href="http://www.cnblogs.com/wl0000-03/p/5953989.html">3. MyEclipse中常用的快捷键大全，快来.....(3719)</a></li><li><a href="http://www.cnblogs.com/wl0000-03/p/6050108.html">4. JavaScript中的匿名函数及函数的闭包(1591)</a></li><li><a href="http://www.cnblogs.com/wl0000-03/p/5904140.html">5. 深入.NET平台和C#编程总结大全(1433)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topcommentedposts" class="sidebar-block"><div id="topfeedback_posts_wrap">
+<div class="catListFeedback">
+<h3 class="catListTitle">评论排行榜</h3>
+	<div id="TopFeedbackPostsBlock"><ul><li><a href="http://www.cnblogs.com/wl0000-03/p/6675811.html">1. 整合第二次（SSM第一次）------------&gt;spring+struts2+mybatis(6)</a></li><li><a href="http://www.cnblogs.com/wl0000-03/p/5941566.html">2. C#深入.NET平台的软件系统分层开发(4)</a></li><li><a href="http://www.cnblogs.com/wl0000-03/p/5904140.html">3. 深入.NET平台和C#编程总结大全(2)</a></li><li><a href="http://www.cnblogs.com/wl0000-03/p/6665518.html">4. 整合初步______SH(2)</a></li><li><a href="http://www.cnblogs.com/wl0000-03/p/5942467.html">5. 分层开发---酒店管理系统---(2)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div id="topdigg_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div id="TopDiggPostsBlock"><ul><li><a href="http://www.cnblogs.com/wl0000-03/p/5904140.html">1. 深入.NET平台和C#编程总结大全(6)</a></li><li><a href="http://www.cnblogs.com/wl0000-03/p/5813384.html">2. 体验套餐管理系统(2)</a></li><li><a href="http://www.cnblogs.com/wl0000-03/p/6669835.html">3. 整合初步---------&gt;SSH（注解版）(2)</a></li><li><a href="http://www.cnblogs.com/wl0000-03/p/6665518.html">4. 整合初步______SH(1)</a></li><li><a href="http://www.cnblogs.com/wl0000-03/p/6541371.html">5. Struts2  数据校验之四兄弟(1)</a></li></ul></div>
+</div></div></div></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright ©2017 刘二雄
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+</body></html>

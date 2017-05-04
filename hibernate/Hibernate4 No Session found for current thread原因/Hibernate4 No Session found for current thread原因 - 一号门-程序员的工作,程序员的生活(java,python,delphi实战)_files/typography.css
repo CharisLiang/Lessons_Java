@@ -1,0 +1,179 @@
+﻿ /*---其他样式---*/  
+ .userpass{border:#bbb 1px solid;font-size:12px; height:16px; padding-left:2px;}
+ .userpass:hover,.userpass:focus{border:#E1A635 1px solid;}
+ .inputBox{border:#bbb 1px solid;background:#fff;font-size:12px;height:16px; padding:4px 0 0 2px}
+ .inputBox:hover,.inputBox:focus{border:#E1A635 1px solid;background:#fff;}
+ .userbutton{padding:3px 6px 3px 6px; border:none;background:#666;font-size:12px; color:#FFF;} 
+ .LinkTable{margin:0px;}
+ .commentTable{}
+ .high1{font-weight:bold;color:#f00;background:#ff0}
+ .SecretInput{color:#990000;border:1px dashed #F00;background:#FEF50F;padding:2px;margin:5px auto;}
+ 
+ /*日历样式*/
+  #Calendar_Body{margin:0px;font-family:arial;line-height:120%}
+ /*日历样式-顶部*/
+  #Calendar_Body #Calendar_Top{padding:0px 2px 0px 2px;height:18px;text-align:center;font-weight:bold;}
+ /*日历样式-顶部按钮-左*/
+  #Calendar_Body #Calendar_Top #LeftB{background:url('../../images/BttnLeft.gif');width:9px;height:16px;float:left;cursor:pointer;overflow:hidden;}
+ /*日历样式-顶部按钮-右*/
+  #Calendar_Body #Calendar_Top #RightB{background:url('../../images/BttnRight.gif');width:9px;height:16px;float:right;cursor:pointer;overflow:hidden;}
+ /*日历样式-星期*/
+  #Calendar_Body #Calendar_week{text-align:center;height:20px;padding:0px 0px 0px 2%;font-weight:bold;}
+  ul.Week_UL{display:inline;list-style:none;margin:0px;padding:0px;}
+  ul.Week_UL li{display:inline;margin:3px 0px 2px 0px;padding:0px;float:left;color:#003;width:14%;}
+ /*日历样式-日期*/
+  .Calendar_Day {text-align:center;height:20px;padding:0px 0px 0px 2%;}
+  .Calendar_Day ul.Day_UL{display:inline;list-style:none;}
+  .Calendar_Day ul.Day_UL li{display:inline;float:left;width:14%;}
+
+ /*日历样式-日期-超链接样式*/
+  .DayA a{cursor:default;padding:2px 0px 3px 0px;display:block;font-size:11px;height:13px;}
+  .DayA a:link,.DayA a:visited{color:#0A5D0A;}
+  .DayA a:hover{color:#930;}
+ /*日期选中*/
+  .DayA a.click{cursor:default;background:#ff9100;color:#fff;border:solid 1px #ff6600;font-weight:bold;}
+  .DayA a.click:link,.DayA a.click:visited{cursor:pointer;font-weight:bold;text-decoration:none;}
+  .DayA a.click:hover{text-decoration:none;color:#996600;}
+ /*今天*/
+   .DayA a.today{cursor:default;background:#ff9100;color:#fff;border:solid 1px #ff6600;font-weight:bold;}
+ /*非本月日期*/
+   .DayA a.otherday{cursor:default;color:#aaa;text-decoration:none;/*visibility:hidden*/}
+   .DayA a.otherday:link,.DayA a.otherday:visited{cursor:pointer;color:#aaa;font-weight:bold;}
+ /*本日存在日记*/
+   .DayA a.haveD{cursor:pointer;}
+   .DayA a.haveD:link,.DayA a.haveD:visited{color:#0A5D0A;font-weight:bold;}
+   .DayA a.haveD:hover{color:#930;}
+ /*今天存在日记*/
+   .DayA a.DayD{cursor:pointer;}
+   .DayA a.DayD:link,.DayA a.DayD:visited{background:#ff9100;color:#fff;border:solid 1px #ff6600;font-weight:bold;text-decoration:none;}
+   .DayA a.DayD:hover{color:#996600;}
+/*显示和隐藏置顶日志按钮*/
+   .BttnC{float:right;width:16px;height:16px;background:url(../../images/BttnCllps.gif) no-repeat;margin-top:0px;cursor:pointer}
+   .BttnE{float:right;width:16px;height:16px;background:url(../../images/BttnExpnd.gif) no-repeat;margin-top:0px;cursor:pointer}
+/*提示框CSS*/
+   div.nicetitle {
+    position: absolute;
+    padding: 4px !important;
+	padding: 6px 4px 4px 4px;
+    top: 0;
+    left: 0;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    width: 15em;
+    background: #FFFBD1 url(../../images/nicetitlebg.jpg);
+    color: #3D2C05;
+    border: 1px solid #715208;
+    text-align: left;
+}
+   div.nicetitle p {
+    margin: 0; padding: 0 3px;
+}
+   div.nicetitle p.destination {
+    font-size: 9px;
+    text-align: left;
+    padding:3px 0px 0px 3px;
+	color: #715208;
+	/*display:none;*/
+}
+.CateIcon{ display:none}
+
+.#Side_User{position: absolute;background:none;top:20px;margin-left:-300px;}
+
+#Side_User{position: absolute;background:none;top:20px;margin-left:-300px;}
+#Side_User .Ptitle{display:none}
+#Side_User .Pcontent{margin:0 auto;width: auto;*width:auto;_width:600px;background:none; color:#fff;}
+#Side_User .Pfoot{display:none}
+#Side_User ul{padding:0;margin:0; text-align:right;width:600px; margin-left:-300px;*margin-left:-300px;_margin-left:0px;list-style-type:none;}
+#Side_User li{padding:0 6px;margin:0;border-left:solid 1px #b8bec1;display:inline;color:#EEE;}
+#Side_User li a:link{color:#fff;}
+#Side_User li a:visited{color:#EEE;}
+#Side_User li a:hover{color:#DDD;}
+
+#Side_topnav{position: absolute;background:none;top:63px;}
+#Side_topnav .Ptitle{display:none}
+#Side_topnav .Pcontent{background:none;margin:0 auto;}
+#Side_topnav .Pfoot{display:none}
+#Side_topnav ul{padding:0;margin:0;width:500px;margin-left:-430px;list-style-type:none;}
+#Side_topnav ul li{float:left;margin:0;width:64px;padding:10px 0;list-style:none;text-align:center;position:relative;height:48px;}
+#Side_topnav ul li img{margin-bottom:5px; border:none;}
+#Side_topnav ul li a{padding:0 5px;margin:0;display:block;text-decoration:none;}
+#Side_topnav ul li a:link,#Side_topnav ul li a:visited{color:#D4D4D4;}
+#Side_topnav ul li a:hover,#Side_topnav ul li a:active{color:#f7d700;}
+
+#Side_Search .Ptitle{background:#F0F0E3 url(left_top1.jpg) no-repeat;color:#0A5D0A}
+#Side_Search .Pcontent{background:#F0F0E3 url(kyd.jpg) no-repeat 15px top;overflow:hidden;height:33px;padding-top:5px;/*/padding-top:1px;*/}
+#Side_Search .Pfoot{background:#F0F0E3 url(left_bottom1.jpg) no-repeat top;overflow:hidden;}
+#Side_Search .userpass{border:none; background:#fff;height:15px; width:200px;color:#000}
+#Side_Search .userbutton{ float:right; margin:-18px 20px 0;*margin:-22px 20px 0;_margin:-20px 20px 0;/*/margin:-10px 20px 0;*/border:none; height:25px;background:url(btn.jpg) no-repeat;width:25px;}
+
+#Side_Category .Ptitle{background:#F0F0E3 url(left_top1.jpg) no-repeat;color:#0A5D0A}  
+#Side_Category .Pcontent{background:#F0F0E3}  
+#Side_Category .Pfoot{background:#F0F0E3 url(left_bottom1.jpg) no-repeat top;} 
+
+#Side_Calendar .Ptitle{background:#E6EFFF url(left_top2.jpg) no-repeat;color:#0A5D0A;overflow:hidden;}  
+#Side_Calendar .Pcontent{background:#E6EFFF; padding-right:10px;overflow:hidden;}  
+#Side_Calendar .Pfoot{background:#E6EFFF url(left_bottom2.jpg) no-repeat top;overflow:hidden;} 
+
+#Side_Comment .Ptitle{background:#E2F9E3 url(left_top3.jpg) no-repeat;color:#444}  
+#Side_Comment .Pcontent{background:#E2F9E3;}  
+#Side_Comment .Pfoot{background:#E2F9E3 url(left_bottom3.jpg) no-repeat top;} 
+#Side_Comment .sideA:link,#Side_Comment .sideA:visited{background:url(arrow1.gif) no-repeat 0px 4px;}
+#Side_Comment .sideA:hover{background:url(arrow1.gif) no-repeat 0px 4px;}
+
+#Side_GuestBookForPJBlogSubItem1 .Ptitle{background:#E6EFFF url(left_top2.jpg) no-repeat;color:#0A5D0A;}  
+#Side_GuestBookForPJBlogSubItem1 .Pcontent{background:#E6EFFF;}  
+#Side_GuestBookForPJBlogSubItem1 .Pfoot{background:#E6EFFF url(left_bottom2.jpg) no-repeat top;} 
+#Side_GuestBookForPJBlogSubItem1 .sideA:link,#Side_GuestBookForPJBlogSubItem1 .sideA:visited{background:url(arrow3.gif) no-repeat 0px 4px;}
+#Side_GuestBookForPJBlogSubItem1 .sideA:hover{background:url(arrow1.gif) no-repeat 0px 4px;}
+
+#Side_NewLogForPJBlog .Ptitle{background:#F0F0E3 url(left_top1.jpg) no-repeat;color:#0A5D0A}  
+#Side_NewLogForPJBlog .Pcontent{background:#F0F0E3}  
+#Side_NewLogForPJBlog .Pfoot{background:#F0F0E3 url(left_bottom1.jpg) no-repeat top;} 
+#Side_NewLogForPJBlog .sideA:link,#Side_NewLogForPJBlog .sideA:visited{background:url(arrow2.gif) no-repeat 0px 4px;}
+#Side_NewLogForPJBlog .sideA:hover{background:url(arrow2.gif) no-repeat 0px 4px;}
+
+#Side_Archive .Ptitle{background:#E6EFFF url(left_top2.jpg) no-repeat;color:#111}  
+#Side_Archive .Pcontent{background:#E6EFFF;}  
+#Side_Archive .Pfoot{background:#E6EFFF url(left_bottom2.jpg) no-repeat top;} 
+#Side_Archive .sideA:link,#Side_Archive .sideA:visited{background:url(arrow.gif) no-repeat 0px 4px;}
+#Side_Archive .sideA:hover{background:url(arrow.gif) no-repeat 0px 4px;}
+
+#Side_BlogInfo .Ptitle{background:#F0F0E3 url(left_top1.jpg) no-repeat;color:#0A5D0A}  
+#Side_BlogInfo .Pcontent{background:#F0F0E3}  
+#Side_BlogInfo .Pfoot{background:#F0F0E3 url(left_bottom1.jpg) no-repeat top;} 
+
+
+#Side_Links .Ptitle{background:#E2F9E3 url(left_top3.jpg) no-repeat;color:#444}  
+#Side_Links .Pcontent{background:#E2F9E3; overflow: hidden}  
+#Side_Links .Pfoot{background:#E2F9E3 url(left_bottom3.jpg) no-repeat top;} 
+#Side_Links .sideA:link,#Side_Links .sideA:visited{float:left;background:url(arrow4.gif) no-repeat 0px 4px; width:117px; display:block;}
+#Side_Links .sideA:hover{ float:left;background:url(arrow4.gif) no-repeat 0px 4px;width:117px;display:block;}
+
+#Side_RandomLogForPJBlog .Ptitle{background:#F0F0E3 url(left_top1.jpg) no-repeat;color:#0A5D0A}  
+#Side_RandomLogForPJBlog .Pcontent{background:#F0F0E3}  
+#Side_RandomLogForPJBlog .Pfoot{background:#F0F0E3 url(left_bottom1.jpg) no-repeat top;} 
+#Side_RandomLogForPJBlog .sideA:link,#Side_RandomLogForPJBlog .sideA:visited{background:url(arrow2.gif) no-repeat 0px 4px;}
+#Side_RandomLogForPJBlog .sideA:hover{background:url(arrow2.gif) no-repeat 0px 4px;}
+
+#Side_Search input.btn_search_small {
+    background: url("btn.jpg") no-repeat scroll 0 0 transparent;
+    border: 0 none;
+    cursor: pointer;
+    float: left;
+    height: 25px;
+    margin: 0px 0 0;
+    padding: 0;
+    text-indent: -999em;
+    width: 25px;
+}
+
+#Side_Search input {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    color: #999999;
+    float: left;
+    font-size: 14px;
+    height: 19px;
+    padding: 5px 8px 0;
+    width: 222px;
+}
