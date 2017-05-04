@@ -1,0 +1,222 @@
+http://www.blogjava.net/action/articles/17339.html
+
+
+
+Eclipse快捷键
+1.【ALT+/】 提示信息
+2.【ctrl+o】显示类中方法和属性
+3.【ctro+D】删除当前行
+4.【ctri+M】窗口最大化和还原
+5.【ctrl+k】【ctrl+shift+K】向下/想上查找
+6.【ctrl+shift+T】 在workspace中查找类文件
+7.【Ctrl+Shift+R】查找文件
+8.【Ctrl+Shift+G】查找所有使用当前方法的位置
+9.【Ctrl+Shift+O】引入import
+
+10.【Ctrl+Shift+F】格式化代码
+11.【ALT+Shift+W】
+12.【Ctrl+L】定位到某行
+13。【Alt+←】、【Alt+→】后退历史记录和前进历史记录
+14.【F3】快速定位
+15.【F4】显示类的继承关系，并打开类继承视图。
+
+调试快捷键
+1. 【Ctrl+Shift+B】：在当前行设置断点或取消设置的断点。
+2. 【F11】：调试最后一次执行的程序。
+3. 【Ctrl+F11】：运行最后一次执行的程序。
+4. 【F5】：跟踪到方法中，当程序执行到某方法时，可以按【F5】键跟踪到方法中。
+5. 【F6】：单步执行程序。
+6. 【F7】：执行完方法，返回到调用此方法的后一条语句。
+7. 【F8】：继续执行，到下一个断点或程序结束。
+
+常用编辑器快捷键
+1. 【Ctrl+C】：复制。
+2. 【Ctrl+X】：剪切。
+3. 【Ctrl+V】：粘贴。
+4. 【Ctrl+S】：保存文件。
+5. 【Ctrl+Z】：撤销。
+6. 【Ctrl+Y】：重复。
+7. 【Ctrl+F】：查找。
+
+
+其他快捷键
+1. 【Ctrl+F6】：切换到下一个编辑器。
+2. 【Ctrl+Shift+F6】：切换到上一个编辑器。
+3. 【Ctrl+F7】：切换到下一个视图。
+4. 【Ctrl+Shift+F7】：切换到上一个视图。
+5. 【Ctrl+F8】：切换到下一个透视图。
+6. 【Ctrl+Shift+F8】：切换到上一个透视图。
+-------------------------------------------
+1.【Ctrl+/】行注释/销注释 
+2.【Ctrl+Shift+/   Ctrl+Shift+\】块注释/销注释
+3.【Ctrl+H Ctrl+F】查找 查找替换
+4.【ctrl + shift + t】   通过类名来查找对应的类，包括在那个包，还有提示。
+5.【Ctrl+K   Ctrl+Shift+K】查找下一个/往回找
+6.【Ctrl+L】跳到某行
+7.【Ctrl+G 】查找当前元素的声明 
+8.【Ctrl+Shift+G】查找当前元素的所有引用
+9.【Ctrl+Shift+O】能帮你一次去掉所有未使用的Import声明！
+10.【 Ctrl+Q】返回上一次查看的点
+11.【Ctrl+Alt+下】复制一份代码
+12.【Ctrl+1】快速修正
+13.【ctrl + shift + m】引入某个类（接口）
+14.【shift + alt + j】加头注释 
+ 
+
+【ctrl + shift + g：】查看引用
+【ctrl + shift + n：】重命名
+【ctrl + shift + o：】导入类
+【ctrl + shift + r：】启动上次运行
+【ctrl + shift + f：】格式化代码
+【ctrl + c：】复制
+【ctrl + v：】粘贴
+【ctrl + x：】切剪
+【ctrl + a：】全选
+【ctrl + f：】查找
+【ctrl + z：】撤销
+【ctrl + y：】重做
+【ctrl + s：】保存
+------------------------------------------------------------------------------------------------------------------------------------------------------
+Eclipse快捷键指南                                                                         
+编辑
+作用域            功能            快捷键
+全局            查找并替换            Ctrl+F
+文本编辑器            查找上一个            Ctrl+Shift+K
+文本编辑器            查找下一个            Ctrl+K
+全局            撤销            Ctrl+Z
+全局            复制            Ctrl+C
+全局            恢复上一个选择            Alt+Shift+↓
+全局            剪切            Ctrl+X
+全局            快速修正            Ctrl1+1
+全局            内容辅助            Alt+/
+全局            全部选中            Ctrl+A
+全局            删除            Delete
+全局            上下文信息            Alt+？
+Alt+Shift+?
+Ctrl+Shift+Space
+Java编辑器            显示工具提示描述            F2
+Java编辑器            选择封装元素            Alt+Shift+↑
+Java编辑器            选择上一个元素            Alt+Shift+←
+Java编辑器            选择下一个元素            Alt+Shift+→
+文本编辑器            增量查找            Ctrl+J
+文本编辑器            增量逆向查找            Ctrl+Shift+J
+全局            粘贴            Ctrl+V
+全局            重做            Ctrl+Y
+  
+查看
+作用域            功能            快捷键
+全局            放大            Ctrl+=
+全局            缩小            Ctrl+-
+  
+窗口
+作用域            功能            快捷键
+全局            激活编辑器            F12
+全局            切换编辑器            Ctrl+Shift+W
+全局            上一个编辑器            Ctrl+Shift+F6
+全局            上一个视图            Ctrl+Shift+F7
+全局            上一个透视图            Ctrl+Shift+F8
+全局            下一个编辑器            Ctrl+F6
+全局            下一个视图            Ctrl+F7
+全局            下一个透视图            Ctrl+F8
+文本编辑器            显示标尺上下文菜单            Ctrl+W
+全局            显示视图菜单            Ctrl+F10
+全局            显示系统菜单            Alt+-
+  
+导航
+作用域            功能            快捷键
+Java编辑器            打开结构            Ctrl+F3
+全局            打开类型            Ctrl+Shift+T
+全局            打开类型层次结构            F4
+全局            打开声明            F3
+全局            打开外部javadoc            Shift+F2
+全局            打开资源            Ctrl+Shift+R
+全局            后退历史记录            Alt+←
+全局            前进历史记录            Alt+→
+全局            上一个            Ctrl+,
+全局            下一个            Ctrl+.
+Java编辑器            显示大纲            Ctrl+O
+全局            在层次结构中打开类型            Ctrl+Shift+H
+全局            转至匹配的括号            Ctrl+Shift+P
+全局            转至上一个编辑位置            Ctrl+Q
+Java编辑器            转至上一个成员            Ctrl+Shift+↑
+Java编辑器            转至下一个成员            Ctrl+Shift+↓
+文本编辑器            转至行            Ctrl+L
+  
+搜索
+作用域            功能            快捷键
+全局            出现在文件中            Ctrl+Shift+U
+全局            打开搜索对话框            Ctrl+H
+全局            工作区中的声明            Ctrl+G
+全局            工作区中的引用            Ctrl+Shift+G
+  
+文本编辑
+作用域            功能            快捷键
+文本编辑器            改写切换            Insert
+文本编辑器            上滚行            Ctrl+↑
+文本编辑器            下滚行            Ctrl+↓
+  
+文件
+作用域            功能            快捷键
+全局            保存            Ctrl+X   
+Ctrl+S
+全局            打印            Ctrl+P
+全局            关闭            Ctrl+F4
+全局            全部保存            Ctrl+Shift+S
+全局            全部关闭            Ctrl+Shift+F4
+全局            属性            Alt+Enter
+全局            新建            Ctrl+N
+  
+项目
+作用域            功能            快捷键
+全局            全部构建            Ctrl+B
+  
+源代码
+作用域            功能            快捷键
+Java编辑器            格式化            Ctrl+Shift+F
+Java编辑器            取消注释            Ctrl+
+Java编辑器            注释            Ctrl+/
+Java编辑器            添加导入            Ctrl+Shift+M
+Java编辑器            组织导入            Ctrl+Shift+O
+Java编辑器            使用try/catch块来包围            未设置，太常用了，所以在这里列出,建议自己设置。
+也可以使用Ctrl+1自动修正。
+  
+运行
+作用域            功能            快捷键
+全局            单步返回            F7
+全局            单步跳过            F6
+全局            单步跳入            F5
+全局            单步跳入选择            Ctrl+F5
+全局            调试上次启动            F11
+全局            继续            F8
+全局            使用过滤器单步执行            Shift+F5
+全局            添加/去除断点            Ctrl+Shift+B
+全局            显示            Ctrl+D
+全局            运行上次启动            Ctrl+F11
+全局            运行至行            Ctrl+R
+全局            执行            Ctrl+U
+  
+重构
+作用域            功能            快捷键
+全局            撤销重构            Alt+Shift+Z
+全局            抽取方法            Alt+Shift+M
+全局            抽取局部变量            Alt+Shift+L
+全局            内联            Alt+Shift+I
+全局            移动            Alt+Shift+V
+全局            重命名            Alt+Shift+R
+全局            重做            Alt+Shift+Y
+-----------------------------------------------------------------------------------------------
+窗口
+作用域 功能 快捷键 
+全局 激活编辑器 F12 
+全局 切换编辑器 Ctrl+Shift+W 
+全局 上一个编辑器 Ctrl+Shift+F6 
+全局 上一个视图 Ctrl+Shift+F7 
+全局 上一个透视图 Ctrl+Shift+F8 
+全局 下一个编辑器 Ctrl+F6 
+全局 下一个视图 Ctrl+F7 
+全局 下一个透视图 Ctrl+F8 
+文本编辑器 显示标尺上下文菜单 Ctrl+W 
+全局 显示视图菜单 Ctrl+F10 
+全局 显示系统菜单 Alt+- 
+------------------------------------------------------------------------------------------------
+整行复制  ctrl+shift+↓/↑

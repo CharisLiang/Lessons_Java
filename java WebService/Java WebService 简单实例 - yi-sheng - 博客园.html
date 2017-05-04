@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)http://www.cnblogs.com/yisheng163/p/4524808.html?utm_source=tuicool -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java WebService 简单实例 - yi-sheng - 博客园</title>
+<link type="text/css" rel="stylesheet" href="./Java WebService 简单实例 - yi-sheng - 博客园_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="./Java WebService 简单实例 - yi-sheng - 博客园_files/bundle-arrow.css">
+<link id="mobile-style" media="only screen and (max-width: 768px)" type="text/css" rel="stylesheet" href="./Java WebService 简单实例 - yi-sheng - 博客园_files/bundle-arrow-mobile.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/yisheng163/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/yisheng163/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/yisheng163/wlwmanifest.xml">
+<script src="./Java WebService 简单实例 - yi-sheng - 博客园_files/jquery.js.下载" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'yisheng163', cb_enable_mathjax=false;var isLogined=true;</script>
+<script src="./Java WebService 简单实例 - yi-sheng - 博客园_files/blog-common.js.下载" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<!--done-->
+<div id="header">
+	
+<!--done-->
+<div class="header">
+	<div class="headerText">
+		<a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/yisheng163/">yisheng163</a><br>
+		
+	</div>
+</div>
+
+</div>
+<div id="mylinks">
+<!--done-->
+<a id="blog_nav_sitehome" class="menu" href="http://www.cnblogs.com/">博客园</a>&nbsp;&nbsp;&nbsp;
+<a id="blog_nav_myhome" class="menu" href="http://www.cnblogs.com/yisheng163/">首页</a>&nbsp;&nbsp;&nbsp;
+<a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a>&nbsp;&nbsp;&nbsp;
+<a id="blog_nav_contact" accesskey="9" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/yi-sheng">联系</a>&nbsp;&nbsp;&nbsp;
+<a id="blog_nav_rss" class="menu" href="http://www.cnblogs.com/yisheng163/rss">订阅</a><a id="blog_nav_rss_image" href="http://www.cnblogs.com/yisheng163/rss"><img src="./Java WebService 简单实例 - yi-sheng - 博客园_files/xml.gif" alt="订阅"></a>&nbsp;&nbsp;&nbsp;
+<a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a>
+</div>
+<div id="mytopmenu">
+	
+		<div id="blog_stats">
+<div class="blogStats">随笔 - 32&nbsp;
+文章 - 2&nbsp;评论 - 57&nbsp;trackbacks - 0
+</div></div>
+	
+</div>
+<div id="leftcontent">
+	
+		<div id="leftcontentcontainer">
+			<div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script><br>
+			
+<!--done-->
+<div class="newsItem">
+	<div id="blog-news"><div id="profile_block">昵称：<a href="http://home.cnblogs.com/u/yisheng163/">yi-sheng</a><br>园龄：<a href="http://home.cnblogs.com/u/yisheng163/" title="入园时间：2007-12-05">9年1个月</a><br>粉丝：<a href="http://home.cnblogs.com/u/yisheng163/followers/">50</a><br>关注：<a href="http://home.cnblogs.com/u/yisheng163/followees/">2</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="follow(&#39;fc863d0b-63cf-dd11-9e4d-001cf0cd104b&#39;)">+加关注</a></div></div></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block">
+<div id="sidebar_search" class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="sidebar_search_box">
+
+<div id="widget_my_google" class="div_my_zzk"><input type="text" name="google_q" id="google_q" onkeydown="return google_go_enter(event)" class="input_my_zzk">&nbsp;<input onclick="google_go()" type="button" value="谷歌搜索" class="btn_my_zzk"></div>
+</div>
+</div>
+
+</div><div id="sidebar_toptags" class="sidebar-block">
+<h3 class="catListTitle">我的标签</h3>
+<div id="MyTag">
+<ul>
+<li><a href="http://www.cnblogs.com/yisheng163/tag/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/">程序人生</a>(6)</li><li><a href="http://www.cnblogs.com/yisheng163/tag/C%E5%A4%8F%E8%B0%B1/">C夏谱</a>(4)</li><li><a href="http://www.cnblogs.com/yisheng163/tag/Java/">Java</a>(3)</li><li><a href="http://www.cnblogs.com/yisheng163/tag/%E6%95%B0%E6%8D%AE%E5%BA%93%2FSQL/">数据库/SQL</a>(3)</li><li><a href="http://www.cnblogs.com/yisheng163/tag/%E5%8C%BB%E7%96%97%E7%B3%BB%E7%BB%9F/">医疗系统</a>(3)</li><li><a href="http://www.cnblogs.com/yisheng163/tag/%E5%A8%B1%E4%B9%90/">娱乐</a>(2)</li><li><a href="http://www.cnblogs.com/yisheng163/tag/WebService/">WebService</a>(2)</li><li><a href="http://www.cnblogs.com/yisheng163/tag/WEB%E6%9C%8D%E5%8A%A1%E5%99%A8/">WEB服务器</a>(1)</li><li><a href="http://www.cnblogs.com/yisheng163/tag/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9B%B8%E5%85%B3/">多线程相关</a>(1)</li><li><a href="http://www.cnblogs.com/yisheng163/tag/%E8%A7%A3%E6%9E%90HL7/">解析HL7</a>(1)</li><li><a href="http://www.cnblogs.com/yisheng163/tag/">更多</a></li>
+</ul>
+</div></div><div id="sidebar_categories">
+<!--done-->
+
+		<h1 class="catListTitle">随笔档案</h1>
+		
+				<ul class="catList">
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_0" class="listitem" href="http://www.cnblogs.com/yisheng163/archive/2017/01.html">2017年1月 (1)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_1" class="listitem" href="http://www.cnblogs.com/yisheng163/archive/2016/11.html">2016年11月 (1)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_2" class="listitem" href="http://www.cnblogs.com/yisheng163/archive/2016/09.html">2016年9月 (1)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_3" class="listitem" href="http://www.cnblogs.com/yisheng163/archive/2016/07.html">2016年7月 (1)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_4" class="listitem" href="http://www.cnblogs.com/yisheng163/archive/2016/02.html">2016年2月 (2)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_5" class="listitem" href="http://www.cnblogs.com/yisheng163/archive/2015/12.html">2015年12月 (1)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_6" class="listitem" href="http://www.cnblogs.com/yisheng163/archive/2015/11.html">2015年11月 (2)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_7" class="listitem" href="http://www.cnblogs.com/yisheng163/archive/2015/07.html">2015年7月 (1)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_8" class="listitem" href="http://www.cnblogs.com/yisheng163/archive/2015/06.html">2015年6月 (1)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_9" class="listitem" href="http://www.cnblogs.com/yisheng163/archive/2015/05.html">2015年5月 (7)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_10" class="listitem" href="http://www.cnblogs.com/yisheng163/archive/2013/01.html">2013年1月 (1)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_11" class="listitem" href="http://www.cnblogs.com/yisheng163/archive/2012/11.html">2012年11月 (1)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_12" class="listitem" href="http://www.cnblogs.com/yisheng163/archive/2012/10.html">2012年10月 (2)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_13" class="listitem" href="http://www.cnblogs.com/yisheng163/archive/2012/09.html">2012年9月 (5)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_14" class="listitem" href="http://www.cnblogs.com/yisheng163/archive/2009/07.html">2009年7月 (1)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_15" class="listitem" href="http://www.cnblogs.com/yisheng163/archive/2008/08.html">2008年8月 (1)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_16" class="listitem" href="http://www.cnblogs.com/yisheng163/archive/2008/07.html">2008年7月 (1)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_17" class="listitem" href="http://www.cnblogs.com/yisheng163/archive/2008/06.html">2008年6月 (1)</a></li>
+			
+				<li class="catListItem"> <a id="CatList_LinkList_0_Link_18" class="listitem" href="http://www.cnblogs.com/yisheng163/archive/2007/12.html">2007年12月 (1)</a></li>
+			
+				</ul>
+			
+	
+		<h1 class="catListTitle">园内博友</h1>
+		
+				<ul class="catList">
+			
+				<li class="catListItem"> <a id="CatList_LinkList_1_Link_0" class="listitem" href="http://www.cnblogs.com/William_Fire/" rel="nofollow">本园第一神棍</a></li>
+			
+				</ul>
+			
+	
+</div><div id="sidebar_recentcomments" class="sidebar-block"><div id="recent_comments_wrap">
+<h3 class="catListTitle">最新评论</h3>
+<div class="RecentComment" id="RecentComments">
+	<div id="RecentCommentsBlock"><ul>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html#3587239">1. Re:Java WebService 简单实例</a></li>
+        <li class="recent_comment_body">我只有eclipse要用到哪些包不清楚啊</li>
+        <li class="recent_comment_author">--yh1276</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html#3582655">2. Re:Java WebService 简单实例</a></li>
+        <li class="recent_comment_body">这才是学习webservice的文章，之前在网上找了很多webservice的调用方法，全都是不清不楚，看着很高很大很尚，但是我只想说然并卵，就这一篇文章中说的方法能用，之前看的其他的文章我真是心累，......</li>
+        <li class="recent_comment_author">--IceLobe</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html#3582642">3. Re:Java WebService 简单实例</a></li>
+        <li class="recent_comment_body">@文艺委员学到webservice的人和熟悉eclipse有什么关系，eclipse只是软件，用熟悉了不代表，就会webservice了...</li>
+        <li class="recent_comment_author">--IceLobe</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html#3582638">4. Re:Java WebService 简单实例</a></li>
+        <li class="recent_comment_body">@书香的生活我之前就用axis生成过 报错，用这个命令生成的不报错...</li>
+        <li class="recent_comment_author">--IceLobe</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html#3570319">5. Re:Java WebService 简单实例</a></li>
+        <li class="recent_comment_body">博主，客户端的代码能用axis插件直接生成了，减少了用命令苦逼的生成了</li>
+        <li class="recent_comment_author">--书香的生活</li>
+</ul>
+</div>
+</div>
+</div></div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<h3 class="catListTitle">阅读排行榜</h3>
+<div class="RecentComment" id="TopViewPosts"> 
+	<div id="TopViewPostsBlock"><ul><li><a href="http://www.cnblogs.com/yisheng163/p/4524808.html">1. Java WebService 简单实例(95128)</a></li><li><a href="http://www.cnblogs.com/yisheng163/p/4472687.html">2. js生成二维码实例(真实有效)(34052)</a></li><li><a href="http://www.cnblogs.com/yisheng163/archive/2012/09/26/2704829.html">3. WebForm和WinForm取当前根目录的通用的方法(3056)</a></li><li><a href="http://www.cnblogs.com/yisheng163/archive/2012/09/15/2685932.html">4. sql2005安装过程,(不装C盘)(2356)</a></li><li><a href="http://www.cnblogs.com/yisheng163/archive/2012/11/08/2760544.html">5. 买车后的开销(1622)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topcommentedposts" class="sidebar-block"><div id="topfeedback_posts_wrap">
+<h3 class="catListTitle">评论排行榜</h3>
+<div class="RecentComment" id="TopCommentsPosts">
+	<div id="TopFeedbackPostsBlock"><ul><li><a href="http://www.cnblogs.com/yisheng163/p/4524808.html">1. Java WebService 简单实例(30)</a></li><li><a href="http://www.cnblogs.com/yisheng163/p/4472687.html">2. js生成二维码实例(真实有效)(13)</a></li><li><a href="http://www.cnblogs.com/yisheng163/archive/2012/10/09/2716617.html">3. 循环图片(5)</a></li><li><a href="http://www.cnblogs.com/yisheng163/archive/2008/07/01/1233503.html">4. 给大家一个经典的.net情感故事(4)</a></li><li><a href="http://www.cnblogs.com/yisheng163/archive/2007/12/05/983020.html">5. 博客开张第一贴！谢谢！大伙多多关照！谢谢.(3)</a></li></ul></div>
+</div></div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div id="topdigg_posts_wrap">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div class="RecentComment">
+	<div id="TopDiggPostsBlock"><ul><li><a href="http://www.cnblogs.com/yisheng163/p/4524808.html">1. Java WebService 简单实例(36)</a></li><li><a href="http://www.cnblogs.com/yisheng163/p/4472687.html">2. js生成二维码实例(真实有效)(3)</a></li><li><a href="http://www.cnblogs.com/yisheng163/p/4471478.html">3. WebService到底是什么？(3)</a></li><li><a href="http://www.cnblogs.com/yisheng163/p/6071679.html">4. Windows下安装Nginx反向代理服务器(1)</a></li><li><a href="http://www.cnblogs.com/yisheng163/archive/2008/07/01/1233503.html">5. 给大家一个经典的.net情感故事(1)</a></li></ul></div>
+</div></div></div></div><script type="text/javascript">loadBlogSideColumn();</script></div>		
+	
+</div>
+<div id="centercontent">
+	
+<div id="post_detail">
+<!--done-->
+<div class="post">
+	<div class="postTitle">
+		<h1><a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/yisheng163/p/4524808.html">Java WebService 简单实例</a></h1>
+	</div>
+	<div id="cnblogs_post_body"><p>前言：朋友们开始以下教程前，请先看第五大点的注意事项，以避免不必要的重复操作。</p>
+<p>&nbsp;</p>
+<p>一、准备工作（以下为本实例使用工具）</p>
+<p>1、MyEclipse10.7.1</p>
+<p>2、JDK&nbsp;1.6.0_22</p>
+<p>&nbsp;</p>
+<p>二、创建服务端</p>
+<p>1、创建【Web Service Project】，命名为【TheService】。</p>
+<p><br><iframe id="iframe_0.051745247835926156" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/saved_resource.html" style="border: none; width: 1275px; height: 486px;" frameborder="0" scrolling="no"></iframe><br>&nbsp;<br><iframe id="iframe_0.8010501637568066" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/saved_resource(1).html" style="border: none; width: 668px; height: 728px;" frameborder="0" scrolling="no"></iframe><br>&nbsp;</p>
+<p>&nbsp;</p>
+<p>2、创建【Class】类，命名为【ServiceHello】，位于【com.hyan.service】包下。</p>
+<p><br><iframe id="iframe_0.389181760120878" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/saved_resource(2).html" style="border: none; width: 846px; height: 807px;" frameborder="0" scrolling="no"></iframe><br>&nbsp;<br><iframe id="iframe_0.2170337881276878" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/saved_resource(3).html" style="border: none; width: 694px; height: 755px;" frameborder="0" scrolling="no"></iframe><br>&nbsp;</p>
+<p>&nbsp;</p>
+<p>3、编写供客户端调用的方法，即编译方法代码。</p>
+<p><br><iframe id="iframe_0.536780439974536" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/saved_resource(4).html" style="border: none; width: 1154px; height: 596px;" frameborder="0" scrolling="no"></iframe><br>&nbsp;</p>
+<p>&nbsp;</p>
+<p>4、进行编译</p>
+<p><strong>说明：</strong>编译失败的话，请将该项目引用的jdk设置为1.6.0_17版本或更高版本</p>
+<p><br><iframe id="iframe_0.8224335310761928" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/saved_resource(5).html" style="border: none; width: 1055px; height: 795px;" frameborder="0" scrolling="no"></iframe><br>&nbsp;<br><iframe id="iframe_0.872541418616559" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/saved_resource(6).html" style="border: none; width: 894px; height: 189px;" frameborder="0" scrolling="no"></iframe><br>&nbsp;</p>
+<p>&nbsp;</p>
+<p>5、测试结果</p>
+<p><strong>测试地址：</strong>http://localhost:9001/Service/ServiceHello?wsdl</p>
+<p><br><iframe id="iframe_0.9053233149675242" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/saved_resource(7).html" style="border: none; width: 975px; height: 799px;" frameborder="0" scrolling="no"></iframe><br>&nbsp;</p>
+<p>&nbsp;</p>
+<p>三、生成客户端</p>
+<p>1、创建【Web Service Project】，命名为【TheClient】。</p>
+<p><br><iframe id="iframe_0.13937271728567935" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/saved_resource(8).html" style="border: none; width: 893px; height: 825px;" frameborder="0" scrolling="no"></iframe><br>&nbsp;<br><iframe id="iframe_0.22656846107861295" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/saved_resource(9).html" style="border: none; width: 668px; height: 725px;" frameborder="0" scrolling="no"></iframe><br>&nbsp;<br><iframe id="iframe_0.1930006836369733" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/saved_resource(10).html" style="border: none; width: 631px; height: 463px;" frameborder="0" scrolling="no"></iframe><br>&nbsp;</p>
+<p>&nbsp;</p>
+<p>2、命令提示窗口执行生成命令。</p>
+<p><strong>格式：</strong>wsimport -s&nbsp;"src目录"&nbsp;-p&nbsp;“生成类所在包名”&nbsp;-keep “wsdl发布地址”</p>
+<p><strong>示例：</strong></p>
+<p>wsimport -s G:\\workspace\\webService\\TheClient\\src -p com.hyan.client -keep http://localhost:9001/Service/ServiceHello?wsdl</p>
+<p><strong>说明：</strong></p>
+<p>1）"src目录"地址不可含空格</p>
+<p>2）“wsdl发布地址”不要漏了“?wsdl”</p>
+<p><br><iframe id="iframe_0.2937264219750584" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/saved_resource(11).html" style="border: none; width: 683px; height: 500px;" frameborder="0" scrolling="no"></iframe><br>&nbsp;</p>
+<p>&nbsp;</p>
+<p>3、刷新项目，检查生成类</p>
+<p><br><iframe id="iframe_0.42323414265784765" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/saved_resource(12).html" style="border: none; width: 776px; height: 677px;" frameborder="0" scrolling="no"></iframe><br>&nbsp;<br><iframe id="iframe_0.9121676991695009" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/saved_resource(13).html" style="border: none; width: 435px; height: 524px;" frameborder="0" scrolling="no"></iframe><br>&nbsp;<br>&nbsp;</p>
+<p>&nbsp;</p>
+<p>四、最终测试</p>
+<p>1、创建【Class】类，命名为【ServiceTest】，位于【com.hyan.test】包下。</p>
+<p><br><iframe id="iframe_0.6904210642732325" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/saved_resource(14).html" style="border: none; width: 839px; height: 648px;" frameborder="0" scrolling="no"></iframe><br><br><iframe id="iframe_0.8365044656342286" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/saved_resource(15).html" style="border: none; width: 694px; height: 759px;" frameborder="0" scrolling="no"></iframe><br>&nbsp;&nbsp;<br><iframe id="iframe_0.3213600444333369" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/saved_resource(16).html" style="border: none; width: 1071px; height: 559px;" frameborder="0" scrolling="no"></iframe><br>&nbsp;</p>
+<p>&nbsp;</p>
+<p>2、编写测试方法，调用服务端方法，并打印返回的结果。</p>
+<p><br><iframe id="iframe_0.9158442844962247" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/saved_resource(17).html" style="border: none; width: 1507px; height: 847px;" frameborder="0" scrolling="no"></iframe><br>&nbsp;<br><iframe id="iframe_0.5252291494703085" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/saved_resource(18).html" style="border: none; width: 598px; height: 171px;" frameborder="0" scrolling="no"></iframe><br>&nbsp;</p>
+<p>&nbsp;</p>
+<p>五、注意事项</p>
+<p>1、JDK版本过低问题</p>
+<p><strong>报类似如下的异常：</strong>runtime modeler error: Wrapper class com.hyan.service.jaxws.GetValue is not found. Have you run APT to generate them?</p>
+<p><br><iframe id="iframe_0.9403168956412338" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/saved_resource(19).html" style="border: none; width: 1536px; height: 683px;" frameborder="0" scrolling="no"></iframe><br>&nbsp;</p>
+<p><strong>原因：</strong>JDK版本低于1.6.0_17</p>
+<p><strong>解决方法：</strong>调整该服务端项目所引用的JDK版本为安装的高版本JDK</p>
+<p><br><iframe id="iframe_0.33480071144955614" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/saved_resource(20).html" style="border: none; width: 1027px; height: 723px;" frameborder="0" scrolling="no"></iframe><br>&nbsp;<br><iframe id="iframe_0.8081186024620137" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/saved_resource(21).html" style="border: none; width: 847px; height: 596px;" frameborder="0" scrolling="no"></iframe><br>&nbsp;<br><iframe id="iframe_0.6447821785104639" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/saved_resource(22).html" style="border: none; width: 739px; height: 655px;" frameborder="0" scrolling="no"></iframe><br>&nbsp;<br><iframe id="iframe_0.2247728575055039" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/saved_resource(23).html" style="border: none; width: 757px; height: 620px;" frameborder="0" scrolling="no"></iframe><br>&nbsp;<br><iframe id="iframe_0.4597365407129774" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/saved_resource(24).html" style="border: none; width: 614px; height: 554px;" frameborder="0" scrolling="no"></iframe><br>&nbsp;<br><iframe id="iframe_0.017779506540855028" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/saved_resource(25).html" style="border: none; width: 613px; height: 640px;" frameborder="0" scrolling="no"></iframe><br>&nbsp;<br><iframe id="iframe_0.4301830676485403" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/saved_resource(26).html" style="border: none; width: 614px; height: 641px;" frameborder="0" scrolling="no"></iframe><br>&nbsp;<br><iframe id="iframe_0.22498265598797373" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/saved_resource(27).html" style="border: none; width: 757px; height: 619px;" frameborder="0" scrolling="no"></iframe><br>&nbsp;<br><iframe id="iframe_0.613996233948422" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/saved_resource(28).html" style="border: none; width: 738px; height: 651px;" frameborder="0" scrolling="no"></iframe><br>&nbsp;<br><iframe id="iframe_0.9428288276951333" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/saved_resource(29).html" style="border: none; width: 848px; height: 593px;" frameborder="0" scrolling="no"></iframe><br>&nbsp;<br><iframe id="iframe_0.741166044627271" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/saved_resource(30).html" style="border: none; width: 549px; height: 425px;" frameborder="0" scrolling="no"></iframe><br>&nbsp;</p>
+<p>&nbsp;</p>
+<p>2、生成命令路径含空格问题</p>
+<p><strong>报类似如下的异常：</strong>directory not found: G:\SVN_FILE\GB\05</p>
+<p><br><iframe id="iframe_0.7482727218058447" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/saved_resource(31).html" style="border: none; width: 683px; height: 718px;" frameborder="0" scrolling="no"></iframe><br>&nbsp;</p>
+<p><strong>原因：</strong>客户端src路径不可含有空格</p>
+<p><strong>解决方法：</strong>在不含空格路径的文件夹下重新创建客户端即可。</p>
+<p>&nbsp;</p>
+<p>3、生成命令不完整问题</p>
+<p><strong>报类似如下的异常：</strong>[ERROR] failed.noservice=Could not find wsdl:service in the provided WSDL(s):</p>
+<p><br><iframe id="iframe_0.6607194345612353" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/saved_resource(32).html" style="border: none; width: 677px; height: 451px;" frameborder="0" scrolling="no"></iframe><br>&nbsp;</p>
+<p><strong>原因：</strong>生成命令末尾缺少“?wsdl”</p>
+<p><strong>解决方法：</strong>补上即可。</p>
+<p><strong>错误不完整的命令示例：</strong></p>
+<p>wsimport -s G:\\workspace\\webService\\TheClient\\src -p com.hyan.client -keep http://localhost:9001/Service/ServiceHello</p>
+<p><strong>正确完整的命令示例：</strong></p>
+<p>wsimport -s G:\\workspace\\webService\\TheClient\\src -p com.hyan.client -keep http://localhost:9001/Service/ServiceHello?wsdl</p>
+<p>&nbsp;</p>
+<p>六、示例源码</p>
+<p>服务端源码 &nbsp;<a href="http://dl2.iteye.com/upload/attachment/0101/7956/f0a9c1ec-35f7-38ce-b6e6-070882c10bc9.rar" target="_blank">下载</a></p>
+<p>客户端源码 &nbsp;<a href="http://dl2.iteye.com/upload/attachment/0101/7957/af3d9a48-72e2-36b5-aff1-ce9c4c73f536.rar" target="_blank">下载</a></p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag">标签: <a href="http://www.cnblogs.com/yisheng163/tag/WebService/">WebService</a></div>
+<div id="blog_post_info"><div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(4524808,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+            <a id="green_channel_follow" onclick="follow(&#39;fc863d0b-63cf-dd11-9e4d-001cf0cd104b&#39;);" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./Java WebService 简单实例 - yi-sheng - 博客园_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./Java WebService 简单实例 - yi-sheng - 博客园_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/yisheng163/" target="_blank"><img src="./Java WebService 简单实例 - yi-sheng - 博客园_files/sample_face.gif" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/yisheng163/">yi-sheng</a><br>
+            <a href="http://home.cnblogs.com/u/yisheng163/followees">关注 - 2</a><br>
+            <a href="http://home.cnblogs.com/u/yisheng163/followers">粉丝 - 50</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow(&#39;fc863d0b-63cf-dd11-9e4d-001cf0cd104b&#39;);return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(4524808,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">36</span>
+    </div>
+    <div class="buryit" onclick="votePost(4524808,&#39;Bury&#39;)">
+        <span class="burynum" id="bury_count">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="http://www.cnblogs.com/yisheng163/p/4501761.html" class="p_n_p_prefix">« </a> 上一篇：<a href="http://www.cnblogs.com/yisheng163/p/4501761.html" title="发布于2015-05-13 21:36">Java开发环境的搭建以及使用eclipse从头一步步创建java项目</a><br><a href="http://www.cnblogs.com/yisheng163/p/4596291.html" class="p_n_p_prefix">» </a> 下一篇：<a href="http://www.cnblogs.com/yisheng163/p/4596291.html" title="发布于2015-06-23 21:12">C# 连接 Oracle 的几种方式</a><br></div>
+</div>
+
+
+	<div class="postDesc">posted on <span id="post-date">2015-05-23 19:57</span> <a href="http://www.cnblogs.com/yisheng163/">yi-sheng</a> 阅读(<span id="post_view_count">95129</span>) 评论(<span id="post_comment_count">30</span>)  <a href="https://i.cnblogs.com/EditPosts.aspx?postid=4524808" rel="nofollow">编辑</a> <a href="http://www.cnblogs.com/yisheng163/p/4524808.html?utm_source=tuicool#" onclick="AddToWz(4524808);return false;">收藏</a></div>
+</div>
+<script type="text/javascript">var allowComments=true,cb_blogId=31480,cb_entryId=4524808,cb_blogApp=currentBlogApp,cb_blogUserGuid='fc863d0b-63cf-dd11-9e4d-001cf0cd104b',cb_entryCreatedDate='2015/5/23 19:57:00';loadViewCount(cb_entryId);</script>
+
+</div><a name="!comments"></a><div id="blog-comments-placeholder"><div id="comments_pager_top"></div>
+<!--done-->
+<br>
+<b>FeedBack:</b>
+<div class="feedbackNoItems"></div>
+	
+
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<div class="feedbacktitle"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html?utm_source=tuicool#3298585" class="layer">#1楼</a><a name="3298585" id="comment_anchor_3298585"></a>&nbsp; <span class="comment_date">2015-11-04 09:59</span>&nbsp;<a id="a_comment_author_3298585" href="http://www.cnblogs.com/itaoda/" target="_blank">一直在努力</a> <a href="http://msg.cnblogs.com/send/%E4%B8%80%E7%9B%B4%E5%9C%A8%E5%8A%AA%E5%8A%9B" title="发送站内短消息" class="sendMsg2This">&nbsp;</a></div>
+				<div align="left"><div id="comment_body_3298585" class="blog_comment_body">好闻，谢谢博主</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3298585,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3298585,&#39;Bury&#39;,this)">反对(0)</a></div>&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(3298585,&#39;3k9KljdKmhJW6eUMp/ZJZzV7/d4Oaub/5cen/FHZbsorLjE16HrM8Q==&#39;)">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(3298585,&#39;3k9KljdKmhJW6eUMp/ZJZzV7/d4Oaub/5cen/FHZbsorLjE16HrM8Q==&#39;)">引用</a></span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<div class="feedbacktitle"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html?utm_source=tuicool#3318097" class="layer">#2楼</a><a name="3318097" id="comment_anchor_3318097"></a>&nbsp; <span class="comment_date">2015-12-01 11:35</span>&nbsp;<a id="a_comment_author_3318097" href="http://home.cnblogs.com/u/721506/" target="_blank">真三武侯</a> <a href="http://msg.cnblogs.com/send/%E7%9C%9F%E4%B8%89%E6%AD%A6%E4%BE%AF" title="发送站内短消息" class="sendMsg2This">&nbsp;</a></div>
+				<div align="left"><div id="comment_body_3318097" class="blog_comment_body">百年难得一遇的基础文章啊！！</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3318097,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3318097,&#39;Bury&#39;,this)">反对(0)</a></div>&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(3318097,&#39;jI99+QTm68iZ8p/h/utdWji/SP89ReaxjUa0EO6KeaeB+jb71oyJoQ==&#39;)">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(3318097,&#39;jI99+QTm68iZ8p/h/utdWji/SP89ReaxjUa0EO6KeaeB+jb71oyJoQ==&#39;)">引用</a></span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<div class="feedbacktitle"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html?utm_source=tuicool#3319010" class="layer">#3楼</a><a name="3319010" id="comment_anchor_3319010"></a>&nbsp; <span class="comment_date">2015-12-02 14:29</span>&nbsp;<a id="a_comment_author_3319010" href="http://home.cnblogs.com/u/842129/" target="_blank">MJ威武</a> <a href="http://msg.cnblogs.com/send/MJ%E5%A8%81%E6%AD%A6" title="发送站内短消息" class="sendMsg2This">&nbsp;</a></div>
+				<div align="left"><div id="comment_body_3319010" class="blog_comment_body">非常好，简单强大，原理一步理解到位</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3319010,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3319010,&#39;Bury&#39;,this)">反对(0)</a></div>&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(3319010,&#39;rGIVYOHi0xG8LDfOVrkA6Ffk/k2exRgEuLXmSBwn5+yuIaV5TzLEvA==&#39;)">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(3319010,&#39;rGIVYOHi0xG8LDfOVrkA6Ffk/k2exRgEuLXmSBwn5+yuIaV5TzLEvA==&#39;)">引用</a></span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<div class="feedbacktitle"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html?utm_source=tuicool#3319622" class="layer">#4楼</a><a name="3319622" id="comment_anchor_3319622"></a>&nbsp; <span class="comment_date">2015-12-03 10:41</span>&nbsp;<a id="a_comment_author_3319622" href="http://home.cnblogs.com/u/779992/" target="_blank">石来方夕莉</a> <a href="http://msg.cnblogs.com/send/%E7%9F%B3%E6%9D%A5%E6%96%B9%E5%A4%95%E8%8E%89" title="发送站内短消息" class="sendMsg2This">&nbsp;</a></div>
+				<div align="left"><div id="comment_body_3319622" class="blog_comment_body">不错哦，够基础。</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3319622,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3319622,&#39;Bury&#39;,this)">反对(0)</a></div>&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(3319622,&#39;TxdpfmKojPlQIr6koPNM3bRqsGArQLEQOB2BPdZddDC2r5VpDM6PAQ==&#39;)">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(3319622,&#39;TxdpfmKojPlQIr6koPNM3bRqsGArQLEQOB2BPdZddDC2r5VpDM6PAQ==&#39;)">引用</a></span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<div class="feedbacktitle"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html?utm_source=tuicool#3331889" class="layer">#5楼</a><a name="3331889" id="comment_anchor_3331889"></a>&nbsp; <span class="comment_date">2015-12-22 11:15</span>&nbsp;<a id="a_comment_author_3331889" href="http://www.cnblogs.com/l-zk/" target="_blank">随风者</a> <a href="http://msg.cnblogs.com/send/%E9%9A%8F%E9%A3%8E%E8%80%85" title="发送站内短消息" class="sendMsg2This">&nbsp;</a></div>
+				<div align="left"><div id="comment_body_3331889" class="blog_comment_body">强大撒</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3331889,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3331889,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_3331889_avatar" style="display:none;">http://pic.cnblogs.com/face/848936/20160923184815.png</span>&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(3331889,&#39;QcOjv3gcSK5kq53nJcKpK92zDSKFKMCCz9vy3PfhVG5vd1UNlvl17Q==&#39;)">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(3331889,&#39;QcOjv3gcSK5kq53nJcKpK92zDSKFKMCCz9vy3PfhVG5vd1UNlvl17Q==&#39;)">引用</a></span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<div class="feedbacktitle"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html?utm_source=tuicool#3358223" class="layer">#6楼</a><a name="3358223" id="comment_anchor_3358223"></a>&nbsp; <span class="comment_date">2016-02-02 11:01</span>&nbsp;<a id="a_comment_author_3358223" href="http://home.cnblogs.com/u/647434/" target="_blank">远大</a> <a href="http://msg.cnblogs.com/send/%E8%BF%9C%E5%A4%A7" title="发送站内短消息" class="sendMsg2This">&nbsp;</a></div>
+				<div align="left"><div id="comment_body_3358223" class="blog_comment_body">非常实用，感谢博主</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3358223,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3358223,&#39;Bury&#39;,this)">反对(0)</a></div>&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(3358223,&#39;ZaTlAEoE7myyFLG5UMFDX7VlhppslrNEUY9kO/xRRAbqupm+zHkB7w==&#39;)">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(3358223,&#39;ZaTlAEoE7myyFLG5UMFDX7VlhppslrNEUY9kO/xRRAbqupm+zHkB7w==&#39;)">引用</a></span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<div class="feedbacktitle"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html?utm_source=tuicool#3368924" class="layer">#7楼</a><a name="3368924" id="comment_anchor_3368924"></a>&nbsp; <span class="comment_date">2016-02-29 19:57</span>&nbsp;<a id="a_comment_author_3368924" href="http://www.cnblogs.com/xidongyu/" target="_blank">被罚站的树</a> <a href="http://msg.cnblogs.com/send/%E8%A2%AB%E7%BD%9A%E7%AB%99%E7%9A%84%E6%A0%91" title="发送站内短消息" class="sendMsg2This">&nbsp;</a></div>
+				<div align="left"><div id="comment_body_3368924" class="blog_comment_body">小白正在学习，感谢楼主了！</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3368924,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3368924,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_3368924_avatar" style="display:none;">http://pic.cnblogs.com/face/872539/20160305194755.png</span>&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(3368924,&#39;B4UTo+EizcxnIR3TLjK+58k7VR7Yr9zmiTKDrmc7nnFVnQAzcxaUDQ==&#39;)">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(3368924,&#39;B4UTo+EizcxnIR3TLjK+58k7VR7Yr9zmiTKDrmc7nnFVnQAzcxaUDQ==&#39;)">引用</a></span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<div class="feedbacktitle"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html?utm_source=tuicool#3372971" class="layer">#8楼</a><a name="3372971" id="comment_anchor_3372971"></a>&nbsp; <span class="comment_date">2016-03-06 18:18</span>&nbsp;<a id="a_comment_author_3372971" href="http://home.cnblogs.com/u/687848/" target="_blank">华仔的逆袭</a> <a href="http://msg.cnblogs.com/send/%E5%8D%8E%E4%BB%94%E7%9A%84%E9%80%86%E8%A2%AD" title="发送站内短消息" class="sendMsg2This">&nbsp;</a></div>
+				<div align="left"><div id="comment_body_3372971" class="blog_comment_body">可以简单的理解为远程接口调用</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3372971,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3372971,&#39;Bury&#39;,this)">反对(0)</a></div>&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(3372971,&#39;8Y+/6ZRgSiCH2lkpKGotoxQHys/cGDops/uMrfgyB2tE3n29iCKx4g==&#39;)">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(3372971,&#39;8Y+/6ZRgSiCH2lkpKGotoxQHys/cGDops/uMrfgyB2tE3n29iCKx4g==&#39;)">引用</a></span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<div class="feedbacktitle"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html?utm_source=tuicool#3375369" class="layer">#9楼</a><a name="3375369" id="comment_anchor_3375369"></a>&nbsp; <span class="comment_date">2016-03-09 09:49</span>&nbsp;<a id="a_comment_author_3375369" href="http://home.cnblogs.com/u/688155/" target="_blank">特立独行的火柴</a> <a href="http://msg.cnblogs.com/send/%E7%89%B9%E7%AB%8B%E7%8B%AC%E8%A1%8C%E7%9A%84%E7%81%AB%E6%9F%B4" title="发送站内短消息" class="sendMsg2This">&nbsp;</a></div>
+				<div align="left"><div id="comment_body_3375369" class="blog_comment_body">文章非常详细，点个赞！</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3375369,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3375369,&#39;Bury&#39;,this)">反对(0)</a></div>&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(3375369,&#39;+1IwTBasPT7n0yLQ3kGPQgFNYtQGEb+73EMTwogDMk3gMYyILgDwQA==&#39;)">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(3375369,&#39;+1IwTBasPT7n0yLQ3kGPQgFNYtQGEb+73EMTwogDMk3gMYyILgDwQA==&#39;)">引用</a></span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<div class="feedbacktitle"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html?utm_source=tuicool#3388384" class="layer">#10楼</a><a name="3388384" id="comment_anchor_3388384"></a>&nbsp; <span class="comment_date">2016-03-22 18:06</span>&nbsp;<a id="a_comment_author_3388384" href="http://home.cnblogs.com/u/555227/" target="_blank">c_1108</a> <a href="http://msg.cnblogs.com/send/c_1108" title="发送站内短消息" class="sendMsg2This">&nbsp;</a></div>
+				<div align="left"><div id="comment_body_3388384" class="blog_comment_body">点个赞，，找了这个多  这个最言简意赅！非常好，感谢博主！</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3388384,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3388384,&#39;Bury&#39;,this)">反对(0)</a></div>&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(3388384,&#39;NmxHtELcqTzB9WxzLr3+q2JQTaW1xLPPn60up4sXbPA7lvMl9Pv5tA==&#39;)">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(3388384,&#39;NmxHtELcqTzB9WxzLr3+q2JQTaW1xLPPn60up4sXbPA7lvMl9Pv5tA==&#39;)">引用</a></span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<div class="feedbacktitle"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html?utm_source=tuicool#3394626" class="layer">#11楼</a><a name="3394626" id="comment_anchor_3394626"></a>&nbsp; <span class="comment_date">2016-03-29 15:34</span>&nbsp;<a id="a_comment_author_3394626" href="http://www.cnblogs.com/xm1-ybtk/" target="_blank">烟-波-天-客</a> <a href="http://msg.cnblogs.com/send/%E7%83%9F-%E6%B3%A2-%E5%A4%A9-%E5%AE%A2" title="发送站内短消息" class="sendMsg2This">&nbsp;</a></div>
+				<div align="left"><div id="comment_body_3394626" class="blog_comment_body">楼主，按照您这个代码我敲了一遍，报以下错误，请问是怎么回事，百度没搜到解决办法。<br><br>Exception in thread "main" javax.xml.ws.WebServiceException: Provider com.sun.xml.ws.spi.ProviderImpl not found<br>	at javax.xml.ws.spi.FactoryFinder.newInstance(FactoryFinder.java:38)<br>	at javax.xml.ws.spi.FactoryFinder.find(FactoryFinder.java:133)<br>	at javax.xml.ws.spi.Provider.provider(Provider.java:76)<br>	at javax.xml.ws.Endpoint.publish(Endpoint.java:156)<br>	at com.hyan.service.ServiceHello.main(ServiceHello.java:20)<br>Caused by: java.lang.ClassNotFoundException: com.sun.xml.ws.spi.ProviderImpl<br>	at java.net.URLClassLoader$1.run(URLClassLoader.java:200)<br>	at java.security.AccessController.doPrivileged(Native Method)<br>	at java.net.URLClassLoader.findClass(URLClassLoader.java:188)<br>	at java.lang.ClassLoader.loadClass(ClassLoader.java:307)<br>	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)<br>	at java.lang.ClassLoader.loadClass(ClassLoader.java:252)<br>	at javax.xml.ws.spi.FactoryFinder.newInstance(FactoryFinder.java:34)<br>	... 4 more</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3394626,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3394626,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_3394626_avatar" style="display:none;">http://pic.cnblogs.com/face/818392/20151003173811.png</span>&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(3394626,&#39;kBWboc/7i+fc0E3a04dWHSrLam+I4aUbyLQyhJm3jmO+alh7ZpKZhA==&#39;)">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(3394626,&#39;kBWboc/7i+fc0E3a04dWHSrLam+I4aUbyLQyhJm3jmO+alh7ZpKZhA==&#39;)">引用</a></span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<div class="feedbacktitle"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html?utm_source=tuicool#3400388" class="layer">#12楼</a><a name="3400388" id="comment_anchor_3400388"></a>&nbsp; <span class="comment_date">2016-04-05 16:15</span>&nbsp;<a id="a_comment_author_3400388" href="http://home.cnblogs.com/u/929107/" target="_blank">亮神</a> <a href="http://msg.cnblogs.com/send/%E4%BA%AE%E7%A5%9E" title="发送站内短消息" class="sendMsg2This">&nbsp;</a></div>
+				<div align="left"><div id="comment_body_3400388" class="blog_comment_body">博主很用心，非常细致，必须顶，加油！</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3400388,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3400388,&#39;Bury&#39;,this)">反对(0)</a></div>&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(3400388,&#39;Hdies0hh/WqWV3aLbeCjy4gg4ErbCBWpWTEdMvhFP8WvfnxdFlmy4w==&#39;)">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(3400388,&#39;Hdies0hh/WqWV3aLbeCjy4gg4ErbCBWpWTEdMvhFP8WvfnxdFlmy4w==&#39;)">引用</a></span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<div class="feedbacktitle"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html?utm_source=tuicool#3403416" class="layer">#13楼</a><a name="3403416" id="comment_anchor_3403416"></a>&nbsp; <span class="comment_date">2016-04-08 15:15</span>&nbsp;<a id="a_comment_author_3403416" href="http://www.cnblogs.com/phantom0308/" target="_blank">文艺委员</a> <a href="http://msg.cnblogs.com/send/%E6%96%87%E8%89%BA%E5%A7%94%E5%91%98" title="发送站内短消息" class="sendMsg2This">&nbsp;</a></div>
+				<div align="left"><div id="comment_body_3403416" class="blog_comment_body">楼主辛苦了，写的很细致。不过没必要这么细致的，因为学到webservice的人，感觉对eclipse都比较熟悉了的。鼓励鼓励。。。</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3403416,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3403416,&#39;Bury&#39;,this)">反对(2)</a></div><span id="comment_3403416_avatar" style="display:none;">http://pic.cnblogs.com/face/923312/20160409001804.png</span>&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(3403416,&#39;77LSx/DxCNTPWAcPgsMj6jjHP3JTOlDQblGBm+HG9/7oq3py7qnDuw==&#39;)">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(3403416,&#39;77LSx/DxCNTPWAcPgsMj6jjHP3JTOlDQblGBm+HG9/7oq3py7qnDuw==&#39;)">引用</a></span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<div class="feedbacktitle"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html?utm_source=tuicool#3412152" class="layer">#14楼</a><a name="3412152" id="comment_anchor_3412152"></a>&nbsp; <span class="comment_date">2016-04-19 16:40</span>&nbsp;<a id="a_comment_author_3412152" href="http://home.cnblogs.com/u/785875/" target="_blank">shdabc</a> <a href="http://msg.cnblogs.com/send/shdabc" title="发送站内短消息" class="sendMsg2This">&nbsp;</a></div>
+				<div align="left"><div id="comment_body_3412152" class="blog_comment_body">感谢楼主啊！</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3412152,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3412152,&#39;Bury&#39;,this)">反对(0)</a></div>&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(3412152,&#39;0VA4F03pBgOpbXlkBkCqStTySbsRsC+7rrQ4wwP13YYePl/rzjii8w==&#39;)">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(3412152,&#39;0VA4F03pBgOpbXlkBkCqStTySbsRsC+7rrQ4wwP13YYePl/rzjii8w==&#39;)">引用</a></span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<div class="feedbacktitle"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html?utm_source=tuicool#3447125" class="layer">#15楼</a><a name="3447125" id="comment_anchor_3447125"></a>&nbsp; <span class="comment_date">2016-06-06 09:30</span>&nbsp;<a id="a_comment_author_3447125" href="http://home.cnblogs.com/u/922300/" target="_blank">时间旅行</a> <a href="http://msg.cnblogs.com/send/%E6%97%B6%E9%97%B4%E6%97%85%E8%A1%8C" title="发送站内短消息" class="sendMsg2This">&nbsp;</a></div>
+				<div align="left"><div id="comment_body_3447125" class="blog_comment_body">楼主写得很细致，很感人</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3447125,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3447125,&#39;Bury&#39;,this)">反对(0)</a></div>&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(3447125,&#39;632T/PeDLbwSjXhjdFfJa0TDTs1LsVvgc8186EFqZQYTEDzK+h7MpQ==&#39;)">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(3447125,&#39;632T/PeDLbwSjXhjdFfJa0TDTs1LsVvgc8186EFqZQYTEDzK+h7MpQ==&#39;)">引用</a></span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<div class="feedbacktitle"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html?utm_source=tuicool#3472579" class="layer">#16楼</a><a name="3472579" id="comment_anchor_3472579"></a>&nbsp; <span class="comment_date">2016-07-19 13:25</span>&nbsp;<a id="a_comment_author_3472579" href="http://www.cnblogs.com/ebony/" target="_blank">大猫要奋斗</a> <a href="http://msg.cnblogs.com/send/%E5%A4%A7%E7%8C%AB%E8%A6%81%E5%A5%8B%E6%96%97" title="发送站内短消息" class="sendMsg2This">&nbsp;</a></div>
+				<div align="left"><div id="comment_body_3472579" class="blog_comment_body">感谢楼主，一步步实践下来，很好理解，也遇到了jdk版本的问题，根据楼主的提示也成功解决，非常感谢。</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3472579,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3472579,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_3472579_avatar" style="display:none;">http://pic.cnblogs.com/face/458420/20160613105656.png</span>&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(3472579,&#39;tfe2v+BQTiLqEOMeu7Cuy41lvFmNDUkvnRWUMvfgYsaBaCu2WMtgWg==&#39;)">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(3472579,&#39;tfe2v+BQTiLqEOMeu7Cuy41lvFmNDUkvnRWUMvfgYsaBaCu2WMtgWg==&#39;)">引用</a></span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<div class="feedbacktitle"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html?utm_source=tuicool#3474264" class="layer">#17楼</a><a name="3474264" id="comment_anchor_3474264"></a>&nbsp; <span class="comment_date">2016-07-21 16:15</span>&nbsp;<a id="a_comment_author_3474264" href="http://home.cnblogs.com/u/896074/" target="_blank">闪亮由我</a> <a href="http://msg.cnblogs.com/send/%E9%97%AA%E4%BA%AE%E7%94%B1%E6%88%91" title="发送站内短消息" class="sendMsg2This">&nbsp;</a></div>
+				<div align="left"><div id="comment_body_3474264" class="blog_comment_body">很容易了解webservice,感谢楼主</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3474264,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3474264,&#39;Bury&#39;,this)">反对(0)</a></div>&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(3474264,&#39;iWSbpuOjoQDpPWmdO9hRN0ZL7JLtsT9nsHZ3+/ICdq5pSHUCcCeK7g==&#39;)">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(3474264,&#39;iWSbpuOjoQDpPWmdO9hRN0ZL7JLtsT9nsHZ3+/ICdq5pSHUCcCeK7g==&#39;)">引用</a></span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<div class="feedbacktitle"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html?utm_source=tuicool#3475260" class="layer">#18楼</a><a name="3475260" id="comment_anchor_3475260"></a>&nbsp; <span class="comment_date">2016-07-23 10:56</span>&nbsp;<a id="a_comment_author_3475260" href="http://www.cnblogs.com/liuzhen1995/" target="_blank">舞动的心</a> <a href="http://msg.cnblogs.com/send/%E8%88%9E%E5%8A%A8%E7%9A%84%E5%BF%83" title="发送站内短消息" class="sendMsg2This">&nbsp;</a></div>
+				<div align="left"><div id="comment_body_3475260" class="blog_comment_body">简单易懂，但是我按照楼主的步骤进行的时候，我的电脑上安装的JDK版本是1.8，结果在The Client项目中编译生成源码时，其中的package-info类报错，结果百度一下，发现原来MyEclipse10不兼容JDK1.8版本，才发现原来楼主的每一步都是精心讲解啊</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3475260,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3475260,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_3475260_avatar" style="display:none;">http://pic.cnblogs.com/face/927750/20170103163308.png</span>&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(3475260,&#39;8kuZ15DOGhOBvgelnpUuC1jrA63tt1JaDZE6Nn7Mka05sZOWaMwMZQ==&#39;)">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(3475260,&#39;8kuZ15DOGhOBvgelnpUuC1jrA63tt1JaDZE6Nn7Mka05sZOWaMwMZQ==&#39;)">引用</a></span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<div class="feedbacktitle"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html?utm_source=tuicool#3488084" class="layer">#19楼</a><a name="3488084" id="comment_anchor_3488084"></a>&nbsp; <span class="comment_date">2016-08-12 11:25</span>&nbsp;<a id="a_comment_author_3488084" href="http://home.cnblogs.com/u/935809/" target="_blank">tyxtyx123</a> <a href="http://msg.cnblogs.com/send/tyxtyx123" title="发送站内短消息" class="sendMsg2This">&nbsp;</a></div>
+				<div align="left"><div id="comment_body_3488084" class="blog_comment_body">简单易懂，错误也很到位，学习了</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3488084,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3488084,&#39;Bury&#39;,this)">反对(0)</a></div>&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(3488084,&#39;/BRh5Y6591nBVpEJL9rGNRXs4WBqk2NIJSZiBoWSPnNJrrB8DHcNBA==&#39;)">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(3488084,&#39;/BRh5Y6591nBVpEJL9rGNRXs4WBqk2NIJSZiBoWSPnNJrrB8DHcNBA==&#39;)">引用</a></span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<div class="feedbacktitle"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html?utm_source=tuicool#3492133" class="layer">#20楼</a><a name="3492133" id="comment_anchor_3492133"></a>&nbsp; <span class="comment_date">2016-08-19 09:21</span>&nbsp;<a id="a_comment_author_3492133" href="http://home.cnblogs.com/u/1011420/" target="_blank">hello小七</a> <a href="http://msg.cnblogs.com/send/hello%E5%B0%8F%E4%B8%83" title="发送站内短消息" class="sendMsg2This">&nbsp;</a></div>
+				<div align="left"><div id="comment_body_3492133" class="blog_comment_body">博主，你用的是什么框架，是axis，xfire，cxf三个其中之一，还是其他的？</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3492133,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3492133,&#39;Bury&#39;,this)">反对(0)</a></div>&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(3492133,&#39;BFQYCqTELVTmIYBzHMYBhYag4mvFpKczxPeENxI5Drmz0Asc/+szOg==&#39;)">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(3492133,&#39;BFQYCqTELVTmIYBzHMYBhYag4mvFpKczxPeENxI5Drmz0Asc/+szOg==&#39;)">引用</a></span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<div class="feedbacktitle"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html?utm_source=tuicool#3500526" class="layer">#21楼</a><a name="3500526" id="comment_anchor_3500526"></a>&nbsp; <span class="comment_date">2016-08-31 16:49</span>&nbsp;<a id="a_comment_author_3500526" href="http://www.cnblogs.com/himymm/" target="_blank">TE丶Amo</a> <a href="http://msg.cnblogs.com/send/TE%E4%B8%B6Amo" title="发送站内短消息" class="sendMsg2This">&nbsp;</a></div>
+				<div align="left"><div id="comment_body_3500526" class="blog_comment_body">感谢楼主！！！</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3500526,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3500526,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_3500526_avatar" style="display:none;">http://pic.cnblogs.com/face/1011591/20160819133959.png</span>&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(3500526,&#39;10yJv6R73NdfDrB1BF2uQiBkeTwUGHwFGVO9rgDy/ZTX+F6zCcO4qQ==&#39;)">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(3500526,&#39;10yJv6R73NdfDrB1BF2uQiBkeTwUGHwFGVO9rgDy/ZTX+F6zCcO4qQ==&#39;)">引用</a></span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<div class="feedbacktitle"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html?utm_source=tuicool#3520133" class="layer">#22楼</a><a name="3520133" id="comment_anchor_3520133"></a>&nbsp; <span class="comment_date">2016-09-27 09:03</span>&nbsp;<a id="a_comment_author_3520133" href="http://home.cnblogs.com/u/587460/" target="_blank">【大饼】</a> <a href="http://msg.cnblogs.com/send/%E3%80%90%E5%A4%A7%E9%A5%BC%E3%80%91" title="发送站内短消息" class="sendMsg2This">&nbsp;</a></div>
+				<div align="left"><div id="comment_body_3520133" class="blog_comment_body">看完后，感觉通过wsimport命令生成类的方式，是最不靠谱的，一般项目中都没人这么干</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3520133,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3520133,&#39;Bury&#39;,this)">反对(0)</a></div>&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(3520133,&#39;Wbhr7dUCgmcWMELmPvyCs9TBmJZN5eoYLcAy7EW8dAV0jpDTGeKMLA==&#39;)">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(3520133,&#39;Wbhr7dUCgmcWMELmPvyCs9TBmJZN5eoYLcAy7EW8dAV0jpDTGeKMLA==&#39;)">引用</a></span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<div class="feedbacktitle"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html?utm_source=tuicool#3551980" class="layer">#23楼</a><a name="3551980" id="comment_anchor_3551980"></a>&nbsp; <span class="comment_date">2016-11-09 13:17</span>&nbsp;<a id="a_comment_author_3551980" href="http://www.cnblogs.com/g-f-b/" target="_blank">过-客</a> <a href="http://msg.cnblogs.com/send/%E8%BF%87-%E5%AE%A2" title="发送站内短消息" class="sendMsg2This">&nbsp;</a></div>
+				<div align="left"><div id="comment_body_3551980" class="blog_comment_body">有用.感谢楼主！</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3551980,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3551980,&#39;Bury&#39;,this)">反对(0)</a></div>&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(3551980,&#39;Oc5RRM7XScGozVD61p3x23v+RR2Aqbe8KWEK6glfvhFOArPhy1ADRQ==&#39;)">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(3551980,&#39;Oc5RRM7XScGozVD61p3x23v+RR2Aqbe8KWEK6glfvhFOArPhy1ADRQ==&#39;)">引用</a></span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<div class="feedbacktitle"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html?utm_source=tuicool#3556365" class="layer">#24楼</a><a name="3556365" id="comment_anchor_3556365"></a>&nbsp; <span class="comment_date">2016-11-15 15:37</span>&nbsp;<a id="a_comment_author_3556365" href="http://home.cnblogs.com/u/1063869/" target="_blank">arbilence</a> <a href="http://msg.cnblogs.com/send/arbilence" title="发送站内短消息" class="sendMsg2This">&nbsp;</a></div>
+				<div align="left"><div id="comment_body_3556365" class="blog_comment_body">生成命令是可以有空格的，有空格的话路径要用引号就可以了。<br><br>C:\Users\sahara&gt;wsimport -s "C:\Users\sahara\Workspaces\MyEclipse 10\TheClient\src" -p com.hyan.client -keep <a href="http://localhost/" target="_blank">http://localhost</a>:9001/Service/ServiceHello?wsdl<br>parsing WSDL...<br><br><br>generating code...<br><br><br>compiling code...</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3556365,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3556365,&#39;Bury&#39;,this)">反对(0)</a></div>&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(3556365,&#39;NWPptGusW5ZomDn+0W/erdIWcB8Bdf0bYcPHR1Gv7m1CSbohB5UF2w==&#39;)">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(3556365,&#39;NWPptGusW5ZomDn+0W/erdIWcB8Bdf0bYcPHR1Gv7m1CSbohB5UF2w==&#39;)">引用</a></span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<div class="feedbacktitle"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html?utm_source=tuicool#3564303" class="layer">#25楼</a><a name="3564303" id="comment_anchor_3564303"></a>&nbsp; <span class="comment_date">2016-11-24 16:20</span>&nbsp;<a id="a_comment_author_3564303" href="http://home.cnblogs.com/u/1016615/" target="_blank">ChangJ</a> <a href="http://msg.cnblogs.com/send/ChangJ" title="发送站内短消息" class="sendMsg2This">&nbsp;</a></div>
+				<div align="left"><div id="comment_body_3564303" class="blog_comment_body">矮油，不错哦</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3564303,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3564303,&#39;Bury&#39;,this)">反对(0)</a></div>&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(3564303,&#39;DVYU6TOQTBAKyLo6LaebmnvtscWKsZxnlG0sa9cfqEoI8aO31PNTOQ==&#39;)">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(3564303,&#39;DVYU6TOQTBAKyLo6LaebmnvtscWKsZxnlG0sa9cfqEoI8aO31PNTOQ==&#39;)">引用</a></span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<div class="feedbacktitle"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html?utm_source=tuicool#3570319" class="layer">#26楼</a><a name="3570319" id="comment_anchor_3570319"></a>&nbsp; <span class="comment_date">2016-12-01 20:25</span>&nbsp;<a id="a_comment_author_3570319" href="http://home.cnblogs.com/u/894374/" target="_blank">书香的生活</a> <a href="http://msg.cnblogs.com/send/%E4%B9%A6%E9%A6%99%E7%9A%84%E7%94%9F%E6%B4%BB" title="发送站内短消息" class="sendMsg2This">&nbsp;</a></div>
+				<div align="left"><div id="comment_body_3570319" class="blog_comment_body">博主，客户端的代码能用axis插件直接生成了，减少了用命令苦逼的生成了</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3570319,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3570319,&#39;Bury&#39;,this)">反对(0)</a></div>&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(3570319,&#39;4E9ywvA4CeFkqJJuSnUiK/sST/hriF33vcAtAT51ArJyv6xabEAHOA==&#39;)">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(3570319,&#39;4E9ywvA4CeFkqJJuSnUiK/sST/hriF33vcAtAT51ArJyv6xabEAHOA==&#39;)">引用</a></span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<div class="feedbacktitle"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html?utm_source=tuicool#3582638" class="layer">#27楼</a><a name="3582638" id="comment_anchor_3582638"></a>&nbsp; <span class="comment_date">2016-12-16 14:34</span>&nbsp;<a id="a_comment_author_3582638" href="http://home.cnblogs.com/u/1081826/" target="_blank">IceLobe</a> <a href="http://msg.cnblogs.com/send/IceLobe" title="发送站内短消息" class="sendMsg2This">&nbsp;</a></div>
+				<div align="left"><div id="comment_body_3582638" class="blog_comment_body"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html?utm_source=tuicool#3570319" title="查看所回复的评论" onclick="commentManager.renderComments(0,50,3570319);">@</a>
+书香的生活<br>我之前就用axis生成过 报错，用这个命令生成的不报错</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3582638,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3582638,&#39;Bury&#39;,this)">反对(0)</a></div>&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(3582638,&#39;O6pTp4GM7KgmnoZ0GPBubhaQ4RpUsJAvXb2POxDvB0OIj+c29ut50w==&#39;)">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(3582638,&#39;O6pTp4GM7KgmnoZ0GPBubhaQ4RpUsJAvXb2POxDvB0OIj+c29ut50w==&#39;)">引用</a></span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<div class="feedbacktitle"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html?utm_source=tuicool#3582642" class="layer">#28楼</a><a name="3582642" id="comment_anchor_3582642"></a>&nbsp; <span class="comment_date">2016-12-16 14:37</span>&nbsp;<a id="a_comment_author_3582642" href="http://home.cnblogs.com/u/1081826/" target="_blank">IceLobe</a> <a href="http://msg.cnblogs.com/send/IceLobe" title="发送站内短消息" class="sendMsg2This">&nbsp;</a></div>
+				<div align="left"><div id="comment_body_3582642" class="blog_comment_body"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html?utm_source=tuicool#3403416" title="查看所回复的评论" onclick="commentManager.renderComments(0,50,3403416);">@</a>
+文艺委员<br>学到webservice的人和熟悉eclipse有什么关系，eclipse只是软件，用熟悉了不代表，就会webservice了</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3582642,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3582642,&#39;Bury&#39;,this)">反对(0)</a></div>&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(3582642,&#39;O6pTp4GM7KgmnoZ0GPBubhaQ4RpUsJAvXb2POxDvB0OIj+c29ut50w==&#39;)">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(3582642,&#39;O6pTp4GM7KgmnoZ0GPBubhaQ4RpUsJAvXb2POxDvB0OIj+c29ut50w==&#39;)">引用</a></span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<div class="feedbacktitle"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html?utm_source=tuicool#3582655" class="layer">#29楼</a><a name="3582655" id="comment_anchor_3582655"></a>&nbsp; <span class="comment_date">2016-12-16 14:44</span>&nbsp;<a id="a_comment_author_3582655" href="http://home.cnblogs.com/u/1081826/" target="_blank">IceLobe</a> <a href="http://msg.cnblogs.com/send/IceLobe" title="发送站内短消息" class="sendMsg2This">&nbsp;</a></div>
+				<div align="left"><div id="comment_body_3582655" class="blog_comment_body">这才是学习webservice的文章，之前在网上找了很多webservice的调用方法，全都是不清不楚，看着很高很大很尚，但是我只想说然并卵，就这一篇文章中说的方法能用，之前看的其他的文章我真是心累，axis和axis2都不知道他们是怎么用的，给的代码示例就一部分，我真想说会在网上搜索webservice的调用方法的人多半是不清楚该怎么具体的去调用webservice，那些人屁话说了一堆，但是没有什么实际的用处</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3582655,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3582655,&#39;Bury&#39;,this)">反对(0)</a></div>&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(3582655,&#39;O6pTp4GM7KgmnoZ0GPBubhaQ4RpUsJAvXb2POxDvB0OIj+c29ut50w==&#39;)">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(3582655,&#39;O6pTp4GM7KgmnoZ0GPBubhaQ4RpUsJAvXb2POxDvB0OIj+c29ut50w==&#39;)">引用</a></span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			<div class="feedbacktitle"><a href="http://www.cnblogs.com/yisheng163/p/4524808.html?utm_source=tuicool#3587239" class="layer">#30楼</a><a name="3587239" id="comment_anchor_3587239"></a><span id="comment-maxId" style="display:none;">3587239</span><span id="comment-maxDate" style="display:none;">2016/12/22 16:17:34</span>&nbsp; <span class="comment_date">2016-12-22 16:17</span>&nbsp;<a id="a_comment_author_3587239" href="http://home.cnblogs.com/u/1084919/" target="_blank">yh1276</a> <a href="http://msg.cnblogs.com/send/yh1276" title="发送站内短消息" class="sendMsg2This">&nbsp;</a></div>
+				<div align="left"><div id="comment_body_3587239" class="blog_comment_body">我只有eclipse要用到哪些包不清楚啊</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3587239,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3587239,&#39;Bury&#39;,this)">反对(0)</a></div>&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(3587239,&#39;PKOS7BVetrmsdYS8tRpU5R7NgrrCJzE4jwezKuihBZJ0p2jJ8wwJjQ==&#39;)">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(3587239,&#39;PKOS7BVetrmsdYS8tRpU5R7NgrrCJzE4jwezKuihBZJ0p2jJ8wwJjQ==&#39;)">引用</a></span>
+			</div>
+		</div>
+	<div id="comments_pager_bottom"></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="http://www.cnblogs.com/yisheng163/p/4524808.html?utm_source=tuicool#" onclick="return RefreshPage();">刷新页面</a><a href="http://www.cnblogs.com/yisheng163/p/4524808.html?utm_source=tuicool#top">返回顶部</a></div>
+<div id="comment_form_container">
+<div id="commentform_title">发表评论</div>
+<span id="tip_comment" style="color:Red"></span>
+<p>
+昵称：<input type="text" id="tbCommentAuthor" class="author" disabled="disabled" size="50" value="lch_2016">
+</p>
+<div class="commentbox_main">
+<div class="commentbox_title">
+<div class="commentbox_title_left">评论内容：</div>
+<div class="commentbox_title_right">
+<img id="ubb_quote" class="comment_icon" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/quote.gif" alt="引用" title="添加引用" onclick="insertUBB(&#39;tbCommentBody&#39;,&#39;quote&#39;)">
+<img id="ubb_bold" class="comment_icon" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/b.png" alt="粗体" title="添加粗体" onclick="insertUBB(&#39;tbCommentBody&#39;,&#39;b&#39;)">
+<img id="ubb_url" class="comment_icon" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/lk.png" alt="链接" title="添加链接" onclick="insertUbbUrl(&#39;tbCommentBody&#39;)">
+<img id="ubb_indent" class="comment_icon" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/indent.png" alt="缩进" title="添加首行缩进" onclick="insertIndent(&#39;tbCommentBody&#39;)">
+<img id="ubb_code" class="comment_icon" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/InsertCode.gif" alt="代码" title="添加代码" onclick="insertUbbCode()">
+<img id="ubb_img" class="comment_icon" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/img.gif" alt="图片" title="上传图片" onclick="OpenImageUploadWindow();">
+</div>
+</div>
+<div class="clear"></div>
+<textarea id="tbCommentBody" class="comment_textarea"></textarea>
+</div>
+<p id="commentbox_opt">
+<input id="btn_comment_submit" type="button" class="comment_btn" value="提交评论">
+<span id="span_comment_canceledit" style="display:none"><a href="javascript:void(0);" onclick="return CancelCommentEdit()">不改了</a></span>
+<a href="javascript:void(0);" onclick="return logout();">退出登录</a>
+        <a id="commentbox_opt_sub" href="javascript:void(0);" title="订阅后有新评论时会邮件通知您" onclick="commentManager.Subscribe()">订阅评论</a>
+</p>
+<div id="tip_comment2" style="color:Red"></div>
+<p>
+[Ctrl+Enter快捷键提交]
+</p>
+<div style="display:none">
+<span id="comment_edit_id"></span><span id="span_parentcomment_id"></span>
+<span id="span_parent_id"></span>
+<span id="span_comment_replyto"></span>
+<span id="span_comment_posted"></span>
+</div>
+</div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="ad_t2"><a href="http://www.ucancode.com/index.htm" target="_blank">【推荐】50万行VC++源码: 大型组态工控、电力仿真CAD与GIS源码库</a><br><a href="http://arcapp.anruichina.com/arctrac/trac?tid=smb_azure_1212_CNBlog" target="_blank">【活动】一元专享1500元微软智能云Azure</a><br><a href="http://rongcloud.cn/reports/journal2" target="_blank">【推荐】融云发布 App 社交化白皮书 IM 提升活跃超 8 倍</a><br><a href="http://bbs.h3bpm.com/index.php?m=app&amp;app=product_download&amp;a=reg&amp;utm_source=csdn&amp;utm_medium=pic&amp;utm_campaign=show&amp;utm_content=v10&amp;utm_term=%E5%85%8D%E8%B4%B9%E4%B8%8B%E8%BD%BD" target="_blank">【推荐】自开发 零实施的BPM</a><br></div>
+<div id="opt_under_post"></div>
+<div id="ad_c1" class="c_ad_block"><a href="http://www.gcpowertools.com.cn/products/activereports_overview.htm?utm_source=cnblogs&amp;utm_medium=blogpage&amp;utm_term=bottom&amp;utm_content=AR&amp;utm_campaign=community" target="_blank"><img width="300" height="250" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/24442-20161115165230123-1587531896.png" alt=""></a></div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>最新IT新闻</b>:<br> ·  <a href="http://news.cnblogs.com/n/560482/" target="_blank">挪威下周开始关闭国内FM无线电网络</a><br> ·  <a href="http://news.cnblogs.com/n/560480/" target="_blank">颠覆围棋后，DeepMind还想进军医疗、游戏领域</a><br> ·  <a href="http://news.cnblogs.com/n/560479/" target="_blank">亚马逊扩大实体书店 意在推广Prime会员服务</a><br> ·  <a href="http://news.cnblogs.com/n/560463/" target="_blank">36氪发书单|2017年认真读一读这个世界</a><br> ·  <a href="http://news.cnblogs.com/n/560478/" target="_blank">优必选与亚马逊合作推出人形机器人Lynx</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="ad_c2" class="c_ad_block"><a href="http://bbs.h3bpm.com/index.php?m=app&amp;app=product_download&amp;a=reg&amp;utm_source=csdn&amp;utm_medium=pic&amp;utm_campaign=show&amp;utm_content=v10&amp;utm_term=%E5%85%8D%E8%B4%B9%E4%B8%8B%E8%BD%BD" target="_blank"><img width="468" height="60" src="./Java WebService 简单实例 - yi-sheng - 博客园_files/35695-20161213142353073-1602158633.jpg" alt=""></a></div>
+<div id="under_post_kb"><div class="itnews c_ad_block" id="kb_block"><b>最新知识库文章</b>:<br><div id="kb_recent"> ·  <a href="http://kb.cnblogs.com/page/556770/" target="_blank">写给未来的程序媛</a><br> ·  <a href="http://kb.cnblogs.com/page/558087/" target="_blank">高质量的工程代码为什么难写</a><br> ·  <a href="http://kb.cnblogs.com/page/555750/" target="_blank">循序渐进地代码重构</a><br> ·  <a href="http://kb.cnblogs.com/page/554496/" target="_blank">技术的正宗与野路子</a><br> ·  <a href="http://kb.cnblogs.com/page/553682/" target="_blank">陈皓：什么是工程师文化？</a><br></div>» <a href="http://kb.cnblogs.com/" target="_blank">更多知识库文章...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+	
+<!--done-->
+<div class="footer">
+	
+	Copyright ©2017 yi-sheng Powered by: <a href="http://www.cnblogs.com/" class="footerlink">博客园</a> 模板提供：<a href="http://blog.hjenglish.com/" class="footerlink">沪江博客</a><br>
+</div>
+</div>
+
+
+
+
+
+</body></html>
